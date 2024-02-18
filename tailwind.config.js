@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,75 +8,30 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        incognito: ["var(--incognito)"],
+        inter: ["var(--inter)"],
+      },
+      colors: {
+        "primary-color": "#33E092",
+        "secondary-color": "#0CCE6B",
+        "tertiary-color": "#16a34a",
+        "primary-bg": "rgba(39, 39, 43, 0.4)",
+        "secondary-bg": "rgba(250, 250, 250, 0.4)",
+      },
+      boxShadow: {
+        "line-light": "rgba(17, 17, 26, 0.1) 0px 1px 0px",
+        "line-dark": "rgb(29, 29, 32) 0px 1px 0px",
+      },
+      gridTemplateColumns: {
+        custom: "1.2fr 1fr",
+      },
       backgroundImage: {
-        "gradient-radial":
-          "radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-stops))",
+        noise:
+          "url('https://res.cloudinary.com/victoreke/image/upload/v1691779257/victoreke/noise.png')",
       },
-      animation: {
-        "fade-in": "fade-in 3s ease-in-out forwards",
-        title: "title 3s ease-out forwards",
-        "fade-left": "fade-left 3s ease-in-out forwards",
-        "fade-right": "fade-right 3s ease-in-out forwards",
-      },
-      keyframes: {
-        "fade-in": {
-          "0%": {
-            opacity: "0%",
-          },
-          "75%": {
-            opacity: "0%",
-          },
-          "100%": {
-            opacity: "100%",
-          },
-        },
-        "fade-left": {
-          "0%": {
-            transform: "translateX(100%)",
-            opacity: "0%",
-          },
-
-          "30%": {
-            transform: "translateX(0%)",
-            opacity: "100%",
-          },
-          "100%": {
-            opacity: "0%",
-          },
-        },
-        "fade-right": {
-          "0%": {
-            transform: "translateX(-100%)",
-            opacity: "0%",
-          },
-
-          "30%": {
-            transform: "translateX(0%)",
-            opacity: "100%",
-          },
-          "100%": {
-            opacity: "0%",
-          },
-        },
-        title: {
-          "0%": {
-            "line-height": "0%",
-            "letter-spacing": "0.25em",
-            opacity: "0",
-          },
-          "25%": {
-            "line-height": "0%",
-            opacity: "0%",
-          },
-          "80%": {
-            opacity: "100%",
-          },
-
-          "100%": {
-            "line-height": "100%",
-            opacity: "100%",
-          },
-        },
+      backgroundPosition: {
+        zero: "0 0",
       },
     },
   },

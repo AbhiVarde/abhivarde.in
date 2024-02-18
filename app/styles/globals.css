@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url("../../public/noise.png");
+  background-size: 200px 200px;
+  background-position: 0 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Varela Round", sans-serif;
+}
+
+.path {
+  stroke-dasharray: 500px 100px;
+  animation: animate 100s linear infinite alternate-reverse;
+}
+
+@keyframes animate {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 12433.8193359375;
+  }
+}

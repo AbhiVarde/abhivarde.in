@@ -1,49 +1,54 @@
-import Link from "next/link";
-import React from "react";
-import Particles from "./components/particles";
-
-const navigation = [
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
-  { name: "About me", href: "/about" },
-];
+"use client";
+import { useState, useEffect } from "react";
+import { profileQuery } from "../lib/sanity.query";
+import Job from "./components/pages/Job";
+import { sanityFetch } from "../lib/sanity.client";
+import Slide from "./animation/Slide";
+import Social from "./components/shared/Social";
+import HeroSvg from "./icons/HeroSvg";
 
 export default function Home() {
+  const [profile, setProfile] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchedProfile = await sanityFetch({
+          query: profileQuery,
+          tags: ["profile"],
+        });
+        setProfile(fetchedProfile);
+      } catch (error) {
+        console.error("Error fetching profile data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
-
-      <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
-        <nav className="my-16 animate-fade-in">
-          <ul className="flex items-center justify-center gap-4">
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-md duration-500 text-zinc-500 hover:text-zinc-300"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </ul>
-        </nav>
-        <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-        <Particles
-          className="absolute inset-0 -z-10 animate-fade-in"
-          quantity={300}
-        />
-
-        <h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text my-2">
-          Abhi Varde
-        </h1>
-
-        <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-        <div className="my-16 text-center animate-fade-in">
-          <h2 className="text-md text-zinc-500 p-1 md:p-0">
-            👋 Hey there! I'm a passionate software developer who loves creating
-            beautiful user interfaces.
-          </h2>
-        </div>
-      </div>
-  
-
+    <main className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-36 md:mt-32 mt-28">
+      <section className="flex xl:flex-row flex-col xl:items-center items-start xl:justify-center justify-between gap-x-12 mb-16">
+        {profile &&
+          profile.map((data) => (
+            <div key={data._id} className="lg:max-w-2xl max-w-2xl">
+              <Slide>
+                <h1 className="font-semibold tracking-tight text-2xl sm:text-4xl mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] min-w-full ">
+                  {data.headline}
+                </h1>
+                <p className="text-base leading-relaxed">{data.shortBio}</p>
+              </Slide>
+              <Slide delay={0.1}>
+                <Social type="social" />
+              </Slide>
+              <Slide delay={0.1}></Slide>
+            </div>
+          ))}
+        <Slide delay={0.14}>
+          <HeroSvg />
+        </Slide>
+      </section>
+      <Job />
+    </main>
   );
 }
