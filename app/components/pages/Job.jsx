@@ -65,7 +65,9 @@ const Job = () => {
                     {job.endDate ? (
                       formatDate(job.endDate)
                     ) : (
-                      <span className="text-white">Present</span>
+                      <span className="dark:text-white text-black">
+                        Present
+                      </span>
                     )}
                   </time>
                   <p className="tracking-tight dark:text-zinc-400 text-zinc-600 my-4">

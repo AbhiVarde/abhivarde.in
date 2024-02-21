@@ -1,8 +1,26 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Theme from "./Theme";
 import { CgMenuRight, CgClose } from "react-icons/cg";
+
+const NavLink = ({ href, children }) => {
+  const isActive = usePathname() === href;
+
+  return (
+    <Link
+      href={href}
+      className={`${
+        isActive
+          ? "text-black dark:text-white"
+          : "text-gray-600 dark:text-gray-300"
+      } hover:dark:text-white hover:text-gray-800 dark:hover:text-white`}
+    >
+      {children}
+    </Link>
+  );
+};
 
 const Navbar = () => {
   const [isToggle, setIsToggle] = useState(false);
@@ -26,16 +44,8 @@ const Navbar = () => {
         <div className="flex items-center space-x-6">
           <ul className="hidden md:flex space-x-6 list-none">
             {links.map((link, index) => (
-              <li
-                key={index}
-                className="transition duration-300 ease-in-out hover:text-gray-800 dark:hover:text-white"
-              >
-                <Link
-                  href={link.href}
-                  className="text-gray-600 dark:text-gray-300"
-                >
-                  {link.title}
-                </Link>
+              <li key={index} className="transition duration-300 ease-in-out">
+                <NavLink href={link.href}>{link.title}</NavLink>
               </li>
             ))}
           </ul>
