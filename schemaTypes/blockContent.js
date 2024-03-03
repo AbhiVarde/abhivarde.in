@@ -1,6 +1,6 @@
 import { defineArrayMember, defineType } from "sanity";
 
-module.exports = defineType({
+export const blockContent = defineType({
   name: "blockContent",
   title: "Post Body",
   type: "array",
@@ -43,6 +43,7 @@ module.exports = defineType({
       ],
     }),
     defineArrayMember({
+      title: "Code",
       type: "code",
       options: {
         language: "typescript",
@@ -64,9 +65,6 @@ module.exports = defineType({
           { title: "Yaml", value: "yaml" },
         ],
       },
-    }),
-    defineArrayMember({
-      type: "youtube",
     }),
   ],
 });

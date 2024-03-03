@@ -27,7 +27,7 @@ const profile = {
       description: "Upload a profile picture",
       options: {
         hotspot: true,
-        metadata: ["lqip"], // "blurhash", "palette", etc
+        metadata: ["lqip"],
       },
       fields: [
         {
@@ -60,7 +60,7 @@ const profile = {
     defineField({
       name: "fullBio",
       title: "Full Bio",
-      type: "string",
+      type: "blockContent",
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -72,7 +72,7 @@ const profile = {
     defineField({
       name: "usage",
       title: "Usage",
-      type: "string",
+      type: "blockContent",
       validation: (rule) => rule.required(),
     }),
   ],

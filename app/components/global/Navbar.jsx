@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Theme from "./Theme";
 import { CgMenuRight, CgClose } from "react-icons/cg";
+import { motion } from "framer-motion";
 
 const NavLink = ({ href, children }) => {
   const isActive = usePathname() === href;
@@ -27,13 +28,22 @@ const Navbar = () => {
 
   const links = [
     { title: "About", href: "/about" },
-    { title: "Projects", href: "/projects" },
-    { title: "Blog", href: "/blog" },
     { title: "Guestbook", href: "/guestbook" },
   ];
 
+  useEffect(() => {
+    if (isToggle) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isToggle]);
+
   return (
-    <header className="backdrop-filter bg-opacity-25 backdrop-blur-md border-b dark:border-zinc-800 border-zinc-200 fixed top-0 left-0 w-full z-50 px-6 py-4">
+    <header className="border-b dark:border-zinc-800 backdrop-filter backdrop-blur-sm bg-opacity-25 dark:bg-transparent  bg-white border-zinc-200 fixed top-0 left-0 w-full z-50 px-6 py-4">
       <nav className="container max-w-6xl mx-auto flex justify-between items-center">
         <Link
           href="/"
@@ -52,7 +62,12 @@ const Navbar = () => {
           <div className="hidden md:block border-l mx-6 h-6 dark:border-zinc-600 border-zinc-300"></div>
           <Theme />
           <div className="block md:hidden border-l mx-6 h-6 dark:border-zinc-600 border-zinc-300"></div>
-          <div className="md:hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden"
+          >
             {!isToggle && (
               <CgMenuRight
                 size={24}
@@ -60,14 +75,17 @@ const Navbar = () => {
                 className="text-gray-600 dark:text-gray-300 cursor-pointer transition duration-300 ease-in-out hover:text-gray-800 dark:hover:text-white"
               />
             )}
-          </div>
+          </motion.div>
         </div>
 
         {isToggle && (
-          <div
-            className={`backdrop-filter backdrop-blur-md bg-opacity-85 md:hidden fixed top-0 left-0 w-screen h-screen  dark:bg-zinc-900 bg-white z-50 flex flex-col justify-center items-center `}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className={`backdrop-filter backdrop-blur-md dark:bg-opacity-85 bg-opacity-85 md:hidden fixed top-0 left-0 w-screen h-screen dark:bg-zinc-900 bg-white z-50 flex flex-col justify-center items-center`}
           >
-            <div className="absolute top-6 right-6">
+            <div className="absolute top-5 right-5">
               <CgClose
                 size={24}
                 onClick={() => setIsToggle(!isToggle)}
@@ -83,7 +101,7 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         )}
       </nav>
     </header>

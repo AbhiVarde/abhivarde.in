@@ -4,7 +4,7 @@ import "./styles/globals.css";
 import Navbar from "./components/global/Navbar";
 import Footer from "./components/global/Footer";
 import { Providers } from "./providers";
-
+import Chat from "./components/global/Chat";
 const VarelaRound = Varela_Round({
   subsets: ["latin"],
   display: "swap",
@@ -44,6 +44,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           {children}
           <Footer />
+          <Chat />
         </Providers>
       </body>
       <Script async src="https://statsvictor.vercel.app/script.js" />
