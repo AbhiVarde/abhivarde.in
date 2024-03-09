@@ -65,8 +65,8 @@ const Footer = () => {
 
           <div className="flex flex-col lg:items-end items-center lg:text-start text-center">
             <small>
-              Copyright &copy; Abhi Varde {new Date().getFullYear()} All rights
-              Reserved
+              Copyright &copy; {new Date().getFullYear()} Abhi Varde. All rights
+              Reserved.
             </small>
           </div>
         </div>

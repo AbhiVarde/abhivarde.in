@@ -58,8 +58,8 @@ export default async function About() {
                   height={400}
                   quality={100}
                   alt={data.profileImage.alt}
-                  placeholder="blur" // Ensure placeholder image is displayed while loading
-                  blurDataURL={data.profileImage.lqip} // Use low-quality image for initial loading
+                  placeholder="blur"
+                  blurDataURL={data.profileImage.lqip}
                   priority
                 />
 
