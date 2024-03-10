@@ -109,7 +109,7 @@ export default function Chat() {
 
   return (
     <AnimatePresence initial={false} onExitComplete={() => null}>
-      <div className="fixed right-4 md:right-10 bottom-10 flex flex-col items-end z-20">
+      <div className="fixed bottom-6 right-4 md:right-10 md:bottom-10 flex flex-col items-end z-20">
         {open && (
           <motion.div
             variants={dropIn}
@@ -119,7 +119,7 @@ export default function Chat() {
             className="mb-4 rounded-xl shadow-2xl dark:text-white text-zinc-700 flex flex-col overflow-hidden mx-4 md:mx-0"
           >
             <div className="p-4 dark:bg-zinc-900 bg-white">
-              <h2 className=" font-bold text-xl">
+              <h2 className="font-bold text-lg sm:text-xl">
                 Something on your mind? Let's talk! 👇
               </h2>
               <small className="text-sm  mb-10">
@@ -159,12 +159,12 @@ export default function Chat() {
 
               <button
                 onClick={handleSubmit}
-                className="w-full p-4 border-2 rounded-md font-semibold text-lg mb-4 transition duration-200 hover:shadow-none dark:hover:shadow-none"
+                className="w-full p-2 sm:p-4 border-2 rounded-md font-semibold text-lg mb-2 sm:mb-4 transition duration-200 hover:shadow-none dark:hover:shadow-none"
               >
                 Submit
               </button>
 
-              <small className="h-4 min-h-4 mb-4">
+              <small className="h-4 min-h-4 mb-2 sm:mb-4">
                 {success && (
                   <p className="text-green-500 font-semibold text-sm">
                     {success}
@@ -179,7 +179,7 @@ export default function Chat() {
         )}
         <button
           onClick={handleButtonClick}
-          className="dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-200  w-14 h-14 rounded-full flex items-center justify-center hover:scale-105 hover:shadow-xl transition duration-200 shadow-lg"
+          className="dark:bg-zinc-900 bg-zinc-100 border dark:border-zinc-800 border-zinc-200 w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center hover:scale-105 hover:shadow-xl transition duration-200 shadow-lg"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -187,7 +187,7 @@ export default function Chat() {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="w-6 h-6 text-zinc-500 dark:text-[#00FFC2]"
+            className="w-5 h-5 sm:w-6 sm:h-6 text-zinc-500 dark:text-[#00FFC2]"
           >
             <path
               strokeLinecap="round"
