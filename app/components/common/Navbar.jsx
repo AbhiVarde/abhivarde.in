@@ -69,7 +69,7 @@ const Navbar = () => {
     <header
       className={`${
         !isTop
-          ? "fixed top-0 w-full border-b z-20 bg-white backdrop-filter backdrop-blur-md bg-opacity-90"
+          ? "fixed top-0 w-full border-b z-20 bg-white backdrop-filter backdrop-blur-lg bg-opacity-95"
           : ""
       }`}
     >
