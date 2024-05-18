@@ -16,5 +16,5 @@ You may not copy, modify, or distribute this code without explicit permission fr
 
 For permissions or inquiries, please contact:
 
-Author: Abhi Varde  
-Email: abhivarde.contact@gmail.com
+**Author**: Abhi Varde  
+**Email**: abhivarde.contact@gmail.com
