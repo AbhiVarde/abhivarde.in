@@ -10,4 +10,11 @@
 
 ## License
 
-1. Please do not copy it directly.
+This project is licensed under the Proprietary License. All rights reserved.
+
+You may not copy, modify, or distribute this code without explicit permission from the author.
+
+For permissions or inquiries, please contact:
+
+Author: Abhi Varde  
+Email: abhivarde.contact@gmail.com
