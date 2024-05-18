@@ -7,10 +7,10 @@ const GiscusComponent = () => {
   return (
     <div className="mt-8">
       <Giscus
-        repo="AbhiVarde/Portfolio"
-        repoId="R_kgDOLw1udA"
+        repo="AbhiVarde/abhivarde.in"
+        repoId="R_kgDOL9N2Lg"
         category="General"
-        categoryId="DIC_kwDOLw1udM4CfTVD"
+        categoryId="DIC_kwDOL9N2Ls4Cfckr"
         mapping="pathname"
         strict="0"
         reactionsEnabled="1"
