@@ -50,7 +50,7 @@ const About = () => {
         <div className="relative overflow-hidden w-full px-4 sm:px-8 min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[900px]">
           <div className="pt-6 md:pt-14 absolute mx-auto flex flex-col items-center inset-0 bg-grid-slate-100/70 z-0 px-4 sm:px-8">
             <div className="relative max-w-3xl text-xl md:text-2xl lg:text-3xl text-left text-[#040202] sm:text-center !leading-9 mb-6 font-medium">
-              <TextReveal text="I'm Abhi, an experienced frontend developer. I live in Surat, building the future." />
+              <TextReveal text="I'm Abhi, an experienced frontend developer.I'm live in Surat, building the future." />
             </div>
             <Image
               src={img}
