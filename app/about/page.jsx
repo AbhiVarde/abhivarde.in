@@ -1,6 +1,3 @@
-// import React from "react";
-// import { LuClock } from "react-icons/lu";
-
 import React from "react";
 import { LuUser, LuTerminal, LuFigma, LuGlobe } from "react-icons/lu";
 import { IoBriefcaseOutline } from "react-icons/io5";
@@ -10,6 +7,7 @@ import works from "../data/works";
 import { PiPlusThin } from "react-icons/pi";
 import img from "../resources/images/me.png";
 import Contact from "../components/about/Contact";
+import TextReveal from "../components/common/TextReveal";
 
 export const metadata = {
   title: "About",
@@ -19,18 +17,6 @@ export const metadata = {
 
 const About = () => {
   return (
-    // <div className="h-screen flex flex-col items-center text-center px-2 justify-center bg-gray-50">
-    //   <main className="flex flex-col items-center justify-center">
-    //     <LuClock className="text-5xl mb-4 text-gray-800" />
-    //     <h1 className="text-3xl font-semibold text-gray-800 mb-4">
-    //       Coming Soon!
-    //     </h1>
-    //     <p className="text-gray-600 mb-8">
-    //       Stay tuned, something awesome is on its way.
-    //     </p>
-    //   </main>
-    // </div>
-
     <div className="max-w-5xl mx-auto px-4 relative">
       <div className="mt-6 sm:mt-10">
         <div className="mt-4 mb-6 flex space-x-3 items-center">
@@ -64,12 +50,7 @@ const About = () => {
         <div className="relative overflow-hidden w-full px-4 sm:px-8 min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[900px]">
           <div className="pt-6 md:pt-14 absolute mx-auto flex flex-col items-center inset-0 bg-grid-slate-100/70 z-0 px-4 sm:px-8">
             <div className="relative max-w-3xl text-xl md:text-2xl lg:text-3xl text-left text-[#040202] sm:text-center !leading-9 mb-6 font-medium">
-              <p>
-                I'm Abhi, an experienced frontend developer.
-                <span className="text-[#666666]">
-                  I'm live in Surat, building the future.
-                </span>
-              </p>
+              <TextReveal text="I'm Abhi, an experienced frontend developer. I live in Surat, building the future." />
             </div>
             <Image
               src={img}
