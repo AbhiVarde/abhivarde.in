@@ -5,7 +5,7 @@ import splitStrUsingRegex from "../../utils/splitStrUsingRegex";
 import { motion } from "framer-motion";
 
 const charVariants = {
-  hidden: { opacity: 0, filter: "blur(10px)" },
+  hidden: { opacity: 0, filter: "blur(8px)" },
   reveal: {
     opacity: 1,
     filter: "blur(0px)",
