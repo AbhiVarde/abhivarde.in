@@ -20,7 +20,7 @@ const GuestBook = () => {
             GuestBook
           </h2>
         </div>
-        <p class="text-lg text-zinc-600 leading-relaxed">
+        <p class="sm:text-lg text-zinc-600 leading-relaxed">
           Feel free to leave a message for future visitors - your thoughts and
           feedback are greatly appreciated :)
         </p>
