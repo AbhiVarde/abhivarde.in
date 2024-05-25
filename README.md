@@ -10,9 +10,7 @@
 
 ## License
 
-This project is licensed under the Proprietary License. All rights reserved.
-
-You may not copy, modify, or distribute this code without explicit permission from the author.
+This project is licensed under the MIT License. All rights reserved.
 
 For permissions or inquiries, please contact:
 
