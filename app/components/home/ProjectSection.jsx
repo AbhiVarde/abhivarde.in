@@ -37,7 +37,9 @@ const ProjectSection = () => {
             <Image
               src={project.image}
               alt={project.title}
-              className="w-full h-[240px] md:h-[300px] object-cover hover:opacity-80"
+              objectFit="cover"
+              loading="eager"
+              className="w-full h-[240px] md:h-[300px] hover:opacity-90"
             />
             <div className="flex justify-between items-center gap-1 px-4 py-2">
               <p
