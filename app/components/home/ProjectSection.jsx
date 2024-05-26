@@ -28,8 +28,8 @@ const ProjectSection = () => {
             target="_blank"
             className={`flex flex-col rounded-xl shadow-md overflow-hidden bg-white cursor-pointer transition-all duration-300 ${
               i % 4 === 0 || i % 4 === 3
-                ? "rotate-2 hover:rotate-0"
-                : "-rotate-2 hover:rotate-0"
+                ? "sm:rotate-2 sm:hover:rotate-0"
+                : "sm:-rotate-2 sm:hover:rotate-0"
             }`}
             onMouseEnter={() => setHoveredIndex(i)}
             onMouseLeave={() => setHoveredIndex(null)}
@@ -37,7 +37,7 @@ const ProjectSection = () => {
             <Image
               src={project.image}
               alt={project.title}
-              className="w-full h-[300px] object-cover hover:opacity-80"
+              className="w-full h-[240px] md:h-[300px] object-cover hover:opacity-80"
             />
             <div className="flex justify-between items-center gap-1 px-4 py-2">
               <p
