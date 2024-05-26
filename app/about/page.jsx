@@ -50,13 +50,13 @@ const About = () => {
         <div className="relative overflow-hidden w-full px-4 sm:px-8 min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[900px]">
           <div className="pt-6 md:pt-14 absolute mx-auto flex flex-col items-center inset-0 bg-grid-slate-100/70 z-0 px-4 sm:px-8">
             <div className="relative max-w-3xl text-xl md:text-2xl lg:text-3xl text-left text-[#040202] sm:text-center !leading-9 mb-6 font-medium">
-              <TextReveal text="I'm Abhi, an experienced frontend developer.I'm live in Surat, building the future." />
+              <TextReveal text="I'm Abhi, an experienced frontend developer living in Surat, dedicated to building the future." />
             </div>
             <Image
               src={img}
               alt="Abhi Varde"
               objectFit="cover"
-              className="rounded-md mt-2 bg-gray-300 bg-opacity-30"
+              className="rounded-md mt-2.5 bg-gray-300 bg-opacity-30"
             />
           </div>
         </div>
@@ -114,7 +114,7 @@ const About = () => {
                   Skills
                 </p>
                 <p className="text-lg mt-4">
-                  Here’s what sets me apart and makes me unique.
+                  I’ve worked with the following but not limited to.
                 </p>
                 <div className="mt-6 overflow-hidden hidden sm:flex lg:hidden">
                   <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-scroll">
