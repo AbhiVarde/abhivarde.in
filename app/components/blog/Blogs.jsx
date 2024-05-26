@@ -29,7 +29,9 @@ const Blogs = () => {
             <Image
               src={blog.image}
               alt={blog.title}
-              className="rounded-md hover:opacity-90 object-cover"
+              objectFit="cover"
+              loading="eager"
+              className="rounded-md hover:opacity-90"
             />
             <p className="font-medium text-base mt-2">{blog.title}</p>
             <p className="flex gap-0.5 text-sm mt-2 text-[#666666]">
