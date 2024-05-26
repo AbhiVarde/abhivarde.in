@@ -21,7 +21,7 @@ const Project = () => {
           </h2>
         </div>
         <p class="sm:text-lg text-zinc-600 leading-relaxed">
-          Here are some projects I'm really proud of. Most of them are
+          Here are some projects of which I'm really proud. Most of them are
           open-source, so feel free to check out the code and contribute if
           you're interested!
         </p>
