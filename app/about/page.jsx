@@ -56,6 +56,7 @@ const About = () => {
               src={img}
               alt="Abhi Varde"
               objectFit="cover"
+              loading="eager"
               className="rounded-md mt-2.5 bg-gray-300 bg-opacity-30"
             />
           </div>
