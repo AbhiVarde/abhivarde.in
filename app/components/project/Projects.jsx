@@ -22,11 +22,13 @@ const Projects = () => {
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <div className="overflow-hidden rounded-lg md:w-72">
-            <div className="relative h-full w-full transition duration-200 hover:opacity-80 md:w-72">
+            <div className="relative h-full w-full transition duration-200 hover:opacity-90 md:w-72">
               <Image
                 src={project.image}
                 alt="image"
-                className="w-full h-[180px] md:h-full object-cover"
+                objectFit="cover"
+                loading="eager"
+                className="w-full h-[180px] md:h-full"
               />
             </div>
           </div>
