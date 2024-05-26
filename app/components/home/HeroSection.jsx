@@ -18,11 +18,7 @@ const HeroSection = () => {
           <p>Welcome to my corner of the internet!</p>
         </div>
         <p className="max-w-xl text-base sm:text-lg text-left sm:text-center text-slate-600">
-          <TextReveal
-            text="I'm an experienced frontend developer with a passion for design and a
-          knack for tinkering. Web development is my playground, where I push
-          boundaries and chase new horizons."
-          />
+          <TextReveal text="I am an experienced frontend developer with a passion for design and a knack for tinkering. Web development is my playground, where I push boundaries and pursue new horizons." />
         </p>
         <div className="flex space-x-4 mt-10">
           {socialLinks.map((social, i) => (
