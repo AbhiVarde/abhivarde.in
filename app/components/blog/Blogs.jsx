@@ -4,17 +4,21 @@ import React, { useState } from "react";
 import blogs from "@/app/data/blogs";
 import Link from "next/link";
 import Image from "next/image";
-import { LuExternalLink } from "react-icons/lu";
+import { GoArrowUpRight } from "react-icons/go";
 
 const Blogs = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-8">
       {blogs.map((blog, index) => (
         <div
           key={index}
-          className="group relative shadow-md rounded-xl transition duration-200 p-4 md:hover:scale-[1.02]"
+          className={`group relative transition-all duration-200 rounded-md bg-[#FAFAFA] p-4 ${
+            hoveredIndex === index
+              ? "border border-gray-300"
+              : "border border-transparent"
+          }`}
         >
           <Link
             target="_blank"
@@ -25,23 +29,20 @@ const Blogs = () => {
             <Image
               src={blog.image}
               alt={blog.title}
-              objectFit="cover"
-              className="h-[180px] sm:h-[240px] rounded-lg hover:opacity-80"
+              className="rounded-md hover:opacity-90 object-cover"
             />
-            <p className="text-zinc-500 text-sm mt-2">{blog.publishdate}</p>
-            <p
-              className={`font-medium *:sm:text-lg mt-2 ${
-                hoveredIndex === index && "underline"
-              }`}
-            >
-              {blog.title}
+            <p className="font-medium text-base mt-2">{blog.title}</p>
+            <p className="flex gap-0.5 text-sm mt-2 text-[#666666]">
+              {blog.publishdate}{" "}
+              <GoArrowUpRight
+                size={21}
+                className={`${
+                  hoveredIndex === index &&
+                  "text-black transition-all duration-200 -translate-y-0.5 translate-x-1"
+                }`}
+              />
             </p>
           </Link>
-          {blog.url && (
-            <div className="absolute -top-2 -right-2   hidden opacity-0 transition duration-200 hover:bg-secondary hover:text-accent group-hover:block group-hover:opacity-100">
-              <LuExternalLink size={22} />
-            </div>
-          )}
         </div>
       ))}
     </div>
