@@ -45,7 +45,7 @@ const Contact = () => {
           <p class="text-lg md:text-xl text-[#040202] leading-normal sm:!leading-9 font-medium ">
             Ready to hire a freelancer?
             <span class="text-[#666666] mx-1">
-              Drop in your email ID and I will get back to you.
+              Please drop your email ID, and I will get back to you.
             </span>
           </p>
           <div className="flex flex-wrap gap-2 items-center mt-4 max-w-md w-full">
@@ -69,7 +69,7 @@ const Contact = () => {
         </div>
         <div class="px-4 sm:px-8 md:px-10 lg:px-12 py-10">
           <p className="text-[#040202]">
-            Get My Resume to See My in Detail and Discover How I Can Help You.
+            Get my resume to see me in detail and discover how I can help you.
           </p>
           <button
             className="mt-4 bg-white border px-3 py-1.5 rounded-full"
