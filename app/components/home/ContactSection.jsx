@@ -16,7 +16,7 @@ const ContactSection = () => {
         </h2>
       </div>
       <p className="text-lg text-zinc-600 leading-relaxed flex flex-col sm:flex-row items-center">
-        You can send me over an email on
+        You can send me an email at
         <Link
           href="mailto:abhivarde.contact@gmail.com?subject=Hi%20from%20abhivarde.in"
           className="flex ml-1 space-x-1 relative overflow-hidden group w-max
