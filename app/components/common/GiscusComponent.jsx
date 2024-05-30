@@ -20,7 +20,6 @@ const GiscusComponent = () => {
         lang="en"
         crossorigin="anonymous"
         async
-        defaultCommentOrder="newest"
       />
     </div>
   );
