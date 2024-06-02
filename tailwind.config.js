@@ -7,19 +7,19 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       animation: {
+        grid: "grid 15s linear infinite",
         scroll:
-          "scroll var(--animation-duration, 3s) var(--animation-direction, forwards) linear infinite",
+          "scroll var(--animation-duration, 4s) var(--animation-direction, forwards) linear infinite",
         scrollReverse:
-          "scroll var(--animation-duration, 3s) reverse var(--animation-direction, forwards) linear infinite",
+          "scroll var(--animation-duration, 4s) reverse var(--animation-direction, forwards) linear infinite",
       },
 
       keyframes: {
+        grid: {
+          "0%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(0)" },
+        },
         scroll: {
           to: {
             transform: "translate(calc(-25% - 0.25rem))",
