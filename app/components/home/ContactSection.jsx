@@ -15,7 +15,7 @@ const ContactSection = () => {
           Keep in touch!
         </h2>
       </div>
-      <p className="text-lg text-zinc-600 leading-relaxed flex flex-col sm:flex-row items-center">
+      <p className="sm:text-lg text-zinc-600 leading-relaxed flex flex-col sm:flex-row items-center">
         You can send me an email at
         <Link
           href="mailto:abhivarde.contact@gmail.com?subject=Hi%20from%20abhivarde.in"
