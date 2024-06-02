@@ -26,9 +26,8 @@ const Projects = () => {
               <Image
                 src={project.image}
                 alt="image"
-                objectFit="cover"
                 loading="eager"
-                className="w-full h-[180px] md:h-full"
+                className="w-full h-[180px] md:h-full object-cover"
               />
             </div>
           </div>
