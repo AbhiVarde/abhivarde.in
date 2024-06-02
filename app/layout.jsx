@@ -57,7 +57,7 @@ export default function RootLayout({ children }) {
           rel="icon"
           type="image/x-icon"
           href="/favicon.ico"
-          size="320x320"
+          sizes="320x320"
         />
       </head>
       <body className={`${inter.className} bg-white text-black`}>
