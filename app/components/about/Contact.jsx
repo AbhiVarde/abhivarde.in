@@ -41,7 +41,7 @@ const Contact = () => {
   return (
     <div className="mt-4 border-t border-gray-100">
       <div class="grid grid-cols-1 md:grid-cols-3">
-        <div class="col-span-2 border-r border-gray-100 px-4 sm:px-8 md:px-10 lg:px-12 py-10">
+        <div class="col-span-2 border-b sm:border-r border-gray-100 px-4 sm:px-8 md:px-10 lg:px-12 py-10">
           <p class="text-lg md:text-xl text-[#040202] leading-normal sm:!leading-9 font-medium ">
             Ready to hire a freelancer?
             <span class="text-[#666666] mx-1">
