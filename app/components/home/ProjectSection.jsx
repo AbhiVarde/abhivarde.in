@@ -26,7 +26,7 @@ const ProjectSection = () => {
             key={i}
             href={project.url ? project.url : project.githubLink}
             target="_blank"
-            className={`flex flex-col rounded-xl shadow-md overflow-hidden bg-white cursor-pointer transition-all duration-300 ${
+            className={`flex flex-col shadow-md bg-white cursor-pointer rounded-3xl border w-full overflow-hidden hover:scale-[1.02] transition duration-200"${
               i % 4 === 0 || i % 4 === 3
                 ? "sm:rotate-2 sm:hover:rotate-0"
                 : "sm:-rotate-2 sm:hover:rotate-0"
@@ -39,11 +39,11 @@ const ProjectSection = () => {
               alt={project.title}
               objectFit="cover"
               loading="eager"
-              className="w-full h-[240px] md:h-[300px] hover:opacity-90"
+              className="transition duration-300 transform blur-0 scale-100 h-60 object-cover object-top w-full"
             />
-            <div className="flex justify-between items-center gap-1 px-4 py-2">
+            <div className="flex items-center justify-between p-4">
               <p
-                className={`font-medium text-lg mt-2 ${
+                className={`sm:text-lg font-medium ${
                   hoveredIndex === i && "underline"
                 }`}
               >
