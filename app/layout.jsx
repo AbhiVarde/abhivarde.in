@@ -7,7 +7,6 @@ import KProvider from "./components/common/KProvider";
 import CommandBarInvokar from "./components/common/CommandBarInvokar";
 import ScrollToTop from "./components/common/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
-import { ProfileImg } from "./resources/images/me.png";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +24,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: ProfileImg,
+        url: "/favicon.ico",
         width: 800,
         height: 600,
         alt: "Abhi Varde",
@@ -43,7 +42,7 @@ export const metadata = {
     site: "@varde_abhi",
     title: "Abhi Varde",
     description: "A passionate Software Engineer from India.",
-    images: [ProfileImg],
+    images: "/favicon.ico",
   },
   instagram: {
     url: "https://www.instagram.com/iamabhi_189",
@@ -53,6 +52,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+       <head>
+        <link
+          rel="icon"
+          type="image/x-icon"
+          href="/favicon.ico"
+          size="320x320"
+        />
+      </head>
       <body className={`${inter.className} bg-white text-black`}>
         <KProvider>
           <Providers>
