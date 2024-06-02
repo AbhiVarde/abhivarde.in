@@ -15,7 +15,7 @@ const Tooltip = ({ text, children }) => {
 
   return (
     <div
-      className="relative inline-block rounded-xl shadow-md border-[1px] px-2 py-1.5 text-center cursor-pointer"
+      className="relative inline-block rounded-lg shadow-md border-[1px] p-2 text-center cursor-pointer bg-white backdrop-filter backdrop-blur-lg"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
