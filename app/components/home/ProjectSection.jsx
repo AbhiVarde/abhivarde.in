@@ -37,7 +37,6 @@ const ProjectSection = () => {
             <Image
               src={project.image}
               alt={project.title}
-              objectFit="cover"
               loading="eager"
               className="transition duration-300 transform blur-0 scale-100 h-60 object-cover object-top w-full"
             />
