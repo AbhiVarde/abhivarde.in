@@ -49,7 +49,7 @@ const About = () => {
       <div className="mt-6 sm:mt-8 border border-[#333]">
         <div className="relative overflow-hidden w-full px-4 sm:px-8 min-h-[500px] sm:min-h-[600px] border-b border-[#333] md:min-h-[700px] lg:min-h-[900px]">
           <div className="pt-6 md:pt-14 absolute mx-auto flex flex-col items-center inset-0 bg-[#111111] z-0 px-4 sm:px-8">
-            <div className="relative max-w-3xl text-xl md:text-2xl lg:text-3xl text-left text-white sm:text-center !leading-9 mb-6 font-medium">
+            <div className="relative max-w-3xl text-xl md:text-2xl lg:text-3xl text-left text-[#F4F0E6] sm:text-center !leading-9 mb-6 font-medium">
               <TextReveal text="I'm Abhi, an experienced frontend developer living in Surat, dedicated to building the future." />
             </div>
             <Image
@@ -62,7 +62,7 @@ const About = () => {
           </div>
         </div>
         <div className="flex justify-center items-center bg-[#F4F0E6] h-[200px] mt-4 border-t border-b border-[#333] px-4 sm:px-8">
-          <p className="max-w-3xl text-xl md:text-2xl lg:text-3xl text-left text-black sm:text-center !leading-9 font-medium">
+          <p className="max-w-3xl text-xl md:text-2xl text-black !leading-9 font-medium text-left sm:text-center">
             Proficient in
             <span className="text-[#FF3B00]"> diverse skills </span>
             with
