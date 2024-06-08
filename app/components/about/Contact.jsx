@@ -48,15 +48,14 @@ const Contact = () => {
               Please drop your email ID, and I will get back to you.
             </span>
           </p>
-          <div className="flex flex-wrap gap-2 items-center mt-4 max-w-xl w-full">
+          <div className="flex gap-2 items-center mt-4 max-w-xl sm:w-full">
             <input
               type="email"
               placeholder="abhi@icloud.com"
-              className="bg-transparent border w-72 border-[#333] placeholder:text-white/50 px-3 py-2 rounded-lg text-white leading-tight focus:outline-none"
+              className="bg-transparent border w-full sm:w-72 border-[#333] placeholder:text-white/50 px-3 py-2 rounded-lg text-white leading-tight focus:outline-none"
               value={email}
               onChange={handleEmailChange}
             />
-
             <button
               className="bg-[#111111] border border-[#333] px-3 py-1.5 rounded-lg"
               onClick={handleSendEmail}
