@@ -64,6 +64,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const isTop = useIsScrollTop();
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [selected, setSelected] = useState(pathname);
 
   return (
     <header
@@ -139,16 +140,24 @@ const Navbar = () => {
 
           <ul className="hidden md:flex gap-4">
             {headerNavLinks.map((navLink, index) => (
-              <Link
-                key={index}
-                href={navLink.url}
-                className={`${
-                  pathname === navLink.url
-                    ? "bg-[#F4F0E6] text-black"
-                    : "hover:bg-[#F4F0E6] text-white hover:text-black"
-                } rounded-lg px-3 py-1 transition duration-200`}
-              >
-                {navLink.title}
+              <Link key={index} href={navLink.url}>
+                <button
+                  onClick={() => setSelected(navLink.url)}
+                  className={`relative rounded-lg px-3 py-1 transition duration-200 ${
+                    selected === navLink.url
+                      ? "text-black"
+                      : "text-white hover:bg-[#141414]"
+                  }`}
+                >
+                  <span className="relative z-10">{navLink.title}</span>
+                  {selected === navLink.url && (
+                    <motion.span
+                      layoutId="pill-tab"
+                      transition={{ type: "spring", duration: 0.5 }}
+                      className="absolute inset-0 z-0 bg-[#F4F0E6] rounded-lg"
+                    ></motion.span>
+                  )}
+                </button>
               </Link>
             ))}
           </ul>
