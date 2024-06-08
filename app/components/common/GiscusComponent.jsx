@@ -15,7 +15,7 @@ const GiscusComponent = () => {
         strict="0"
         reactionsEnabled="1"
         emitMetadata="0"
-        inputPosition="bottom"
+        inputPosition="top"
         theme="noborder_dark"
         lang="en"
         crossorigin="anonymous"
