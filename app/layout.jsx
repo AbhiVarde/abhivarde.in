@@ -24,7 +24,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "./favicon.ico",
+        url: "./icon.png",
         width: 800,
         height: 600,
         alt: "Abhi Varde",
@@ -42,7 +42,7 @@ export const metadata = {
     site: "@varde_abhi",
     title: "Abhi Varde",
     description: "A passionate Software Engineer from India.",
-    images: "./favicon.ico",
+    images: "./icon.png",
   },
   instagram: {
     url: "https://www.instagram.com/iamabhi_189",
@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
         <link
           rel="icon"
           type="image/x-icon"
-          href="./favicon.ico"
+          href="./icon.png"
           sizes="320x320"
         />
       </head>
