@@ -72,7 +72,7 @@ const About = () => {
         </div>
         <div className="mt-4 border-t border-b border-[#333]">
           <div class="grid grid-cols-1 lg:grid-cols-2">
-            <div className="border-r border-[#333] p-4 bg-[#111111]">
+            <div className="border-b sm:border-r border-[#333] p-4 bg-[#111111]">
               <div>
                 <div className="text-white flex gap-2 items-center">
                   <span className="bg-[#FF3B00] p-1.5 rounded-md">
