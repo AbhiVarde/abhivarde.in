@@ -142,7 +142,7 @@ const Navbar = () => {
             )}
           </div>
 
-          <ul className="hidden md:flex gap-4">
+          <ul className="hidden md:flex gap-4 relative">
             {headerNavLinks.map((navLink, index) => (
               <Link key={index} href={navLink.url}>
                 <button
@@ -157,6 +157,7 @@ const Navbar = () => {
                   {selected === navLink.url && (
                     <motion.span
                       layoutId="pill-tab"
+                      initial={false}
                       transition={{
                         type: "tween",
                         ease: "easeInOut",
