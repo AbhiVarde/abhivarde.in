@@ -66,6 +66,10 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [selected, setSelected] = useState(pathname);
 
+  useEffect(() => {
+    setSelected(pathname);
+  }, [pathname]);
+
   return (
     <header
       className={`${
@@ -119,8 +123,8 @@ const Navbar = () => {
                     key={index}
                     className={`${
                       pathname === item.url
-                        ? "text-white"
-                        : "text-white/50 hover:text-white"
+                        ? "text-[#FF3B00]"
+                        : "text-white hover:text-[#FF3B00]"
                     } border-b-[1px] border-[#333] border-b-tertiary py-1 pl-2 transition duration-200 `}
                     variants={listItemVariants}
                   >
@@ -153,7 +157,11 @@ const Navbar = () => {
                   {selected === navLink.url && (
                     <motion.span
                       layoutId="pill-tab"
-                      transition={{ type: "spring", duration: 0.5 }}
+                      transition={{
+                        type: "tween",
+                        ease: "easeInOut",
+                        duration: 0.3,
+                      }}
                       className="absolute inset-0 z-0 bg-[#F4F0E6] rounded-lg"
                     ></motion.span>
                   )}
