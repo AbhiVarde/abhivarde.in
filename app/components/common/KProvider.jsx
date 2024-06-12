@@ -87,7 +87,7 @@ const KProvider = ({ children }) => {
         <KBarPortal>
           <KBarPositioner className="z-30 backdrop-blur-md backdrop-filter">
             <KBarAnimator className="mx-auto w-[32rem] overflow-hidden rounded-xl border-[1px] border-[#333] border-tertiary bg-[#111111] px-4 drop-shadow-2xl ">
-              <div className="mx-2 flex items-center justify-between py-4 ">
+              <div className="mx-2 flex items-center justify-between border-b py-4">
                 <span>
                   <LuSearch className="mr-2 mb-0.5 h-5 w-5" />
                 </span>
