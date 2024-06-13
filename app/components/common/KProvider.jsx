@@ -31,7 +31,7 @@ const KProvider = ({ children }) => {
       shortcut: ["h"],
       perform: () => router.push("/"),
       section: "Pages",
-      icon: <LuHome />,
+      icon: <LuHome size={20} />,
     },
     {
       id: "blog",
@@ -40,7 +40,7 @@ const KProvider = ({ children }) => {
       shortcut: ["b"],
       perform: () => router.push("/blog"),
       section: "Pages",
-      icon: <LuLayout />,
+      icon: <LuLayout size={20} />,
     },
     {
       id: "projects",
@@ -49,7 +49,7 @@ const KProvider = ({ children }) => {
       shortcut: ["p"],
       perform: () => router.push("/projects"),
       section: "Pages",
-      icon: <LuTarget />,
+      icon: <LuTarget size={19} />,
     },
     {
       id: "guestbook",
@@ -58,7 +58,7 @@ const KProvider = ({ children }) => {
       shortcut: ["g"],
       perform: () => router.push("/guestbook"),
       section: "Pages",
-      icon: <LuBook />,
+      icon: <LuBook size={20} />,
     },
     {
       id: "about",
@@ -67,7 +67,7 @@ const KProvider = ({ children }) => {
       shortcut: ["a"],
       perform: () => router.push("/about"),
       section: "Pages",
-      icon: <LuUser size={19} />,
+      icon: <LuUser size={20} />,
     },
   ];
 
@@ -87,7 +87,7 @@ const KProvider = ({ children }) => {
         <KBarPortal>
           <KBarPositioner className="z-30 backdrop-blur-md backdrop-filter">
             <KBarAnimator className="mx-auto w-[32rem] overflow-hidden rounded-xl border-[1px] border-[#333] border-tertiary bg-[#111111] drop-shadow-2xl ">
-              <div className="mx-2 flex items-center justify-between border-b border-[#333] py-4 px-2">
+              <div className="flex items-center justify-between border-b border-[#333] p-4">
                 <span>
                   <LuSearch className="mr-2 mb-0.5 h-5 w-5" />
                 </span>
