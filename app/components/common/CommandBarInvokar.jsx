@@ -9,7 +9,7 @@ const CommandBarInvokar = () => {
 
   return (
     <button
-      className="fixed right-6 bottom-6 p-2 flex gap-1 font-medium hover:-translate-y-1 border-2 border-transparent hover:border-[#333] bg-[#111111] text-white rounded-md transition-all duration-200 hover:shadow-sm focus:outline-none"
+      className="fixed right-6 bottom-6 p-2 flex gap-1 font-medium hover:-translate-y-1 border-1 border-[#333] hover:border-2 bg-[#111111] text-white rounded-md transition-all duration-200 hover:shadow-sm focus:outline-none"
       onClick={() => query.toggle()}
       aria-label="Command Bar"
     >
