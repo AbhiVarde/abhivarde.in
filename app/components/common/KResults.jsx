@@ -11,7 +11,7 @@ const KResults = () => {
         typeof item === "string" ? (
           <div className="px-3 pt-4 pb-2 text-sm">{item}</div>
         ) : (
-          <div className="flex cursor-pointer items-center justify-between rounded-lg px-3 py-3 transition-shadow">
+          <div className="flex cursor-pointer items-center justify-between rounded-lg px-6 py-2 transition-shadow">
             <div className="flex items-center gap-2">
               {item.icon}
               <span className="text-md">{item.name}</span>
