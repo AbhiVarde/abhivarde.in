@@ -8,16 +8,19 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        scroll:
-          "scroll var(--animation-duration, 4s) var(--animation-direction, forwards) linear infinite",
-        scrollReverse:
-          "scroll var(--animation-duration, 4s) reverse var(--animation-direction, forwards) linear infinite",
+        carousel:
+          "carousel 45s linear infinite",
+        carouselReverse:
+          "carousel 45s reverse linear infinite",
       },
       keyframes: {
-        scroll: {
-          to: {
-            transform: "translate(calc(-25% - 0.25rem))",
-          },
+       carousel: {
+          '0%': { transform: 'translateZ(0);' },
+          '100%': { transform: 'translate3d(-50%, 0, 0);' }, 
+        },
+        carouselReverse: {
+          '0%': { transform: 'translate3d(-50%, 0, 0)' },
+          '100%': { transform: 'translateZ(0)' },
         },
       },
     },
