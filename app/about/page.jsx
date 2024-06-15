@@ -122,7 +122,7 @@ const About = () => {
                   I’ve worked with the following but not limited to.
                 </p>
                 <div className="mt-6 overflow-hidden hidden sm:flex lg:hidden">
-                  <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-scroll">
+                  <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-carousel">
                     {skills.map((skill, i) => (
                       <div
                         key={i}
@@ -139,7 +139,7 @@ const About = () => {
                   </div>
                 </div>
                 <div className="mt-6 overflow-hidden flex sm:hidden lg:flex">
-                  <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-scroll">
+                  <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-carousel">
                     {skills.slice(0, 6).map((skill, i) => (
                       <div
                         key={i}
@@ -156,7 +156,7 @@ const About = () => {
                   </div>
                 </div>
                 <div className="mt-2 overflow-hidden flex sm:hidden lg:flex">
-                  <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-scrollReverse">
+                  <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-carouselReverse">
                     {skills.slice(6, 12).map((skill, i) => (
                       <div
                         key={skill}
@@ -173,7 +173,7 @@ const About = () => {
                   </div>
                 </div>
                 <div className="mt-2 overflow-hidden flex sm:hidden lg:flex">
-                  <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-scroll">
+                  <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-carousel">
                     {skills.slice(12).map((skill, i) => (
                       <div
                         key={skill}
