@@ -9,9 +9,9 @@ module.exports = {
     extend: {
       animation: {
         carousel:
-          "carousel 45s linear infinite",
+          "carousel 10s linear infinite",
         carouselReverse:
-          "carousel 45s reverse linear infinite",
+          "carousel 10s reverse linear infinite",
       },
       keyframes: {
        carousel: {
