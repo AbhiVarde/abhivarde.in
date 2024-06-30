@@ -8,10 +8,10 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        carousel:
-          "carousel 10s linear infinite",
+         carousel:
+          "scroll var(--animation-duration, 4s) var(--animation-direction, forwards) linear infinite",
         carouselReverse:
-          "carousel 10s reverse linear infinite",
+          "scroll var(--animation-duration, 4s) reverse var(--animation-direction, forwards) linear infinite",
       },
       keyframes: {
        carousel: {
