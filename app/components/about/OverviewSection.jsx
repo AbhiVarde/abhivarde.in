@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import MapImage from "../../resources/images/globe.jpg";
-import { FaMapMarkerAlt, FaCodepen } from "react-icons/fa";
-import { LuCrown } from "react-icons/lu";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { SiVisualstudiocode } from "react-icons/si";
 
 const OverviewSection = () => {
@@ -71,7 +70,7 @@ const OverviewSection = () => {
             </button>
           </div>
         </div>
-        <div className="lg:col-span-6 p-4 sm:p-6 md:p-8 border border-[#333] bg-[#111111] rounded-2xl relative overflow-hidden shadow-lg">
+        <div className="lg:col-span-6 p-4 sm:p-6 md:p-8 border min-h-[300px] border-[#333] bg-[#111111] rounded-2xl relative overflow-hidden shadow-lg">
           <div className="absolute inset-0">
             <Image
               src={MapImage}
