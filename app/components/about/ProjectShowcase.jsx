@@ -61,7 +61,7 @@ const ProjectShowcase = () => {
       <Slider ref={sliderRef} {...settings}>
         {[...projects, { title: "Explore Projects" }].map((project, i) => (
           <div key={i} className="outline-none">
-            <div className="relative h-[340px] sm:h-[400px] overflow-hidden rounded-2xl border border-[#333]">
+            <div className="relative h-[350px] sm:h-[450px] md:h-[500px] overflow-hidden rounded-2xl border border-[#333]">
               {i < projects.length ? (
                 <>
                   <Image
