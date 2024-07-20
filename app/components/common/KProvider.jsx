@@ -9,14 +9,7 @@ import {
   KBarSearch,
 } from "kbar";
 import { useRouter } from "next/navigation";
-import {
-  LuSearch,
-  LuHome,
-  LuBook,
-  LuUser,
-  LuTarget,
-  LuLayout,
-} from "react-icons/lu";
+import { LuSearch, LuBook, LuUser, LuTarget, LuLayout } from "react-icons/lu";
 import KResults from "./KResults";
 import socialLinks from "@/app/data/socialLinks";
 
@@ -24,15 +17,6 @@ const KProvider = ({ children }) => {
   const router = useRouter();
 
   const actions = [
-    {
-      id: "home",
-      name: "Home",
-      keywords: "index root",
-      shortcut: ["h"],
-      perform: () => router.push("/"),
-      section: "Pages",
-      icon: <LuHome size={20} />,
-    },
     {
       id: "blog",
       name: "blog",
@@ -65,7 +49,7 @@ const KProvider = ({ children }) => {
       name: "About",
       keywords: "about",
       shortcut: ["a"],
-      perform: () => router.push("/about"),
+      perform: () => router.push("/"),
       section: "Pages",
       icon: <LuUser size={20} />,
     },
