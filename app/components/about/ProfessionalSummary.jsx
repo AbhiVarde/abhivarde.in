@@ -10,7 +10,7 @@ const ProfessionalSummary = ({ works, skills }) => {
     <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
       <div className="p-4 rounded-2xl border border-[#333] bg-[#111111]">
         <div>
-          <div className="text-white flex gap-2 items-center">
+          <div className="text-white uppercase tracking-wider flex gap-3 items-center">
             <span className="bg-[#FF3B00] p-1.5 rounded-md">
               <IoBriefcaseOutline size={20} color="#FFFFFF" />
             </span>
@@ -46,7 +46,7 @@ const ProfessionalSummary = ({ works, skills }) => {
       </div>
       <div className="p-4 rounded-2xl border border-[#333] bg-[#111111]">
         <div>
-          <div className="text-white flex gap-2 items-center">
+          <div className="text-white uppercase tracking-wider flex gap-3 items-center">
             <span className="bg-[#FF3B00] p-1.5 rounded-md">
               <LuTerminal size={20} color="#FFFFFF" />
             </span>
