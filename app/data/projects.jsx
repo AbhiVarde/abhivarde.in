@@ -1,6 +1,7 @@
 import Tracker from "../resources/images/project/tracker.png";
 import Trello from "../resources/images/project/trello.png";
-import SQL from "../resources/images/project/sql.png";
+// import SQL from "../resources/images/project/sql.png";
+import Librarium from "../resources/images/project/librarium.png";
 import Git from "../resources/images/project/git.png";
 import Course from "../resources/images/project/course.png";
 import jukebox from "../resources/images/project/jukebox.png";
@@ -21,6 +22,13 @@ const projects = [
     url: "https://trello-bice.vercel.app/",
     githubLink: "https://github.com/AbhiVarde/Trello-Clone",
   },
+  {
+    image: Librarium,
+    title: "Librarium",
+    description:
+      "A full-stack solution with Google and Discord login, powerful search, and complete CRUD operations for seamless book management.",
+    githubLink: "https://github.com/AbhiVarde/Librarium",
+  },
   // {
   //   image: SQL,
   //   title: "SQL AI",
@@ -30,20 +38,20 @@ const projects = [
   //   githubLink: "https://github.com/AbhiVarde/SQL-AI",
   // },
   {
-    image: Git,
-    title: "Git Wars",
-    description:
-      "An interactive platform enabling users to enhance Git proficiency through task completion, aiming for mastery in version control.",
-    url: "https://gitwars.vercel.app/",
-    githubLink: "https://github.com/AbhiVarde/Git-Wars",
-  },
-  {
     image: jukebox,
     title: "JukeBox",
     description:
       "JukeBox is a web application facilitating Spotify login, search, and playback functionality for users.",
     url: "https://jukebox-xi.vercel.app/",
     githubLink: "https://github.com/AbhiVarde/Jukebox",
+  },
+  {
+    image: Git,
+    title: "Git Wars",
+    description:
+      "An interactive platform enabling users to enhance Git proficiency through task completion, aiming for mastery in version control.",
+    url: "https://gitwars.vercel.app/",
+    githubLink: "https://github.com/AbhiVarde/Git-Wars",
   },
   {
     image: Course,
