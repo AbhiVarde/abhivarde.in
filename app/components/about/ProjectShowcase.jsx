@@ -1,67 +1,45 @@
 "use client";
 
-import { useRef } from "react";
-import projects from "@/app/data/projects";
-import Link from "next/link";
+import React from "react";
 import Image from "next/image";
-import { LuExternalLink, LuCode, LuGlobe } from "react-icons/lu";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay, EffectFade } from "swiper/modules";
+import { LuExternalLink, LuCode } from "react-icons/lu";
+import projects from "@/app/data/projects";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 
 const ProjectShowcase = () => {
-  const sliderRef = useRef(null);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: true,
-    adaptiveHeight: true,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          adaptiveHeight: false,
-        },
-      },
-    ],
-    appendDots: (dots) => (
-      <div
-        style={{
-          bottom: "10px",
-          padding: "10px",
-        }}
-      >
-        <ul style={{ margin: "0px" }}> {dots} </ul>
-      </div>
-    ),
-    customPaging: (i) => (
-      <div
-        style={{
-          width: "10px",
-          height: "10px",
-          borderRadius: "50%",
-          backgroundColor:
-            i === sliderRef.current?.innerSlider.state.currentSlide
-              ? "rgb(255, 255, 255)"
-              : "rgba(255, 255, 255, 0.5)",
-        }}
-      />
-    ),
-  };
-
   return (
     <div className="relative max-w-6xl mx-auto mt-8">
-      <Slider ref={sliderRef} {...settings}>
+      <Swiper
+        modules={[Pagination, Autoplay, EffectFade]}
+        spaceBetween={30}
+        effect={"fade"}
+        pagination={{
+          clickable: true,
+          renderBullet: function (index, className) {
+            return (
+              '<span class="' +
+              className +
+              '" style="background-color: #F4F0E6;"></span>'
+            );
+          },
+        }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        className="mySwiper"
+      >
         {[...projects, { title: "Explore Projects" }].map((project, i) => (
-          <div key={i} className="outline-none">
-            <div className="relative h-[350px] sm:h-[450px] md:h-[500px] overflow-hidden rounded-2xl border border-[#333]">
+          <SwiperSlide key={i}>
+            <div className="relative h-[380px] sm:h-[450px] md:h-[500px] overflow-hidden rounded-2xl border border-[#333]">
               {i < projects.length ? (
                 <>
                   <Image
@@ -77,22 +55,14 @@ const ProjectShowcase = () => {
                     <h2 className="text-xl sm:text-2xl font-medium tracking-wide">
                       {project.title}
                     </h2>
-                    <p className="sm:text-lg font-light tracking-wider leading-relaxed mt-2">
+                    <p className="sm:text-lg font-light tracking-wider leading-relaxed mt-2 sm:mt-4">
                       {project.description}
                     </p>
                     <Link
                       href={project.url || project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex sm:hidden items-center bg-[#F4F0E6] text-black px-4 py-2 mt-4 rounded-lg hover:bg-opacity-80 transition-colors duration-300 w-fit cursor-pointer"
-                    >
-                      <LuGlobe size={18} />
-                    </Link>
-                    <Link
-                      href={project.url || project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hidden sm:inline-flex cursor-pointer items-center bg-[#F4F0E6] text-black px-4 py-2 mt-4 rounded-lg hover:bg-opacity-80 transition-colors duration-300 w-fit"
+                      className="inline-flex cursor-pointer items-center bg-[#F4F0E6] text-black px-4 py-2 mt-4 mb-4 sm:mb-0 rounded-lg hover:bg-opacity-80 transition-colors duration-300 w-fit"
                     >
                       <span className="mr-2">View Project</span>
                       <LuExternalLink size={18} />
@@ -111,7 +81,7 @@ const ProjectShowcase = () => {
                   </p>
                   <Link
                     href="/projects"
-                    className="inline-flex items-center bg-[#FF3B00] text-white px-6 py-3 rounded-lg hover:bg-[#FF3B00] transition-colors duration-300 text-base sm:text-lg"
+                    className="inline-flex items-center bg-[#FF3B00] text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-colors duration-300 text-base sm:text-lg"
                   >
                     <LuCode size={20} className="mr-2" />
                     <span>View All Projects</span>
@@ -119,9 +89,9 @@ const ProjectShowcase = () => {
                 </div>
               )}
             </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </Slider>
+      </Swiper>
     </div>
   );
 };
