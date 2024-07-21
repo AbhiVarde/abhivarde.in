@@ -41,7 +41,7 @@ const Footer = () => {
               href="https://nextjs.org"
               rel="noreferrer noopener"
               target="_blank"
-              className="flex items-center gap-x-1 p-2 rounded-lg bg-[#111111] text-white"
+              className="flex items-center gap-x-1 p-2 rounded-lg border border-[#333] bg-[#111111] text-white"
             >
               <Image src={NextJS} alt="next" className="w-4 h-4" />
               <span>Next.js</span>
@@ -52,7 +52,7 @@ const Footer = () => {
               href="https://tailwindcss.com/"
               rel="noreferrer noopener"
               target="_blank"
-              className="flex items-center gap-x-1 p-2 rounded-lg bg-[#111111] text-white"
+              className="flex items-center gap-x-1 p-2 rounded-lg border border-[#333] bg-[#111111] text-white"
             >
               <Image src={TailwindCSS} alt="taiwlindCSS" className="w-5 h-5" />
               <span>TailwindCSS</span>
@@ -63,7 +63,7 @@ const Footer = () => {
               href="https://vercel.com"
               rel="noreferrer noopener"
               target="_blank"
-              className="flex items-center gap-x-1 p-2 rounded-lg bg-[#111111] text-white"
+              className="flex items-center gap-x-1 p-2 rounded-lg border border-[#333] bg-[#111111] text-white"
             >
               <Image src={Vercel} alt="vercel" className="w-4 h-4" />
               <span>Vercel</span>
