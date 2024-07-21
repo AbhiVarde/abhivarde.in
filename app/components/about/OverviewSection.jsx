@@ -56,14 +56,14 @@ const OverviewSection = () => {
             My Studio
           </div>
           <div className="mt-4 flex-grow">
-            <p className="text-lg tracking-wide leading-relaxed mb-4">
+            <p className="sm:text-lg  tracking-wide leading-relaxed mb-4">
               Namaste!🙏 Abhivarde.in is more than a portfolio; it's a window
               into my world, where passion meets purpose. Discover my work.
             </p>
           </div>
           <div className="mt-6">
             <button
-              className="mt-4 bg-[#111111] border border-[#333] px-6 py-3 rounded-full"
+              className="text-base mt-4 bg-[#111111] border border-[#333] px-6 py-3 rounded-full"
               onClick={handleDownloadClick}
             >
               Download CV
