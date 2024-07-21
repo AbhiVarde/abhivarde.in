@@ -7,7 +7,7 @@ const PersonalIntroduction = () => {
   return (
     <div className="mt-12">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <div className="lg:col-span-8 p-4 sm:p-6 md:p-8 border border-[#333] bg-[#111111] rounded-2xl relative overflow-hidden shadow-lg">
+        <div className="h-[300px] sm:h-auto lg:col-span-8 p-4 sm:p-6 md:p-8 border border-[#333] bg-[#111111] rounded-2xl relative overflow-hidden shadow-lg">
           <div className="absolute inset-0">
             <Image
               src={HeroImage}
@@ -20,7 +20,7 @@ const PersonalIntroduction = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-70"></div>
           </div>
           <div className="relative z-10 text-white">
-            <h2 className="font-medium text-[#D3CEC5] uppercase tracking-wider flex items-center">
+            <h2 className="font-medium text-white uppercase tracking-wider flex items-center">
               <LuGlobe className="mr-2" size={18} />
               About me
             </h2>
@@ -40,7 +40,7 @@ const PersonalIntroduction = () => {
             </div>
           </div>
         </div>
-        <div className="lg:col-span-4 p-4 sm:p-6 md:p-8 border border-[#333] rounded-2xl bg-[#F4F0E6] text-black shadow-lg flex flex-col">
+        <div className="h-[240px] lg:h-auto lg:col-span-4 p-4 sm:p-6 md:p-8 border border-[#333] rounded-2xl bg-[#F4F0E6] text-black shadow-lg flex flex-col">
           <h2 className="font-medium uppercase tracking-wider flex items-center">
             <LuRocket className="mr-2" size={18} />
             My Mission
