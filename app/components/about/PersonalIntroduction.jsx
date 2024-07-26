@@ -34,7 +34,7 @@ const PersonalIntroduction = () => {
                 React and Next.js. Crafting innovative digital experiences to
                 shape the future.
               </p>
-              <p className="mt-12 relative bottom-0 sm:text-lg italic tracking-wider">
+              <p className="xs:mt-6 sm:mt-8 md:mt-10 lg:mt-12 relative bottom-0 sm:text-lg italic tracking-wider">
                 Never a master, always a student.
               </p>
             </div>
