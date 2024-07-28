@@ -54,7 +54,7 @@ const Footer = () => {
                 href={tech.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-white rounded-xl bg-[#111111] hover:bg-[#222222] transition-all duration-200 border border-[#333] hover:border-[#FF3B00]"
+                className="flex items-center px-2 sm:px-3 py-1.5 sm:py-2 text-sm sm:text-base font-medium text-white rounded-xl bg-[#111111] hover:bg-[#222222] transition-all duration-200 border border-[#333] hover:border-[#FF3B00]"
               >
                 <Image
                   src={tech.logo}
