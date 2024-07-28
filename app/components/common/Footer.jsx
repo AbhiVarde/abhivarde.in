@@ -16,7 +16,7 @@ const Footer = () => {
 
       <div className="py-8 sm:py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex flex-col items-center md:items-start">
-          <h3 className="text-sm sm:text-base md:text-lg tracking-wide font-medium text-white mb-3 sm:mb-4">
+          <h3 className="text-sm sm:text-base md:text-lg tracking-wider uppercase font-medium text-white mb-3 sm:mb-4">
             Connect
           </h3>
           <div className="flex space-x-3 sm:space-x-4">
@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col items-center md:items-end">
-          <h3 className="text-sm sm:text-base md:text-lg tracking-wide font-medium text-white mb-3 sm:mb-4">
+          <h3 className="text-sm sm:text-base md:text-lg tracking-wider uppercase font-medium text-white mb-3 sm:mb-4">
             Powered By
           </h3>
           <div className="flex flex-wrap justify-center md:justify-end gap-2 sm:gap-3">
@@ -69,14 +69,14 @@ const Footer = () => {
       </div>
 
       <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-[#333] flex flex-col sm:flex-row justify-between items-center">
-        <p className="text-white/80 mb-3 sm:mb-0 text-xs sm:text-sm">
+        <p className="text-white/80 mb-3 sm:mb-0 text-sm sm:text-base">
           &copy; {new Date().getFullYear()} All rights reserved.
         </p>
         <Link
           href="https://twitter.com/varde_abhi"
           className="inline-flex items-center space-x-1 text-white/85 hover:text-[#FF3B00] transition-colors duration-200 group"
         >
-          <span className="text-xs sm:text-sm">
+          <span className="text-sm sm:text-base">
             Brought to you by Abhi Varde
           </span>
           <GoArrowUpRight
