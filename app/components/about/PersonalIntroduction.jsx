@@ -59,7 +59,7 @@ const PersonalIntroduction = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 sm:p-6 text-white">
+            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-4 sm:p-6 text-white">
               <h2 className="font-medium uppercase tracking-wider flex items-center text-sm sm:text-base">
                 <LuRocket className="mr-2" size={18} />
                 My Mission
