@@ -96,7 +96,7 @@ const navVariants = {
             px-4 py-3 w-full max-w-5xl
             shadow-lg border border-[#333] 
             rounded-3xl
-            mt-3 mx-3 md:mt-4 md:mx-4 lg:mt-5 lg:mx-5
+            mt-3 mx-3 md:mt-4 md:mx-4 lg:mt-5
           `}
           variants={navVariants}
           initial="top"
