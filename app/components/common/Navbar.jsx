@@ -69,15 +69,6 @@ const Navbar = () => {
         animate="visible"
       >
         <motion.nav
-{/*           className={`
-          px-3 md:px-4 py-3 w-full max-w-5xl
-          transition-all duration-500 ease-in-out
-          ${
-            isScrolled
-              ? "bg-black/80 backdrop-blur-lg shadow-lg border-b border-[#333]"
-              : "bg-white/5 border border-[#333] mt-3 mx-3 md:mt-4 md:mx-4 lg:mt-5 lg:mx-5 backdrop-blur-md rounded-3xl shadow-2xl"
-          }
-        `} */}
          className={`
           px-4 py-3 w-full max-w-5xl
           transition-all duration-500 ease-in-out
