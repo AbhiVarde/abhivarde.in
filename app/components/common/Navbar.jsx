@@ -27,6 +27,29 @@ const Navbar = () => {
     setSelected(pathname);
   }, [pathname]);
 
+const navVariants = {
+    top: {
+      backgroundColor: "rgba(0, 0, 0, 0.2)",
+      backdropFilter: "blur(8px)",
+      margin: "20px 12px",  // Equivalent to mt-5 mx-3
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 30,
+      },
+    },
+    scroll: {
+      backgroundColor: "rgba(0, 0, 0, 0.8)",
+      backdropFilter: "blur(12px)",
+      margin: "8px 12px",  // Reduced top margin when scrolled
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 30,
+      },
+    },
+  };
+
   const mobileMenuVariants = {
     closed: {
       x: "-100%",
@@ -70,11 +93,14 @@ const Navbar = () => {
       >
         <motion.nav
          className={`
-          px-4 py-3 w-full max-w-5xl
-          transition-all duration-500 ease-in-out
-          bg-black/80 backdrop-blur-lg shadow-lg border border-[#333] 
-          rounded-3xl
-        `}
+            px-4 py-3 w-full max-w-5xl
+            shadow-lg border border-[#333] 
+            rounded-2xl
+            mt-3 mx-3 md:mt-4 md:mx-4 lg:mt-5 lg:mx-5
+          `}
+          variants={navVariants}
+          initial="top"
+          animate={isScrolled ? "scroll" : "top"}
         >
           <div className="flex justify-between items-center">
             <motion.div
