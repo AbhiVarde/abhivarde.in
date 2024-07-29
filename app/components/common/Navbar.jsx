@@ -95,7 +95,7 @@ const navVariants = {
          className={`
             px-4 py-3 w-full max-w-5xl
             shadow-lg border border-[#333] 
-            rounded-2xl
+            rounded-3xl
             mt-3 mx-3 md:mt-4 md:mx-4 lg:mt-5 lg:mx-5
           `}
           variants={navVariants}
@@ -188,8 +188,7 @@ const navVariants = {
         </motion.nav>
       </motion.header>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
+         <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             className="fixed inset-y-0 left-0 z-50 w-full sm:w-72 bg-[#111111] shadow-2xl overflow-hidden"
@@ -198,7 +197,81 @@ const navVariants = {
             animate="open"
             exit="closed"
           >
-            {/* ... (rest of the mobile menu code remains unchanged) ... */}
+            <div className="flex flex-col h-full">
+              <div className="flex justify-between items-center p-4 border-b border-[#333]">
+                <motion.div
+                  className="md:text-lg font-medium tracking-wide text-white"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  Menu
+                </motion.div>
+                <motion.button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-white focus:outline-none"
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <svg
+                    className="w-6 h-6 sm:w-7 sm:h-7"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                </motion.button>
+              </div>
+              <nav className="flex-grow overflow-y-auto">
+                <ul className="flex flex-col space-y-1 p-4">
+                  {headerNavLinks.map((item, index) => (
+                    <motion.li
+                      key={index}
+                      variants={mobileMenuItemVariants}
+                      custom={index}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Link
+                        href={item.url}
+                        className={`block py-2 px-3 rounded-lg transition duration-300 ease-in-out ${
+                          pathname === item.url
+                            ? "text-[#FF3B00] bg-white/10"
+                            : "text-white hover:bg-white/5"
+                        }`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <div className="flex items-center space-x-3">
+                          <div className="bg-[#FF3B00] p-2 rounded-lg">
+                            {item?.icon}
+                          </div>
+                          {/* <span className="w-6 h-6 flex items-center justify-center bg-white/10 rounded-full text-sm">
+                            {item.title.charAt(0)}
+                          </span> */}
+                          <span className="text-sm tracking-wider">
+                            {item.title}
+                          </span>
+                        </div>
+                      </Link>
+                    </motion.li>
+                  ))}
+                </ul>
+              </nav>
+              <motion.div
+                className="p-4 border-t border-[#333]"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                <p className="text-white/80 text-sm">
+                  &copy; {new Date().getFullYear()} Abhi Varde. All rights
+                  reserved.
+                </p>
+              </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
