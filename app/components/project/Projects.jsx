@@ -50,7 +50,7 @@ const Projects = () => {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex text-sm sm:text-base items-center justify-center gap-x-1.5 p-2 rounded-lg bg-[#F4F0E6] text-black transition-all duration-200 hover:-translate-y-1"
+                  className="flex text-sm items-center justify-center gap-x-1.5 p-2 rounded-xl bg-[#F4F0E6] text-black transition-all duration-200 hover:-translate-y-1"
                 >
                   <LuExternalLink /> View Project
                 </Link>
@@ -60,7 +60,7 @@ const Projects = () => {
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex text-sm sm:text-base items-center justify-center gap-x-1.5 p-2 rounded-lg bg-[#F4F0E6] text-black transition-all duration-200 hover:-translate-y-1"
+                  className="flex text-sm items-center justify-center gap-x-1.5 p-2 rounded-xl bg-[#F4F0E6] text-black transition-all duration-200 hover:-translate-y-1"
                 >
                   <LuGithub /> View Code
                 </Link>
@@ -73,11 +73,11 @@ const Projects = () => {
         <Link
           target="_blank"
           href="https://github.com/AbhiVarde"
-          className="flex items-center text-sm sm:text-base justify-center space-x-2 rounded-xl hover:underline overflow-hidden bg-[#FF3B00] text-white shadow-md cursor-pointer h-fit px-12 py-4"
+          className="flex items-center justify-center space-x-2 rounded-2xl hover:underline overflow-hidden bg-[#FF3B00] text-white shadow-md cursor-pointer h-fit px-12 py-4"
           onMouseEnter={() => setHoveredIndex(7)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
-          <p className="font-medium">View more on Github</p>{" "}
+          <span className="text-sm sm:text-base">View more on Github</span>
           <LuArrowRight
             size={22}
             className={`transition-all duration-300 ${
