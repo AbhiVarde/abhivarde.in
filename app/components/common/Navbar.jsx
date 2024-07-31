@@ -27,11 +27,11 @@ const Navbar = () => {
     setSelected(pathname);
   }, [pathname]);
 
-const navVariants = {
+  const navVariants = {
     top: {
       backgroundColor: "rgba(0, 0, 0, 0.2)",
       backdropFilter: "blur(8px)",
-      margin: "20px 12px",  // Equivalent to mt-5 mx-3
+      margin: "20px 12px", // Equivalent to mt-5 mx-3
       transition: {
         type: "spring",
         stiffness: 300,
@@ -41,7 +41,7 @@ const navVariants = {
     scroll: {
       backgroundColor: "rgba(0, 0, 0, 0.8)",
       backdropFilter: "blur(12px)",
-      margin: "8px 12px",  // Reduced top margin when scrolled
+      margin: "8px 12px", // Reduced top margin when scrolled
       transition: {
         type: "spring",
         stiffness: 300,
@@ -87,26 +87,23 @@ const navVariants = {
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ease-in-out flex justify-center`}
+        className={`fixed mx-auto w-full max-w-5xl top-0 left-0 right-0 z-40 transition-all duration-500 ease-in-out flex justify-center`}
         initial="hidden"
         animate="visible"
       >
         <motion.nav
-         className={`
-            px-4 py-3 w-full max-w-5xl
+          className={`
+            px-4 py-3 w-full
             shadow-lg border border-[#333] 
             rounded-3xl
-            mt-3 mx-3 md:mt-4 md:mx-4 lg:mt-5 lg:mx-6
+            mt-3 mx-3 md:mt-4 md:mx-4 lg:mt-5 lg:mx-5
           `}
           variants={navVariants}
           initial="top"
           animate={isScrolled ? "scroll" : "top"}
         >
           <div className="flex justify-between items-center">
-            <motion.div
-              className="flex space-x-1 sm:space-x-2"
-              custom={0}
-            >
+            <motion.div className="flex space-x-1 sm:space-x-2" custom={0}>
               <Link
                 href="/"
                 className="md:text-lg tracking-wide text-[#F4F0E6] cursor-pointer font-normal"
@@ -129,7 +126,7 @@ const navVariants = {
               )}
             </motion.div>
 
-            <div className="md:hidden">
+            <div className="flex items-center justify-center md:hidden">
               <motion.button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="text-[#F4F0E6] focus:outline-none"
@@ -140,10 +137,7 @@ const navVariants = {
 
             <ul className="hidden md:flex gap-3 sm:gap-4 relative">
               {headerNavLinks.map((navLink, index) => (
-                <motion.li
-                  key={index}
-                  custom={index + 1}
-                >
+                <motion.li key={index} custom={index + 1}>
                   <Link href={navLink.url}>
                     <motion.button
                       onClick={() => setSelected(navLink.url)}
@@ -188,7 +182,7 @@ const navVariants = {
         </motion.nav>
       </motion.header>
 
-         <AnimatePresence>
+      <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             className="fixed inset-y-0 left-0 z-50 w-full sm:w-72 bg-[#111111] shadow-2xl overflow-hidden"
