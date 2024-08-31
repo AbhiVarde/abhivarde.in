@@ -15,19 +15,19 @@ const projects = [
     githubLink: "https://github.com/AbhiVarde/SpaceX-Launch-Tracker",
   },
   {
+    image: Librarium,
+    title: "Librarium",
+    description:
+      "A full-stack solution with Google and Discord login, powerful search, and complete CRUD operations for seamless book management.",
+    githubLink: "https://github.com/AbhiVarde/Librarium",
+  },
+  {
     image: Trello,
     title: "Trello Clone",
     description:
       "Facilitating collaborative task management in real-time, enabling users to create boards, lists, and cards for efficient organization and teamwork.",
     url: "https://trello-bice.vercel.app/",
     githubLink: "https://github.com/AbhiVarde/Trello-Clone",
-  },
-  {
-    image: Librarium,
-    title: "Librarium",
-    description:
-      "A full-stack solution with Google and Discord login, powerful search, and complete CRUD operations for seamless book management.",
-    githubLink: "https://github.com/AbhiVarde/Librarium",
   },
   // {
   //   image: SQL,
