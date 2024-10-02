@@ -63,7 +63,7 @@ const OverviewSection = () => {
           >
             <div className="absolute inset-0">
               <video
-                src="/videos/SyncUI.mov"
+                src="/SyncUI.mov"
                 autoPlay
                 loop
                 muted
