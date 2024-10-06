@@ -8,13 +8,14 @@ const GiscusComponent = () => {
     <div className="mt-8">
       <Giscus
         repo="AbhiVarde/abhivarde.in"
-        repoId="R_kgDOMq_-tA"
+        repoId="R_kgDOL9N2Lg"
         category="General"
-        categoryId="DIC_kwDOMq_-tM4Cirpt"
+        categoryId="DIC_kwDOL9N2Ls4Cfckr"
         mapping="pathname"
         strict="0"
         reactionsEnabled="1"
         emitMetadata="0"
+        inputPosition="bottom"
         inputPosition="top"
         theme="noborder_dark"
         lang="en"
