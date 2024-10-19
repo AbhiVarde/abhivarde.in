@@ -11,16 +11,14 @@ const GiscusComponent = () => {
         repoId="R_kgDOMq_-tA"
         category="General"
         categoryId="DIC_kwDOMq_-tM4Cirpt"
-        mapping="pathname"
-        strict="0"
+        mapping="specific"
+        term="guestbook"
         reactionsEnabled="1"
         emitMetadata="0"
         inputPosition="bottom"
-        inputPosition="top"
         theme="noborder_dark"
         lang="en"
-        crossorigin="anonymous"
-        async
+        loading="lazy"
       />
     </div>
   );
