@@ -3,9 +3,15 @@
 import React from "react";
 import { useKBar } from "kbar";
 import { LuCommand } from "react-icons/lu";
+import { usePathname } from "next/navigation";
 
 const CommandBarInvokar = () => {
   const { query } = useKBar();
+
+  const pathname = usePathname();
+  const is404 = !["/", "/guestbook", "/blog", "/projects"].includes(pathname);
+
+  if (is404) return null;
 
   return (
     <button

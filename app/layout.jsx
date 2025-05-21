@@ -1,12 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/common/Navbar";
-import Footer from "./components/common/Footer";
 import { Providers } from "./providers";
 import KProvider from "./components/common/KProvider";
 import CommandBarInvokar from "./components/common/CommandBarInvokar";
-import ScrollToTop from "./components/common/ScrollToTop";
-import { Analytics } from "@vercel/analytics/react";
+import LayoutWrapper from "./components/common/LayoutWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -95,11 +92,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} bg-black text-white`}>
         <KProvider>
           <Providers>
-            <ScrollToTop />
-            <Analytics />
-            <Navbar />
-            {children}
-            <Footer />
+            <LayoutWrapper>{children}</LayoutWrapper>
           </Providers>
           <CommandBarInvokar />
         </KProvider>
