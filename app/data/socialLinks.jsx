@@ -1,11 +1,11 @@
-import { LuGithub, LuInstagram } from "react-icons/lu";
+import { LuGithub } from "react-icons/lu";
 import {
   FaXTwitter,
   FaLinkedinIn,
   FaHashnode,
-  FaDiscord,
+  FaSpotify,
 } from "react-icons/fa6";
-import { SiLeetcode } from "react-icons/si";
+import { SiLeetcode, SiPeerlist } from "react-icons/si";
 
 const socialLinks = [
   {
@@ -15,16 +15,22 @@ const socialLinks = [
     icon: <LuGithub size={20} color="#FFFFFF" />,
   },
   {
+    id: "linkedin",
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/abhi-varde-6634551b1/",
+    icon: <FaLinkedinIn size={20} color="#FFFFFF" />,
+  },
+  {
     id: "twitter",
     name: "Twitter",
     url: "https://twitter.com/varde_abhi",
     icon: <FaXTwitter size={20} color="#FFFFFF" />,
   },
   {
-    id: "linkedin",
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/abhi-varde-6634551b1/",
-    icon: <FaLinkedinIn size={20} color="#FFFFFF" />,
+    id: "peerlist",
+    name: "Peerlist",
+    url: "https://peerlist.io/abhivarde",
+    icon: <SiPeerlist size={20} color="#FFFFFF" />,
   },
   {
     id: "leetcode",
@@ -39,16 +45,10 @@ const socialLinks = [
     icon: <FaHashnode size={20} color="#FFFFFF" />,
   },
   {
-    id: "discord",
-    name: "Discord",
-    url: "https://discord.com/users/1163337031099883550",
-    icon: <FaDiscord size={20} color="#FFFFFF" />,
-  },
-  {
-    id: "instagram",
-    name: "Instagram",
-    url: "https://www.instagram.com/iamabhi_189/",
-    icon: <LuInstagram size={20} color="#FFFFFF" />,
+    id: "spotify",
+    name: "Spotify",
+    url: "https://open.spotify.com/user/31eubskrhf2mhf2lz7wzbcllwqai?si=a517cf8739404b25",
+    icon: <FaSpotify size={20} color="#FFFFFF" />,
   },
 ];
 
