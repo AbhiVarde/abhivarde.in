@@ -22,13 +22,14 @@ const Blogs = () => {
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <Image
-              src={blog.image}
-              alt={blog.title}
-              objectFit="cover"
-              loading="eager"
-              className="rounded-xl hover:opacity-90"
-            />
+            <div className="relative w-full h-[200px] sm:h-[250px] rounded-xl overflow-hidden">
+              <Image
+                src={blog.image}
+                alt={blog.title}
+                fill
+                className="object-cover hover:opacity-90 transition duration-300"
+              />
+            </div>
             <p className="font-medium text-white sm:text-lg mt-2">
               {blog.title}
             </p>

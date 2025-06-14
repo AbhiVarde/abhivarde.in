@@ -5,7 +5,7 @@ import Librarium from "../resources/images/project/librarium.png";
 import Git from "../resources/images/project/git.png";
 import Course from "../resources/images/project/course.png";
 import jukebox from "../resources/images/project/jukebox.png";
-import IdeaTracker from "../resources/images/project/idea.png"; 
+import IdeaTracker from "../resources/images/project/idea.png";
 
 const projects = [
   {
@@ -13,7 +13,7 @@ const projects = [
     title: "Idea Tracker",
     description:
       "A React + Appwrite app to save, search, and manage side project ideas. Features auth, real-time updates, and a clean UI with Tailwind & Framer Motion.",
-    url: "https://appwrite-ideas.vercel.app/",
+    url: "https://idea-tracker.appwrite.network/",
     githubLink: "https://github.com/AbhiVarde/Idea-tracker",
   },
   {

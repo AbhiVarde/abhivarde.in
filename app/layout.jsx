@@ -88,6 +88,13 @@ export default function RootLayout({ children }) {
         <link rel="canonical" href={metadata.canonical} />
         <meta name="keywords" content={metadata.keywords} />
         <meta name="author" content={metadata.author} />
+
+        {/* Umami Analytics */}
+        <script
+          defer
+          src="https://analytics.umami.is/script.js"
+          data-website-id="58bd2a1c-b5e1-4842-b56b-9d1054f374c8"
+        />
       </head>
       <body className={`${inter.className} bg-black text-white`}>
         <KProvider>

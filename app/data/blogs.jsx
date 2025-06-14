@@ -2,8 +2,16 @@ import React from "../resources/images/blog/react.avif";
 import Node from "../resources/images/blog/node.avif";
 import Contact from "../resources/images/blog/contact.avif";
 import Python from "../resources/images/blog/python.avif";
+import SyncUI from "../resources/images/blog/syncui.jpg";
 
 const blogs = [
+  {
+    image: SyncUI,
+    title: "🚀 A Week of Sync UI on Peerlist: From Idea to Top 3 Project 💚",
+    desc: "A week of growth, 100+ upvotes, 50+ GitHub stars, and templates designed for devs - here’s the story.",
+    url: "https://peerlist.io/abhivarde/articles/a-week-of-sync-ui-on-peerlist-from-idea-to-top-3-project",
+    publishdate: "Jun 09, 2025",
+  },
   {
     image: React,
     title: "How to Build a Chatbot with React JS",
