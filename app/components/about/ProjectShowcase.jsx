@@ -27,21 +27,28 @@ const ProjectShowcase = () => {
     return () => clearInterval(timer);
   }, [isAutoplay]);
 
+  const pauseAutoplay = () => {
+    setIsAutoplay(false);
+    setTimeout(() => {
+      setIsAutoplay(true);
+    }, 6000);
+  };
+
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % (projects.length + 1));
-    setIsAutoplay(false);
+    pauseAutoplay();
   };
 
   const prevSlide = () => {
     setCurrentIndex(
       (prev) => (prev - 1 + (projects.length + 1)) % (projects.length + 1)
     );
-    setIsAutoplay(false);
+    pauseAutoplay();
   };
 
   const goToSlide = (index) => {
     setCurrentIndex(index);
-    setIsAutoplay(false);
+    pauseAutoplay();
   };
 
   const isLastSlide = currentIndex === projects.length;
