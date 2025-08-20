@@ -3,7 +3,7 @@
 import React, { Fragment, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import projects from "../../data/projects";
+import projects from "../../content/projects";
 import { LuExternalLink, LuGithub, LuArrowRight } from "react-icons/lu";
 
 const Projects = () => {

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import headerNavLinks from "@/app/data/headerNavLinks";
+import headerNavLinks from "@/app/content/headerNavLinks";
 import {
   motion,
   AnimatePresence,

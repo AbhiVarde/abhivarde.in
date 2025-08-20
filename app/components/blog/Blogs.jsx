@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import blogs from "@/app/data/blogs";
+import blogs from "@/app/content/blogs";
 import Link from "next/link";
 import Image from "next/image";
 import { GoArrowUpRight } from "react-icons/go";

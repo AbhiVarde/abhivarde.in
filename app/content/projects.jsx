@@ -13,7 +13,7 @@ const projects = [
     title: "Idea Tracker",
     description:
       "A React + Appwrite app to save, search, and manage side project ideas. Features auth, real-time updates, and a clean UI with Tailwind & Framer Motion.",
-    url: "https://idea-tracker.appwrite.network/",
+    url: "https://idea-tracker-v2.appwrite.network/",
     githubLink: "https://github.com/AbhiVarde/Idea-tracker",
   },
   {

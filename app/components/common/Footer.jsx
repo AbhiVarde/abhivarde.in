@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import socialLinks from "@/app/data/socialLinks";
+import socialLinks from "@/app/content/socialLinks";
 import { GoArrowUpRight } from "react-icons/go";
 import TailwindCSS from "../../resources/svgs/tailwindCSS.svg";
 import NextJS from "../../../public/next.svg";

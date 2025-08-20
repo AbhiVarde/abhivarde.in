@@ -3,8 +3,8 @@ import ProjectShowcase from "./components/about/ProjectShowcase";
 import ProfessionalSummary from "./components/about/ProfessionalSummary";
 import HireSection from "./components/about/HireSection";
 import OverviewSection from "./components/about/OverviewSection";
-import works from "./data/works";
-import skills from "./data/skills";
+import works from "./content/works";
+import skills from "./content/skills";
 
 export default function About() {
   return (
