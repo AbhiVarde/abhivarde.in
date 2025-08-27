@@ -10,7 +10,6 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "framer-motion";
-import { LuEqual } from "react-icons/lu";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -31,258 +30,144 @@ const Navbar = () => {
     top: {
       backgroundColor: "rgba(0, 0, 0, 0.2)",
       backdropFilter: "blur(8px)",
-      margin: "20px 12px", // Equivalent to mt-5 mx-3
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 30,
-      },
+      margin: "20px 12px",
+      transition: { type: "spring", stiffness: 250, damping: 25 },
     },
     scroll: {
       backgroundColor: "rgba(0, 0, 0, 0.8)",
       backdropFilter: "blur(12px)",
-      margin: "8px 12px", // Reduced top margin when scrolled
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 30,
-      },
+      margin: "8px 12px",
+      transition: { type: "spring", stiffness: 250, damping: 25 },
     },
   };
 
-  const mobileMenuVariants = {
-    closed: {
-      x: "-100%",
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 40,
-      },
-    },
-    open: {
-      x: 0,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 40,
-        staggerChildren: 0.07,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const mobileMenuItemVariants = {
-    closed: { x: -40, opacity: 0 },
-    open: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-      },
-    },
+  const dropdownVariants = {
+    closed: { opacity: 0, height: 0 },
+    open: { opacity: 1, height: "auto" },
   };
 
   return (
-    <>
-      <motion.header
-        className={`fixed mx-auto w-full max-w-5xl top-0 left-0 right-0 z-40 transition-all duration-500 ease-in-out flex justify-center`}
-        initial="hidden"
-        animate="visible"
+    <motion.header className="fixed w-full top-0 z-40 flex justify-center">
+      <motion.nav
+        className="px-4 py-3 w-full max-w-5xl shadow-lg border border-[#333] rounded-3xl mt-3 mx-3 md:mt-4 lg:mt-5 overflow-hidden"
+        variants={navVariants}
+        animate={isScrolled ? "scroll" : "top"}
       >
-        <motion.nav
-          className={`
-            px-4 py-3 w-full
-            shadow-lg border border-[#333] 
-            rounded-3xl
-            mt-3 mx-3 md:mt-4 md:mx-4 lg:mt-5 lg:mx-5
-          `}
-          variants={navVariants}
-          initial="top"
-          animate={isScrolled ? "scroll" : "top"}
-        >
-          <div className="flex justify-between items-center">
-            <motion.div className="flex space-x-1 sm:space-x-2" custom={0}>
+        <div className="flex justify-between items-center">
+          {/* Logo / Breadcrumb */}
+          <div className="flex space-x-2">
+            <Link
+              href="/"
+              className="md:text-lg tracking-wide text-[#F4F0E6] font-normal"
+            >
+              ~{pathname === "/" && <span className="ml-1">abhivarde</span>}
+            </Link>
+            {pathname !== "/" && (
               <Link
-                href="/"
-                className="md:text-lg tracking-wide text-[#F4F0E6] cursor-pointer font-normal"
+                href={pathname}
+                className="md:text-lg tracking-wide text-[#F4F0E6] font-normal"
               >
-                ~
-                {pathname === "/" && (
-                  <span className="ml-1 md:text-lg tracking-wide">
-                    abhivarde
-                  </span>
-                )}
+                <span className="text-[#F4F0E6]">/</span>&nbsp;
+                {pathname.charAt(1).toUpperCase() + pathname.slice(2)}
               </Link>
-              {pathname !== "/" && (
-                <Link
-                  href={pathname}
-                  className="md:text-lg tracking-wide text-[#F4F0E6] cursor-pointer font-normal"
-                >
-                  <span className="text-[#F4F0E6]">/</span>&nbsp;
-                  {pathname.charAt(1).toUpperCase() + pathname.slice(2)}
-                </Link>
-              )}
-            </motion.div>
+            )}
+          </div>
 
-            <div className="flex items-center justify-center md:hidden">
-              <motion.button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-[#F4F0E6] focus:outline-none"
-              >
-                <LuEqual size={24} />
-              </motion.button>
-            </div>
+          {/* Hamburger (Mobile) */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="relative w-6 h-6 flex flex-col justify-center gap-1.5 items-center"
+            >
+              <span
+                className={`block h-0.5 w-5 bg-[#F4F0E6] rounded transition-transform duration-300 ${
+                  isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-5 bg-[#F4F0E6] rounded transition-transform duration-300 ${
+                  isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+                }`}
+              />
+            </button>
+          </div>
 
-            <ul className="hidden md:flex gap-3 sm:gap-4 relative">
-              {headerNavLinks.map((navLink, index) => (
-                <motion.li key={index} custom={index + 1}>
-                  <Link href={navLink.url}>
-                    <motion.button
-                      onClick={() => setSelected(navLink.url)}
-                      className={`relative px-2 sm:px-3 py-1 sm:py-2 rounded-lg overflow-hidden group tracking-wider font-normal`}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+          {/* Desktop Links */}
+          <ul className="hidden md:flex gap-4">
+            {headerNavLinks.map((navLink, index) => (
+              <li key={index}>
+                <Link href={navLink.url}>
+                  <button
+                    onClick={() => setSelected(navLink.url)}
+                    className="relative px-3 py-2 rounded-lg tracking-wider font-normal group"
+                  >
+                    <span
+                      className={`relative z-10 ${
+                        selected === navLink.url ? "text-black" : "text-white"
+                      }`}
                     >
-                      <span
-                        className={`relative z-10 ${
-                          selected === navLink.url ? "text-black" : "text-white"
-                        }`}
-                      >
-                        {navLink.title}
-                      </span>
-                      {selected === navLink.url && (
-                        <motion.span
-                          layoutId="navbar-pill"
-                          className="absolute inset-0 bg-[#F4F0E6] rounded-lg"
-                          initial={false}
-                          transition={{
-                            type: "spring",
-                            stiffness: 350,
-                            damping: 30,
-                          }}
-                        />
-                      )}
+                      {navLink.title}
+                    </span>
+                    {selected === navLink.url && (
                       <motion.span
-                        className="absolute inset-0 bg-white/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        initial={false}
+                        layoutId="navbar-pill"
+                        className="absolute inset-0 bg-[#F4F0E6] rounded-lg"
                         transition={{
                           type: "spring",
                           stiffness: 350,
                           damping: 30,
                         }}
                       />
-                    </motion.button>
-                  </Link>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-        </motion.nav>
-      </motion.header>
+                    )}
+                  </button>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            className="fixed inset-y-0 left-0 z-50 w-full sm:w-72 bg-[#111111] shadow-2xl overflow-hidden"
-            variants={mobileMenuVariants}
-            initial="closed"
-            animate="open"
-            exit="closed"
-          >
-            <div className="flex flex-col h-full">
-              <div className="flex justify-between items-center p-4 border-b border-[#333]">
-                <motion.div
-                  className="md:text-lg font-medium tracking-wide text-white"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  Menu
-                </motion.div>
-                <motion.button
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-white focus:outline-none"
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <svg
-                    className="w-6 h-6 sm:w-7 sm:h-7"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path d="M6 18L18 6M6 6l12 12"></path>
-                  </svg>
-                </motion.button>
-              </div>
-              <nav className="flex-grow overflow-y-auto">
-                <ul className="flex flex-col space-y-1 p-4">
-                  {headerNavLinks.map((item, index) => (
-                    <motion.li
-                      key={index}
-                      variants={mobileMenuItemVariants}
-                      custom={index}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+        {/* Mobile Dropdown */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              className="md:hidden border-t border-[#333]/30 mt-3 pt-3"
+              variants={dropdownVariants}
+              initial="closed"
+              animate="open"
+              exit="closed"
+              transition={{ duration: 0.3 }}
+            >
+              <ul className="flex flex-col space-y-2">
+                {headerNavLinks.map((item, index) => (
+                  <li key={index}>
+                    <Link
+                      href={item.url}
+                      className={`block py-2 px-3 rounded-lg ${
+                        pathname === item.url
+                          ? "text-black bg-[#F4F0E6]"
+                          : "text-[#F4F0E6] hover:bg-white/10"
+                      }`}
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <Link
-                        href={item.url}
-                        className={`block py-2 px-3 rounded-lg transition duration-300 ease-in-out ${
-                          pathname === item.url
-                            ? "text-[#FF3B00] bg-white/10"
-                            : "text-white hover:bg-white/5"
-                        }`}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        <div className="flex items-center space-x-3">
-                          <div className="bg-[#FF3B00] p-2 rounded-lg">
-                            {item?.icon}
+                      <div className="flex items-center space-x-3">
+                        {item?.icon && (
+                          <div className="p-1.5 rounded-md bg-[#FF3B00] text-white">
+                            {item.icon}
                           </div>
-                          {/* <span className="w-6 h-6 flex items-center justify-center bg-white/10 rounded-full text-sm">
-                            {item.title.charAt(0)}
-                          </span> */}
-                          <span className="text-sm tracking-wider">
-                            {item.title}
-                          </span>
-                        </div>
-                      </Link>
-                    </motion.li>
-                  ))}
-                </ul>
-              </nav>
-              <motion.div
-                className="p-4 border-t border-[#333]"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                <p className="text-white/80 text-sm">
-                  &copy; {new Date().getFullYear()} Abhi Varde. All rights
-                  reserved.
-                </p>
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Overlay */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setIsMobileMenuOpen(false)}
-          />
-        )}
-      </AnimatePresence>
-    </>
+                        )}
+                        <span className="text-sm tracking-wide font-medium">
+                          {item.title}
+                        </span>
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.nav>
+    </motion.header>
   );
 };
 
