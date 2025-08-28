@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { SiVisualstudiocode } from "react-icons/si";
 import { LuExternalLink } from "react-icons/lu";
-import Image from 'next/image';
+import Image from "next/image";
 
 const OverviewSection = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -51,8 +51,8 @@ const OverviewSection = () => {
           </div>
           <div className="mt-4 flex-grow">
             <p className="text-base sm:text-lg tracking-wide leading-relaxed mb-4">
-              Namaste!🙏 Abhivarde.in is more than a portfolio; it's a window
-              into my world, where passion meets purpose. Discover my work.
+              Welcome! 👋 This is my digital studio - a space where I share my
+              projects, ideas, and journey as a developer.
             </p>
           </div>
           <motion.button
@@ -83,7 +83,9 @@ const OverviewSection = () => {
               loop
               muted
               playsInline
-              className={`object-cover w-full h-full ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
+              className={`object-cover w-full h-full ${
+                isVideoLoaded ? "opacity-100" : "opacity-0"
+              }`}
               onLoadedData={handleVideoLoad}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-70"></div>
