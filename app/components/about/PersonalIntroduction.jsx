@@ -68,13 +68,23 @@ const PersonalIntroduction = () => {
                 <LuRocket className="mr-2" size={18} />
                 Highlights
               </h2>
-              <p className="mt-3 sm:mt-4 font-light leading-relaxed">
+
+              {/* Short text for small devices */}
+              <p className="mt-3 sm:hidden font-light leading-relaxed">
+                Reached developers in{" "}
+                <span className="font-medium">65+ countries</span> &{" "}
+                <span className="font-medium">75+ stars</span>.
+              </p>
+
+              {/* Full text for larger devices */}
+              <p className="hidden sm:block mt-3 sm:mt-4 font-light leading-relaxed">
                 My projects have reached developers in{" "}
                 <span className="font-medium">65+ countries</span> & received{" "}
                 <span className="font-medium">75+ GitHub stars</span>. Grateful
-                for everyone who finds value in my work-it inspires me to keep
+                for everyone who finds value in my work—it inspires me to keep
                 building.
               </p>
+
               <p className="mt-4 text-base italic">
                 Keep moving, don't settle. 🚀
               </p>
