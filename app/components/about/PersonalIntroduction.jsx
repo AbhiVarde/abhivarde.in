@@ -81,7 +81,7 @@ const PersonalIntroduction = () => {
                 My projects have reached developers in{" "}
                 <span className="font-medium">65+ countries</span> & received{" "}
                 <span className="font-medium">75+ GitHub stars</span>. Grateful
-                for everyone who finds value in my work—it inspires me to keep
+                for everyone who finds value in my work-it inspires me to keep
                 building.
               </p>
 
