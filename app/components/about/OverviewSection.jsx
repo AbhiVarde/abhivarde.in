@@ -47,12 +47,13 @@ const OverviewSection = () => {
             <span className="bg-[#FF3B00] p-1.5 rounded-md">
               <SiVisualstudiocode size={20} color="#FFFFFF" />
             </span>
-            My Studio
+            My Space
           </div>
           <div className="mt-4 flex-grow">
             <p className="text-base sm:text-lg tracking-wide leading-relaxed mb-4">
-              Welcome! 👋 This is my digital studio - a space where I share my
-              projects, ideas, and journey as a developer.
+              Hey there 👋 Welcome to my little corner on the web. This is a
+              space where I share what I’m building, exploring, and learning
+              along the way.
             </p>
           </div>
           <motion.button
@@ -100,8 +101,8 @@ const OverviewSection = () => {
               Building Sync UI 🚀
             </h3>
             <p className="text-sm sm:text-base text-shadow-md mb-2">
-              A sleek UI library for Design Engineers, offering beautifully
-              designed components built with MUI and Framer Motion.
+              A UI library for design engineers, with sleek MUI + Framer Motion
+              components crafted for speed and style.
             </p>
             <motion.a
               href="https://syncui.design"

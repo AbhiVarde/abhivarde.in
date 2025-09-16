@@ -52,8 +52,9 @@ const PersonalIntroduction = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              A frontend developer from Surat, crafting interfaces that feel{" "}
-              <span className="italic">simple, human, and meaningful</span>.
+              I design & build{" "}
+              <span className="italic mr-1">developer tools and UI kits</span>
+              crafting products that feel simple, human, and meaningful.
             </motion.p>
           </div>
 
@@ -71,22 +72,22 @@ const PersonalIntroduction = () => {
 
               {/* Short text for small devices */}
               <p className="mt-3 sm:hidden font-light leading-relaxed">
-                My projects have reached developers in{" "}
-                <span className="font-medium">65+ countries</span> &{" "}
-                <span className="font-medium">75+ GitHub stars</span>.
+                <span className="font-medium">
+                  70+ countries. 85+ GitHub stars.
+                </span>{" "}
+                Grateful for every developer who finds value in my work.
               </p>
 
               {/* Full text for larger devices */}
               <p className="hidden sm:block mt-3 sm:mt-4 font-light leading-relaxed">
                 My projects have reached developers in{" "}
-                <span className="font-medium">65+ countries</span> & received{" "}
-                <span className="font-medium">75+ GitHub stars</span>. Grateful
-                for everyone who finds value in my work-it inspires me to keep
-                building.
+                <span className="font-medium">70+ countries</span> & received{" "}
+                <span className="font-medium">85+ GitHub stars</span>. Every
+                star, every visit reminds me why I keep building.
               </p>
 
               <p className="mt-4 text-base italic">
-                Keep moving, don't settle. 🚀
+                Keep moving. Keep building. 🚀
               </p>
             </div>
           </motion.div>

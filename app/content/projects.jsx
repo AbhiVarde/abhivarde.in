@@ -5,9 +5,18 @@ import Librarium from "../resources/images/project/librarium.png";
 import Git from "../resources/images/project/git.png";
 import Course from "../resources/images/project/course.png";
 import jukebox from "../resources/images/project/jukebox.png";
-import IdeaTracker from "../resources/images/project/idea.png";
+import IdeaTracker from "../resources/images/project/ideatracker.png";
+import ErrExplain from "../resources/images/project/errexplain.png";
 
 const projects = [
+  {
+    image: ErrExplain,
+    title: "ErrExplain",
+    description:
+      "Turn cryptic errors into plain English. Built with Next.js, Vercel AI SDK, and Appwrite. Features collaborative sharing for faster debugging with teammates.",
+    url: "https://errexplain.appwrite.network/",
+    githubLink: "https://github.com/AbhiVarde/ErrExplain",
+  },
   {
     image: IdeaTracker,
     title: "Idea Tracker",
