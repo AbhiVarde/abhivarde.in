@@ -17,7 +17,7 @@ import HTML from "../resources/svgs/html.svg";
 import CSS from "../resources/svgs/css.svg";
 import MySQL from "../resources/svgs/sql.svg";
 import Figma from "../resources/svgs/figma.svg";
-import AWS from "../resources/svgs/AWS.svg";
+import AWS from "../resources/svgs/aws.svg";
 
 // New external icons
 const Appwrite = "https://appwrite.io/images/logos/logo.svg";
