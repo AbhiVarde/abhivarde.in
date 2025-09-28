@@ -71,11 +71,13 @@ const ProfessionalSummary = ({ works, skills }) => {
               {skills?.map((skill, i) => (
                 <div
                   key={i}
-                  className="flex flex-shrink-0 max-w-full relative justify-center items-center border space-x-1 bg-[#F4F0E6] p-2 text-sm rounded-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+                  className="flex flex-shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md shadow-sm border"
                 >
                   <Image
                     src={skill.image}
                     alt={skill.title}
+                    width={16}
+                    height={16}
                     className="w-4 h-4"
                   />
                   <span className="text-black">{skill.title}</span>
@@ -88,11 +90,13 @@ const ProfessionalSummary = ({ works, skills }) => {
               {skills?.slice(0, 6).map((skill, i) => (
                 <div
                   key={i}
-                  className="flex flex-shrink-0 max-w-full relative justify-center items-center border space-x-1 bg-[#F4F0E6] p-2 text-sm rounded-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+                  className="flex flex-shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md shadow-sm border"
                 >
                   <Image
                     src={skill.image}
                     alt={skill.title}
+                    width={16}
+                    height={16}
                     className="w-4 h-4"
                   />
                   <span className="text-black">{skill.title}</span>
@@ -105,11 +109,13 @@ const ProfessionalSummary = ({ works, skills }) => {
               {skills?.slice(6, 12).map((skill, i) => (
                 <div
                   key={i}
-                  className="flex flex-shrink-0 max-w-full relative justify-center items-center border space-x-1 bg-[#F4F0E6] p-2 text-sm rounded-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+                  className="flex flex-shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md shadow-sm border"
                 >
                   <Image
                     src={skill.image}
                     alt={skill.title}
+                    width={16}
+                    height={16}
                     className="w-4 h-4"
                   />
                   <span className="text-black">{skill.title}</span>
@@ -122,11 +128,13 @@ const ProfessionalSummary = ({ works, skills }) => {
               {skills?.slice(12).map((skill, i) => (
                 <div
                   key={i}
-                  className="flex flex-shrink-0 max-w-full relative justify-center items-center border space-x-1 bg-[#F4F0E6] p-2 text-sm rounded-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+                  className="flex flex-shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md shadow-sm border"
                 >
                   <Image
                     src={skill.image}
                     alt={skill.title}
+                    width={16}
+                    height={16}
                     className="w-4 h-4"
                   />
                   <span className="text-black">{skill.title}</span>

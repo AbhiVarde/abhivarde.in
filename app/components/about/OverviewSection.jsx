@@ -31,6 +31,10 @@ const OverviewSection = () => {
     setIsVideoLoaded(true);
   };
 
+  const handleVideoError = () => {
+    setIsVideoLoaded(false);
+  };
+
   return (
     <motion.div
       className="mt-8"
@@ -52,12 +56,12 @@ const OverviewSection = () => {
           <div className="mt-4 flex-grow">
             <p className="text-base sm:text-lg tracking-wide leading-relaxed mb-4">
               Hey there 👋 Welcome to my little corner on the web. This is a
-              space where I share what I’m building, exploring, and learning
+              space where I share what I'm building, exploring, and learning
               along the way.
             </p>
           </div>
           <motion.button
-            className="text-sm sm:text-base mt-4 bg-[#1a1a1a] border border-[#333] px-6 py-3 rounded-full hover:bg-[#111111A0] transition-colors duration-300"
+            className="text-sm sm:text-sm mt-3 bg-[#1a1a1a] border border-[#333] px-4 py-2 rounded-xl hover:bg-[#111111A0] transition-colors duration-300"
             onClick={handleDownloadClick}
             whileTap={{ scale: 0.95 }}
           >
@@ -71,7 +75,7 @@ const OverviewSection = () => {
           <div className="absolute inset-0">
             {!isVideoLoaded && (
               <Image
-                src="/default-syncui-image.png"
+                src="/syncui-image.png"
                 layout="fill"
                 objectFit="cover"
                 alt="Video placeholder"
@@ -84,35 +88,37 @@ const OverviewSection = () => {
               loop
               muted
               playsInline
-              className={`object-cover w-full h-full ${
+              className={`object-cover w-full h-full transition-opacity duration-300 ${
                 isVideoLoaded ? "opacity-100" : "opacity-0"
               }`}
               onLoadedData={handleVideoLoad}
+              onError={handleVideoError}
+              onCanPlay={handleVideoLoad}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-70"></div>
           </div>
           <motion.div
-            className="absolute bottom-0 left-0 right-0 p-4 text-white"
+            className="absolute bottom-0 left-0 right-0 p-4 text-white z-10"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <h3 className="text-lg sm:text-xl font-bold mb-1 text-shadow-lg">
+            <h3 className="text-lg sm:text-xl font-medium mb-1 text-shadow-lg">
               Building Sync UI 🚀
             </h3>
             <p className="text-sm sm:text-base text-shadow-md mb-2">
-              A UI library for design engineers, with sleek MUI + Framer Motion
-              components crafted for speed and style.
+              A UI library with animated MUI components and premium templates.
             </p>
             <motion.a
               href="https://syncui.design"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-3 py-1 bg-white/20 hover:bg-white/30 rounded-full text-sm font-medium transition-colors duration-200"
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-3 py-1.5 rounded-lg hover:bg-white/20 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              syncui.design <LuExternalLink className="ml-1 w-4 h-4" />
+              <span className="text-sm sm:text-sm">syncui.design</span>
+              <LuExternalLink size={14} />
             </motion.a>
           </motion.div>
         </motion.div>

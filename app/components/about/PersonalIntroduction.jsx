@@ -73,7 +73,7 @@ const PersonalIntroduction = () => {
               {/* Short text for small devices */}
               <p className="mt-3 sm:hidden font-light leading-relaxed">
                 <span className="font-medium">
-                  70+ countries. 85+ GitHub stars.
+                  70+ countries. 90+ GitHub stars.
                 </span>{" "}
                 Grateful for every developer who finds value in my work.
               </p>
@@ -82,7 +82,7 @@ const PersonalIntroduction = () => {
               <p className="hidden sm:block mt-3 sm:mt-4 font-light leading-relaxed">
                 My projects have reached developers in{" "}
                 <span className="font-medium">70+ countries</span> & received{" "}
-                <span className="font-medium">85+ GitHub stars</span>. Every
+                <span className="font-medium">90+ GitHub stars</span>. Every
                 star, every visit reminds me why I keep building.
               </p>
 
