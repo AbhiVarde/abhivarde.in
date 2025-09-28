@@ -44,15 +44,15 @@ const Projects = () => {
                 {project.description}
               </p>
             </div>
-            <div className="flex flex-col space-y-3 mt-4 md:mt-0 md:flex-row md:items-center md:space-x-2 md:space-y-0">
+            <div className="flex flex-col space-y-2 mt-4 md:mt-0 md:flex-row md:items-center md:space-x-2 md:space-y-0">
               {project.url && (
                 <Link
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex text-sm items-center justify-center gap-x-1.5 p-2 rounded-xl bg-[#F4F0E6] text-black transition-all duration-200 hover:-translate-y-1"
+                  className="flex text-sm items-center justify-center gap-x-1.5 px-3 py-1.5 rounded-lg bg-[#F4F0E6] text-black transition-transform duration-200 hover:-translate-y-0.5"
                 >
-                  <LuExternalLink /> View Project
+                  <LuExternalLink size={16} /> <span>Live Demo</span>
                 </Link>
               )}
               {project.githubLink && (
@@ -60,9 +60,9 @@ const Projects = () => {
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex text-sm items-center justify-center gap-x-1.5 p-2 rounded-xl bg-[#F4F0E6] text-black transition-all duration-200 hover:-translate-y-1"
+                  className="flex text-sm items-center justify-center gap-x-1.5 px-3 py-1.5 rounded-lg bg-[#F4F0E6] text-black transition-transform duration-200 hover:-translate-y-0.5"
                 >
-                  <LuGithub /> View Code
+                  <LuGithub size={16} /> <span>Source Code</span>
                 </Link>
               )}
             </div>
@@ -73,15 +73,15 @@ const Projects = () => {
         <Link
           target="_blank"
           href="https://github.com/AbhiVarde"
-          className="flex items-center justify-center space-x-2 rounded-2xl hover:underline overflow-hidden bg-[#FF3B00] text-white shadow-md cursor-pointer h-fit px-12 py-4"
+          className="flex items-center justify-center space-x-2 rounded-xl hover:underline overflow-hidden bg-[#FF3B00] text-white shadow-md cursor-pointer px-6 py-2"
           onMouseEnter={() => setHoveredIndex(7)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
-          <span className="text-sm sm:text-base">View more on Github</span>
+          <span className="text-sm sm:text-sm">View more on Github</span>
           <LuArrowRight
-            size={22}
+            size={18}
             className={`transition-all duration-300 ${
-              hoveredIndex === 7 ? "translate-x-2" : "translate-x-0"
+              hoveredIndex === 7 ? "translate-x-1" : "translate-x-0"
             }`}
           />
         </Link>

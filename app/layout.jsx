@@ -21,7 +21,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://abhivarde.in/default-og-image.png",
+        url: "https://abhivarde.in/og-image.png",
         width: 800,
         height: 600,
         alt: "Abhi Varde",
@@ -39,10 +39,10 @@ export const metadata = {
     site: "@varde_abhi",
     title: "Abhi Varde",
     description: "A passionate Software Developer from India.",
-    images: "https://abhivarde.in/default-og-image.png",
+    images: "https://abhivarde.in/og-image.png",
   },
   instagram: {
-    url: "https://www.instagram.com/iamabhi_189",
+    url: "https://www.instagram.com/abhivarde.in",
   },
   robots: "index,follow",
   canonical: "https://abhivarde.in",

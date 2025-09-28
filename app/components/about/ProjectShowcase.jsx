@@ -85,7 +85,7 @@ const ProjectShowcase = () => {
                   <h2 className="text-2xl sm:text-3xl font-medium mb-3 tracking-tight">
                     {projects[currentIndex].title}
                   </h2>
-                  <p className="hidden sm:flex text-sm sm:text-base opacity-90 mb-4 leading-relaxed max-w-2xl">
+                  <p className="hidden sm:flex text-sm sm:text-base opacity-90 mb-4 leading-relaxed w-full max-w-sm lg:max-w-full">
                     {projects[currentIndex].description}
                   </p>
                   <Link
@@ -95,10 +95,10 @@ const ProjectShowcase = () => {
                     }
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 rounded-xl hover:bg-white/20 transition-all duration-300"
+                    className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-3 py-1.5 rounded-lg hover:bg-white/20 transition-all duration-300"
                   >
-                    <span className="text-sm sm:text-base">View Project</span>
-                    <LuExternalLink size={16} />
+                    <span className="text-sm sm:text-sm">Open Project</span>
+                    <LuExternalLink size={14} />
                   </Link>
                 </motion.div>
               </>
