@@ -20,7 +20,7 @@ const OverviewSection = () => {
   }, []);
 
   const handleDownloadClick = () => {
-    const cvUrl = "./AbhiVarde-Resume.pdf";
+    const cvUrl = "./AbhiVarde_Resume.pdf";
     const downloadLink = document.createElement("a");
     downloadLink.href = cvUrl;
     downloadLink.download = "AbhiVarde_CV.pdf";
