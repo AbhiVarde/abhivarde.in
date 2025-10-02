@@ -82,7 +82,7 @@ const ProjectShowcase = () => {
                   transition={{ delay: 0.3, duration: 0.5 }}
                   className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white"
                 >
-                  <h2 className="text-2xl sm:text-3xl font-medium mb-3 tracking-tight">
+                  <h2 className="text-xl sm:text-2xl font-medium mb-3 tracking-tight">
                     {projects[currentIndex].title}
                   </h2>
                   <p className="hidden sm:flex text-sm sm:text-base opacity-90 mb-4 leading-relaxed w-full max-w-sm lg:max-w-full">
