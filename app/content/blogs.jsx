@@ -1,8 +1,21 @@
 import SyncUIPeerlist from "../resources/images/blog/syncui-peerlist.jpg";
 import IdeaTracker from "../resources/images/blog/idea-tracker.png";
 import SyncUI from "../resources/images/blog/syncui.png";
+import ErrExplain from "../resources/images/project/errexplain.png";
+import Sendra from "../resources/images/project/sendra.png";
 
 const blogs = [
+  {
+    image: Sendra,
+    title:
+      "Sendra 🌱 Monitoring Appwrite Sites Deployments with Next.js, Vercel & Resend",
+    url: "https://dev.to/abhivarde/sendra-monitoring-appwrite-sites-deployments-with-nextjs-vercel-resend-5g3g",
+  },
+  {
+    image: ErrExplain,
+    title: "ErrExplain: Turning Confusing Errors into Clear Fixes 🚀",
+    url: "https://dev.to/abhivarde/errexplain-turning-confusing-errors-into-clear-fixes-42dk",
+  },
   {
     image: SyncUI,
     title: "My Sync UI Journey: From Navratri 2024 to Navratri 2025 🎉",
