@@ -9,7 +9,7 @@ const works = [
     companyName: "Uniqual iTech",
     role: "Jr Web Developer",
     startAt: "Oct 2023",
-    endAt: "Present",
+    endAt: "Oct 2025",
   },
   {
     image: SolGuruz,
