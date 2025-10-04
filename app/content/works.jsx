@@ -7,7 +7,7 @@ const works = [
   {
     image: Uniqual,
     companyName: "Uniqual iTech",
-    role: "Jr Web Developer",
+    role: "Frontend Web Developer",
     startAt: "Oct 2023",
     endAt: "Oct 2025",
   },
