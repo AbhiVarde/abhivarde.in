@@ -9,11 +9,10 @@ const projects = [
     image: Sendra,
     title: "Sendra",
     description:
-      "Sendra monitors your Appwrite Sites deployments and sends instant email alerts when issues arise, built with Appwrite, Resend, and Vercel.",
+      "Monitors Appwrite Sites & Functions, sends instant failure alerts, and suggests AI-powered fixes - built with Appwrite, Resend, Vercel & Vercel AI SDK.",
     url: "https://sendra.vercel.app",
     githubLink: "https://github.com/AbhiVarde/sendra",
   },
-
   {
     image: ErrExplain,
     title: "ErrExplain",
