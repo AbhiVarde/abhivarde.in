@@ -4,12 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import headerNavLinks from "@/app/content/headerNavLinks";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -41,11 +36,6 @@ const Navbar = () => {
     },
   };
 
-  const dropdownVariants = {
-    closed: { opacity: 0, height: 0 },
-    open: { opacity: 1, height: "auto" },
-  };
-
   return (
     <motion.header className="fixed w-full top-0 z-40 flex justify-center">
       <motion.nav
@@ -54,7 +44,6 @@ const Navbar = () => {
         animate={isScrolled ? "scroll" : "top"}
       >
         <div className="flex justify-between items-center">
-          {/* Logo / Breadcrumb */}
           <div className="flex space-x-2">
             <Link
               href="/"
@@ -126,46 +115,40 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Mobile Dropdown */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              className="md:hidden border-t border-[#333]/30 mt-3 pt-3"
-              variants={dropdownVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
-              transition={{ duration: 0.3 }}
-            >
-              <ul className="flex flex-col space-y-2">
-                {headerNavLinks.map((item, index) => (
-                  <li key={index}>
-                    <Link
-                      href={item.url}
-                      className={`block py-2 px-3 rounded-lg ${
-                        pathname === item.url
-                          ? "text-black bg-[#F4F0E6]"
-                          : "text-[#F4F0E6] hover:bg-white/10"
-                      }`}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      <div className="flex items-center space-x-3">
-                        {item?.icon && (
-                          <div className="p-1.5 rounded-md bg-[#FF3B00] text-white">
-                            {item.icon}
-                          </div>
-                        )}
-                        <span className="text-sm tracking-wide font-medium">
-                          {item.title}
-                        </span>
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="border-t border-[#333]/30 mt-3 pt-3">
+            <ul className="flex flex-col space-y-2">
+              {headerNavLinks.map((item, index) => (
+                <li key={index}>
+                  <Link
+                    href={item.url}
+                    className={`block py-2 px-3 rounded-lg transition-colors duration-200 ${
+                      pathname === item.url
+                        ? "text-black bg-[#F4F0E6]"
+                        : "text-[#F4F0E6] hover:bg-white/10"
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <div className="flex items-center space-x-3">
+                      {item?.icon && (
+                        <div className="p-1.5 rounded-md bg-[#FF3B00] text-white">
+                          {item.icon}
+                        </div>
+                      )}
+                      <span className="text-sm tracking-wide font-medium">
+                        {item.title}
+                      </span>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </motion.nav>
     </motion.header>
   );
