@@ -8,7 +8,7 @@ const blogs = [
   {
     image: Sendra,
     title:
-      "Sendra 🌱 Monitoring Appwrite Sites Deployments with Next.js, Vercel & Resend",
+      "Sendra 🌱 Monitoring Appwrite Sites & Functions Deployments with Next.js, Vercel & Resend",
     url: "https://dev.to/abhivarde/sendra-monitoring-appwrite-sites-deployments-with-nextjs-vercel-resend-5g3g",
   },
   {
