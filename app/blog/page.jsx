@@ -17,7 +17,7 @@ const Blog = () => {
             <LuLayout size={22} color="#FFFFFF" />
           </div>
           <h2 class="sm:text-lg md:text-xl lg:text-2xl font-medium leading-4 md:leading-6 lg:leading-8 tracking-wide">
-            Blog Posts
+            Blogs
           </h2>
         </div>
         <p class="text-sm sm:text-lg text-white leading-relaxed">
