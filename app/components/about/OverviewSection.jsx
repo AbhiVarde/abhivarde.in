@@ -68,6 +68,7 @@ const OverviewSection = () => {
             Download CV
           </motion.button>
         </motion.div>
+
         <motion.div
           className="p-4 sm:p-6 md:p-8 border min-h-[300px] border-[#333] bg-[#111111] rounded-3xl relative overflow-hidden shadow-2xl"
           transition={{ type: "spring", stiffness: 300 }}
@@ -76,9 +77,11 @@ const OverviewSection = () => {
             {!isVideoLoaded && (
               <Image
                 src="/syncui-image.png"
-                layout="fill"
-                objectFit="cover"
+                fill
+                className="object-cover"
                 alt="Video placeholder"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority
               />
             )}
             <video
