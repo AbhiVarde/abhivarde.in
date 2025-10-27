@@ -22,7 +22,7 @@ export default function About() {
     );
 
     console.log(
-      "%c🚀 Sync UI - loved by developers in 80+ countries\n" +
+      "%c🚀 Sync UI: loved by developers in 80+ countries\n" +
         "⭐️ 75+ stars and growing fast\n" +
         "🔗 Explore: https://syncui.design\n\n" +
         "💬 Like my work? Share your thoughts → https://abhivarde.in/guestbook\n" +
