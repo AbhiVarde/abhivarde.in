@@ -1,7 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["resend.com", "appwrite.io", "lingo.dev"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "resend.com",
+      },
+      {
+        protocol: "https",
+        hostname: "appwrite.io",
+      },
+      {
+        protocol: "https",
+        hostname: "lingo.dev",
+      },
+    ],
+    qualities: [75, 95, 100],
   },
 };
 
