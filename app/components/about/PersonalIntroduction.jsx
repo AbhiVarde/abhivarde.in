@@ -17,7 +17,6 @@ const PersonalIntroduction = () => {
             alt="Background"
             fill
             style={{ objectFit: "cover" }}
-            quality={100}
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"></div>

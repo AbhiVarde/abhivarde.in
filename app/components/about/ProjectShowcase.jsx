@@ -72,7 +72,6 @@ const ProjectShowcase = () => {
                   alt={projects[currentIndex].title}
                   fill
                   className="object-cover"
-                  quality={95}
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70" />
