@@ -9,7 +9,8 @@ import {
   KBarSearch,
 } from "kbar";
 import { useRouter } from "next/navigation";
-import { LuSearch, LuBook, LuUser, LuTarget, LuLayout } from "react-icons/lu";
+import { LuSearch, LuBook, LuUser, LuTarget } from "react-icons/lu";
+import { TbLayout } from "react-icons/tb";
 import KResults from "./KResults";
 import socialLinks from "@/app/content/socialLinks";
 
@@ -24,7 +25,7 @@ const KProvider = ({ children }) => {
       shortcut: ["b"],
       perform: () => router.push("/blog"),
       section: "Pages",
-      icon: <LuLayout size={20} />,
+      icon: <TbLayout size={20} />,
     },
     {
       id: "projects",

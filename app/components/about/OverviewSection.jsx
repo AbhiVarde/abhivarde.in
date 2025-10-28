@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { SiVisualstudiocode } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 import { LuExternalLink } from "react-icons/lu";
 import Image from "next/image";
 
@@ -49,7 +49,7 @@ const OverviewSection = () => {
         >
           <div className="text-white uppercase tracking-wider flex gap-2 items-center text-sm sm:text-base">
             <span className="bg-[#FF3B00] p-1.5 rounded-md">
-              <SiVisualstudiocode size={20} color="#FFFFFF" />
+              <VscVscode size={20} color="#FFFFFF" />
             </span>
             My Space
           </div>

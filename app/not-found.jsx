@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { LuHome } from "react-icons/lu";
+import { TbHome } from "react-icons/tb";
 import { motion } from "framer-motion";
 
 function NotFoundPage() {
@@ -75,7 +75,7 @@ function NotFoundPage() {
             <span className="relative rounded-md bg-gradient-to-r from-[#FF3B00] to-[#FF7A00]  px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 flex items-center">
               Return Home
               <span className="ml-2">
-                <LuHome size={16} />
+                <TbHome size={16} />
               </span>
             </span>
           </Link>

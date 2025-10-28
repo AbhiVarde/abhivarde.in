@@ -1,4 +1,5 @@
-import { LuBook, LuUser, LuTarget, LuLayout } from "react-icons/lu";
+import { LuBook, LuUser, LuTarget } from "react-icons/lu";
+import { TbLayout } from "react-icons/tb";
 
 const headerNavLinks = [
   { title: "About", url: "/", icon: <LuUser color="#FFFFFF" /> },
@@ -11,7 +12,7 @@ const headerNavLinks = [
   {
     title: "GuestBook",
     url: "/guestbook",
-    icon: <LuLayout color="#FFFFFF" />,
+    icon: <TbLayout color="#FFFFFF" />,
   },
 ];
 
