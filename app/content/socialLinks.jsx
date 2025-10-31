@@ -17,7 +17,7 @@ const socialLinks = [
   {
     id: "linkedin",
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/abhi-varde-6634551b1/",
+    url: "https://www.linkedin.com/in/abhi-varde/",
     icon: <FaLinkedinIn size={20} color="#FFFFFF" />,
   },
   {
