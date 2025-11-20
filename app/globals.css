@@ -40,3 +40,34 @@
     transform: rotate(0deg);
   }
 }
+
+/* cmdk styles */
+[cmdk-root] {
+  max-width: 90vw;
+}
+
+[cmdk-list] {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+[cmdk-list]::-webkit-scrollbar {
+  width: 8px;
+}
+
+[cmdk-list]::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+[cmdk-list]::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+[cmdk-group-heading] {
+  user-select: none;
+}
+
+[cmdk-item] {
+  user-select: none;
+}

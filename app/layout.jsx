@@ -1,7 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-import KProvider from "./components/common/KProvider";
 import CommandBarInvokar from "./components/common/CommandBarInvokar";
 import LayoutWrapper from "./components/common/LayoutWrapper";
 import Script from "next/script";
@@ -67,13 +66,11 @@ export default function RootLayout({ children }) {
           data-website-id="58bd2a1c-b5e1-4842-b56b-9d1054f374c8"
           strategy="afterInteractive"
         />
-        <KProvider>
-          <Providers>
-            <LayoutWrapper>{children}</LayoutWrapper>
-          </Providers>
-          <CommandBarInvokar />
-        </KProvider>
+        <Providers>
+          <LayoutWrapper>{children}</LayoutWrapper>
+        </Providers>
+        <CommandBarInvokar />
       </body>
     </html>
   );
-}
+};

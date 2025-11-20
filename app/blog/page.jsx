@@ -16,11 +16,11 @@ const Blog = () => {
           <div className="bg-[#FF3B00] p-2 rounded-lg">
             <TbLayout size={22} color="#FFFFFF" />
           </div>
-          <h2 class="sm:text-lg md:text-xl lg:text-2xl font-medium leading-4 md:leading-6 lg:leading-8 tracking-wide">
+          <h2 className="sm:text-lg md:text-xl lg:text-2xl font-medium leading-4 md:leading-6 lg:leading-8 tracking-wide">
             Blogs
           </h2>
         </div>
-        <p class="text-sm sm:text-lg text-white leading-relaxed">
+        <p className="text-sm sm:text-lg text-white leading-relaxed">
           Check out my latest blog posts where I share insights, tips, and
           experiences. Feel free to drop by, read, and leave your thoughts in
           the comments!
