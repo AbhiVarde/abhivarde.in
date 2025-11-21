@@ -72,7 +72,7 @@ const PersonalIntroduction = () => {
               {/* Short text for small devices */}
               <p className="mt-3 sm:hidden font-light leading-relaxed">
                 <span className="font-medium">
-                  70+ countries. 90+ GitHub stars.
+                  90+ countries. 100+ GitHub stars.
                 </span>{" "}
                 Grateful for every developer who finds value in my work.
               </p>
