@@ -16,11 +16,11 @@ const Project = () => {
           <div className="bg-[#FF3B00] p-2 rounded-lg">
             <LuTarget size={22} color="#FFFFFF" />
           </div>
-          <h2 class="sm:text-lg md:text-xl lg:text-2xl font-medium leading-4 md:leading-6 lg:leading-8 tracking-wide">
+          <h2 className="sm:text-lg md:text-xl lg:text-2xl font-medium leading-4 md:leading-6 lg:leading-8 tracking-wide">
             Projects
           </h2>
         </div>
-        <p class="text-sm sm:text-lg text-white leading-relaxed">
+        <p className="text-sm sm:text-lg text-white leading-relaxed">
           Here are some projects of which I'm really proud. Most of them are
           open-source, so feel free to check out the code and contribute if
           you're interested!

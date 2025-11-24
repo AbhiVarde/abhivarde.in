@@ -26,13 +26,11 @@ const Navbar = () => {
       backgroundColor: "rgba(0, 0, 0, 0.2)",
       backdropFilter: "blur(8px)",
       margin: "20px 12px",
-      transition: { type: "spring", stiffness: 250, damping: 25 },
     },
     scroll: {
       backgroundColor: "rgba(0, 0, 0, 0.8)",
       backdropFilter: "blur(12px)",
       margin: "8px 12px",
-      transition: { type: "spring", stiffness: 250, damping: 25 },
     },
   };
 
@@ -42,6 +40,7 @@ const Navbar = () => {
         className="px-4 py-3 w-full max-w-5xl shadow-lg border border-[#333] rounded-3xl mt-3 mx-3 md:mt-4 lg:mt-5 overflow-hidden"
         variants={navVariants}
         animate={isScrolled ? "scroll" : "top"}
+        transition={{ duration: 0.15, ease: "linear" }}
       >
         <div className="flex justify-between items-center">
           <div className="flex space-x-2">
@@ -62,7 +61,6 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Hamburger (Mobile) */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -81,17 +79,16 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Desktop Links */}
           <ul className="hidden md:flex gap-4">
             {headerNavLinks.map((navLink, index) => (
               <li key={index}>
                 <Link href={navLink.url}>
                   <button
                     onClick={() => setSelected(navLink.url)}
-                    className="relative px-3 py-2 rounded-lg tracking-wider font-normal group"
+                    className="relative px-3 py-2 rounded-lg tracking-wider font-normal"
                   >
                     <span
-                      className={`relative z-10 ${
+                      className={`relative z-10 transition-colors duration-150 ${
                         selected === navLink.url ? "text-black" : "text-white"
                       }`}
                     >
@@ -101,10 +98,11 @@ const Navbar = () => {
                       <motion.span
                         layoutId="navbar-pill"
                         className="absolute inset-0 bg-[#F4F0E6] rounded-lg"
+                        initial={false}
                         transition={{
-                          type: "spring",
-                          stiffness: 350,
-                          damping: 30,
+                          type: "tween",
+                          duration: 0.2,
+                          ease: "easeInOut",
                         }}
                       />
                     )}

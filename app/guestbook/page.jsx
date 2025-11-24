@@ -16,11 +16,11 @@ const GuestBook = () => {
           <div className="bg-[#FF3B00] p-2 rounded-lg">
             <LuBook size={22} color="#FFFFFF" />
           </div>
-          <h2 class="sm:text-lg md:text-xl lg:text-2xl font-medium leading-4 md:leading-6 lg:leading-8 tracking-wide">
+          <h2 className="sm:text-lg md:text-xl lg:text-2xl font-medium leading-4 md:leading-6 lg:leading-8 tracking-wide">
             GuestBook
           </h2>
         </div>
-        <p class="text-sm sm:text-lg text-white leading-relaxed">
+        <p className="text-sm sm:text-lg text-white leading-relaxed">
           Feel free to leave a message for future visitors - your thoughts and
           feedback are greatly appreciated :)
         </p>
