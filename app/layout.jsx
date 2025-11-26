@@ -4,6 +4,7 @@ import { Providers } from "./providers";
 import CommandBarInvokar from "./components/common/CommandBarInvokar";
 import LayoutWrapper from "./components/common/LayoutWrapper";
 import Script from "next/script";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -67,10 +68,23 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
         <Providers>
-          <LayoutWrapper>{children}</LayoutWrapper>
+          <Suspense
+            fallback={
+              <main className="min-h-screen flex flex-col items-center justify-center">
+                <h1 className="text-center font-medium text-xl md:text-2xl">
+                  Loading...
+                </h1>
+                <p className="text-center mt-4 font-light">
+                  Hopefully not for too long :)
+                </p>
+              </main>
+            }
+          >
+            <LayoutWrapper>{children}</LayoutWrapper>
+          </Suspense>
         </Providers>
         <CommandBarInvokar />
       </body>
     </html>
   );
-};
+}

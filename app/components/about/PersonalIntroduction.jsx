@@ -10,7 +10,6 @@ const PersonalIntroduction = () => {
   return (
     <div className="mt-8 md:mt-10">
       <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-        {/* Background */}
         <div className="absolute inset-0 z-0">
           <Image
             src={HeroImage}
@@ -22,8 +21,7 @@ const PersonalIntroduction = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"></div>
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 flex flex-col p-6 sm:p-8">
+        <div className="relative z-10 flex flex-col p-4 sm:p-6">
           <div className="text-white max-w-xl">
             <motion.h2
               className="font-medium uppercase tracking-wider flex items-center text-sm sm:text-base"
@@ -36,7 +34,7 @@ const PersonalIntroduction = () => {
             </motion.h2>
 
             <motion.h1
-              className="mt-3 sm:mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
+              className="mt-3 sm:mt-4 text-3xl sm:text-4xl font-bold tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -51,9 +49,11 @@ const PersonalIntroduction = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              I design & build{" "}
-              <span className="italic mr-1">developer tools and UI kits</span>
-              crafting products that feel simple, human, and meaningful.
+              I build
+              <span className="italic mx-1 font-medium">
+                developer tools and UI kits
+              </span>
+              crafting products that are simple, fast, and thoughtful.
             </motion.p>
           </div>
 
@@ -63,30 +63,23 @@ const PersonalIntroduction = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-4 text-white">
-              <h2 className="font-medium uppercase tracking-wider flex items-center text-sm">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-3 sm:p-4 text-white">
+              <h2 className="font-normal uppercase tracking-wider flex items-center text-sm">
                 <LuRocket className="mr-2" size={18} />
                 Highlights
               </h2>
 
-              {/* Short text for small devices */}
               <p className="mt-3 sm:hidden font-light leading-relaxed">
-                <span className="font-medium">
-                  90+ countries. 100+ GitHub stars.
-                </span>{" "}
-                Grateful for every developer who finds value in my work.
+                <span className="font-medium mr-1">90+ countries.</span>
+                <span className="font-medium">100+ GitHub stars.</span>
               </p>
 
-              {/* Full text for larger devices */}
               <p className="hidden sm:block mt-3 sm:mt-4 font-light leading-relaxed">
-                My projects have reached developers in{" "}
-                <span className="font-medium">70+ countries</span> & received{" "}
-                <span className="font-medium">90+ GitHub stars</span>. Every
-                star, every visit reminds me why I keep building.
-              </p>
-
-              <p className="mt-4 text-base italic">
-                Keep moving. Keep building. 🚀
+                Reached developers in
+                <span className="font-medium mx-1">90+ countries</span> and
+                earned
+                <span className="font-medium mx-1">100+ GitHub stars</span>
+                across my projects.
               </p>
             </div>
           </motion.div>

@@ -4,17 +4,11 @@ import React from "react";
 import { IoBriefcaseOutline } from "react-icons/io5";
 import { LuTerminal } from "react-icons/lu";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 const ProfessionalSummary = ({ works, skills }) => {
   return (
     <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <motion.div
-        className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111]"
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-      >
+      <div className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111]">
         <div>
           <div className="text-white uppercase tracking-wider flex gap-3 items-center">
             <span className="bg-[#FF3B00] p-1.5 rounded-md">
@@ -33,6 +27,8 @@ const ProfessionalSummary = ({ works, skills }) => {
               <Image
                 src={work.image}
                 alt={work.companyName}
+                width={48}
+                height={48}
                 className="h-12 w-12 object-cover bg-[#333] border border-[#333] bg-opacity-30 p-2 rounded-md"
               />
               <div className="flex w-full flex-col">
@@ -49,13 +45,9 @@ const ProfessionalSummary = ({ works, skills }) => {
             </div>
           ))}
         </div>
-      </motion.div>
-      <motion.div
-        className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111]"
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-      >
+      </div>
+
+      <div className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111]">
         <div>
           <div className="text-white uppercase tracking-wider flex gap-3 items-center">
             <span className="bg-[#FF3B00] p-1.5 rounded-md">
@@ -64,7 +56,7 @@ const ProfessionalSummary = ({ works, skills }) => {
             Skills
           </div>
           <p className="sm:text-lg mt-4">
-            I’ve worked with the following but not limited to.
+            I've worked with the following but not limited to.
           </p>
           <div className="mt-6 overflow-hidden hidden sm:flex lg:hidden">
             <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-scroll">
@@ -143,7 +135,7 @@ const ProfessionalSummary = ({ works, skills }) => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
