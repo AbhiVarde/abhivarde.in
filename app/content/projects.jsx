@@ -1,8 +1,8 @@
-import Tracker from "../resources/images/project/tracker.png";
-import SyncUI from "../resources/images/project/syncui.png";
-import IdeaTracker from "../resources/images/project/ideatracker.png";
-import ErrExplain from "../resources/images/project/errexplain.png";
-import Sendra from "../resources/images/project/sendra.png";
+import Tracker from "../resources/images/project/tracker.webp";
+import SyncUI from "../resources/images/project/syncui.webp";
+import IdeaTracker from "../resources/images/project/ideatracker.webp";
+import ErrExplain from "../resources/images/project/errexplain.webp";
+import Sendra from "../resources/images/project/sendra.webp";
 
 const projects = [
   {

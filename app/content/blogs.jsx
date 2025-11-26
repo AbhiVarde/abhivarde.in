@@ -1,8 +1,8 @@
-import SyncUIPeerlist from "../resources/images/blog/syncui-peerlist.jpg";
-import IdeaTracker from "../resources/images/blog/idea-tracker.png";
-import SyncUI from "../resources/images/blog/syncui.png";
-import ErrExplain from "../resources/images/project/errexplain.png";
-import Sendra from "../resources/images/project/sendra.png";
+import SyncUIPeerlist from "../resources/images/blog/syncui-peerlist.webp";
+import IdeaTracker from "../resources/images/blog/idea-tracker.webp";
+import SyncUI from "../resources/images/blog/syncui.webp";
+import ErrExplain from "../resources/images/project/errexplain.webp";
+import Sendra from "../resources/images/project/sendra.webp";
 
 const blogs = [
   {
