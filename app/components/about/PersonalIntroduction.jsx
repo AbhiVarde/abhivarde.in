@@ -22,7 +22,7 @@ const PersonalIntroduction = () => {
         </div>
 
         <div className="relative z-10 flex flex-col p-4 sm:p-6">
-          <div className="text-white max-w-xl">
+          <div className="text-white max-w-lg">
             <motion.h2
               className="font-medium uppercase tracking-wider flex items-center text-sm sm:text-base"
               initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,7 @@ const PersonalIntroduction = () => {
           </div>
 
           <motion.div
-            className="mt-auto pt-8 sm:pt-10 max-w-xl"
+            className="mt-auto pt-8 sm:pt-10 max-w-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
