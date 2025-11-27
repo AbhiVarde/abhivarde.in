@@ -3,12 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  LuExternalLink,
-  LuCode,
-  LuChevronLeft,
-  LuChevronRight,
-} from "react-icons/lu";
+import { LuExternalLink, LuCode } from "react-icons/lu";
 import projects from "@/app/content/projects";
 
 const ProjectShowcase = () => {
@@ -37,18 +32,6 @@ const ProjectShowcase = () => {
       setCurrentIndex(newIndex);
       setIsTransitioning(false);
     }, 150);
-  };
-
-  const nextSlide = () => {
-    changeSlide((currentIndex + 1) % (projects.length + 1));
-    pauseAutoplay();
-  };
-
-  const prevSlide = () => {
-    changeSlide(
-      (currentIndex - 1 + (projects.length + 1)) % (projects.length + 1)
-    );
-    pauseAutoplay();
   };
 
   const goToSlide = (index) => {
@@ -115,20 +98,6 @@ const ProjectShowcase = () => {
             </div>
           )}
         </div>
-
-        <button
-          onClick={prevSlide}
-          className="hidden sm:flex absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full items-center justify-center text-white hover:bg-white/20 transition z-10"
-        >
-          <LuChevronLeft size={18} />
-        </button>
-
-        <button
-          onClick={nextSlide}
-          className="hidden sm:flex absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full items-center justify-center text-white hover:bg-white/20 transition z-10"
-        >
-          <LuChevronRight size={18} />
-        </button>
       </div>
 
       <div className="flex justify-center gap-2 mt-6">
