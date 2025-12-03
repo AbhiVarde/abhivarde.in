@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import headerNavLinks from "@/app/content/headerNavLinks";
@@ -11,6 +11,8 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selected, setSelected] = useState(pathname);
+  const [pillStyle, setPillStyle] = useState({});
+  const navRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,16 +27,32 @@ const Navbar = () => {
     setSelected(pathname);
   }, [pathname]);
 
+  useEffect(() => {
+    if (!navRef.current) return;
+
+    const activeButton = navRef.current.querySelector(
+      `[data-nav-item="${selected}"]`
+    );
+
+    if (activeButton) {
+      const { offsetLeft, offsetWidth } = activeButton;
+      setPillStyle({
+        left: offsetLeft,
+        width: offsetWidth,
+      });
+    }
+  }, [selected]);
+
   return (
-    <header className="fixed w-full top-0 z-40 flex justify-center">
+    <header className="fixed w-full top-0 z-40 flex justify-center px-4">
       <motion.nav
-        className="px-4 py-3 w-full max-w-5xl shadow-lg border border-[#333] rounded-3xl mt-3 mx-3 md:mt-4 lg:mt-5 overflow-hidden"
+        className="px-4 py-2 w-full max-w-5xl shadow-lg border border-[#333] rounded-3xl overflow-hidden"
         animate={{
           backgroundColor: isScrolled
             ? "rgba(0, 0, 0, 0.8)"
             : "rgba(0, 0, 0, 0.2)",
           backdropFilter: isScrolled ? "blur(12px)" : "blur(8px)",
-          margin: isScrolled ? "8px 12px" : "20px 12px",
+          marginTop: isScrolled ? "8px" : "20px",
         }}
         transition={{ duration: 0.15, easing: "linear" }}
       >
@@ -75,11 +93,26 @@ const Navbar = () => {
             </button>
           </div>
 
-          <ul className="hidden md:flex gap-4">
+          <ul ref={navRef} className="hidden md:flex gap-4 relative">
+            {pillStyle.width && (
+              <motion.span
+                className="absolute bg-[#F4F0E6] rounded-xl h-9 top-[50%] -translate-y-1/2 z-0"
+                animate={{
+                  left: pillStyle.left,
+                  width: pillStyle.width,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 350,
+                  damping: 30,
+                }}
+              />
+            )}
             {headerNavLinks.map((navLink, index) => (
               <li key={index}>
                 <Link href={navLink.url}>
                   <button
+                    data-nav-item={navLink.url}
                     onClick={() => setSelected(navLink.url)}
                     className="relative px-3 py-2 rounded-lg tracking-wider font-normal"
                   >
@@ -90,16 +123,6 @@ const Navbar = () => {
                     >
                       {navLink.title}
                     </span>
-                    {selected === navLink.url && (
-                      <motion.span
-                        layoutId="navbar-pill"
-                        className="absolute inset-0 bg-[#F4F0E6] rounded-lg"
-                        transition={{
-                          duration: 0.2,
-                          easing: "ease-in-out",
-                        }}
-                      />
-                    )}
                   </button>
                 </Link>
               </li>

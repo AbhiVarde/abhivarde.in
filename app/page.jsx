@@ -67,7 +67,7 @@ export default function About() {
   }, []);
 
   return (
-    <main className="max-w-5xl mx-auto px-5 pt-16 md:pt-18 lg:pt-20">
+    <main className="max-w-5xl mx-auto px-5 pt-16 md:pt-18">
       <div
         className="transition-opacity duration-300"
         style={{ opacity: showSections[0] ? 1 : 0 }}

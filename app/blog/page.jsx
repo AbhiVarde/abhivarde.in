@@ -10,7 +10,7 @@ export const metadata = {
 
 const Blog = () => {
   return (
-    <div className="max-w-5xl mx-auto px-4 pt-16 md:pt-18 lg:pt-20">
+    <div className="max-w-5xl mx-auto px-4 pt-16 md:pt-18">
       <div className="mt-6 sm:mt-10">
         <div className="mt-4 mb-2 sm:mb-4 md:mb-6 flex space-x-3 items-center">
           <div className="bg-[#FF3B00] p-2 rounded-lg">
