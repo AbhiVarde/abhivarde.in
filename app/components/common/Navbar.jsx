@@ -37,6 +37,7 @@ const Navbar = () => {
   return (
     <motion.header className="fixed w-full top-0 z-40 flex justify-center">
       <motion.nav
+        initial={false}
         className="px-4 py-3 w-full max-w-5xl shadow-lg border border-[#333] rounded-3xl mt-3 mx-3 md:mt-4 lg:mt-5 overflow-hidden"
         variants={navVariants}
         animate={isScrolled ? "scroll" : "top"}
