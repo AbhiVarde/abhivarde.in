@@ -4,44 +4,39 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import headerNavLinks from "@/app/content/headerNavLinks";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { motion } from "motion/react";
 
 const Navbar = () => {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selected, setSelected] = useState(pathname);
-  const { scrollY } = useScroll();
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsScrolled(latest > 20);
-  });
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     setSelected(pathname);
   }, [pathname]);
 
-  const navVariants = {
-    top: {
-      backgroundColor: "rgba(0, 0, 0, 0.2)",
-      backdropFilter: "blur(8px)",
-      margin: "20px 12px",
-    },
-    scroll: {
-      backgroundColor: "rgba(0, 0, 0, 0.8)",
-      backdropFilter: "blur(12px)",
-      margin: "8px 12px",
-    },
-  };
-
   return (
-    <motion.header className="fixed w-full top-0 z-40 flex justify-center">
+    <header className="fixed w-full top-0 z-40 flex justify-center">
       <motion.nav
-        initial={false}
         className="px-4 py-3 w-full max-w-5xl shadow-lg border border-[#333] rounded-3xl mt-3 mx-3 md:mt-4 lg:mt-5 overflow-hidden"
-        variants={navVariants}
-        animate={isScrolled ? "scroll" : "top"}
-        transition={{ duration: 0.15, ease: "linear" }}
+        animate={{
+          backgroundColor: isScrolled
+            ? "rgba(0, 0, 0, 0.8)"
+            : "rgba(0, 0, 0, 0.2)",
+          backdropFilter: isScrolled ? "blur(12px)" : "blur(8px)",
+          margin: isScrolled ? "8px 12px" : "20px 12px",
+        }}
+        transition={{ duration: 0.15, easing: "linear" }}
       >
         <div className="flex justify-between items-center">
           <div className="flex space-x-2">
@@ -99,11 +94,9 @@ const Navbar = () => {
                       <motion.span
                         layoutId="navbar-pill"
                         className="absolute inset-0 bg-[#F4F0E6] rounded-lg"
-                        initial={false}
                         transition={{
-                          type: "tween",
                           duration: 0.2,
-                          ease: "easeInOut",
+                          easing: "ease-in-out",
                         }}
                       />
                     )}
@@ -149,7 +142,7 @@ const Navbar = () => {
           </div>
         </div>
       </motion.nav>
-    </motion.header>
+    </header>
   );
 };
 

@@ -2,16 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import splitStrUsingRegex from "../../utils/splitStrUsingRegex";
-import { motion } from "framer-motion";
-
-const charVariants = {
-  hidden: { opacity: 0, filter: "blur(8px)" },
-  reveal: {
-    opacity: 1,
-    filter: "blur(0px)",
-    transition: { duration: 0.5 },
-  },
-};
+import { motion } from "motion/react";
 
 const TextReveal = ({ text }) => {
   const [isMounted, setIsMounted] = useState(false);
@@ -22,17 +13,25 @@ const TextReveal = ({ text }) => {
   }, []);
 
   return (
-    <motion.span
-      initial="hidden"
-      animate={isMounted ? "reveal" : ""}
-      transition={{ staggerChildren: 0.015 }}
-    >
+    <span>
       {splitText.map((char, index) => (
-        <motion.span key={index} variants={charVariants}>
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, filter: "blur(8px)" }}
+          animate={
+            isMounted
+              ? { opacity: 1, filter: "blur(0px)" }
+              : { opacity: 0, filter: "blur(8px)" }
+          }
+          transition={{
+            duration: 0.5,
+            delay: index * 0.015,
+          }}
+        >
           {char}
         </motion.span>
       ))}
-    </motion.span>
+    </span>
   );
 };
 

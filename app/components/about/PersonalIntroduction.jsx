@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { LuGlobe, LuRocket } from "react-icons/lu";
 import HeroImage from "../../resources/images/me.png";
 
@@ -39,7 +39,7 @@ const PersonalIntroduction = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Hey, I’m Abhi
+              Hey, I'm Abhi
               <span className="animate-wave inline-block ml-2">👋</span>
             </motion.h1>
 

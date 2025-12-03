@@ -2,69 +2,67 @@
 
 import Link from "next/link";
 import { TbHome } from "react-icons/tb";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
+import { stagger } from "motion";
+import { useEffect, useRef } from "react";
 
 function NotFoundPage() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.1,
-      },
-    },
-  };
+  const containerRef = useRef(null);
 
-  const itemVariants = {
-    hidden: { y: 10, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.4 },
-    },
-  };
+  useEffect(() => {
+    if (containerRef.current) {
+      const items = containerRef.current.querySelectorAll(".animate-item");
+      stagger(items, {
+        delay: 0.1,
+        from: 0,
+      });
+    }
+  }, []);
 
   return (
     <div className="min-h-screen text-white flex flex-col items-center justify-center p-4 overflow-hidden">
-      {/* Background stars - minimal version */}
       <div className="absolute inset-0 z-0">
         <div className="stars"></div>
       </div>
 
-      <motion.div
+      <div
+        ref={containerRef}
         className="relative z-10 max-w-xl w-full flex flex-col items-center"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
       >
-        {/* Status Code */}
-        <motion.div className="relative" variants={itemVariants}>
+        <motion.div
+          className="relative animate-item"
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+        >
           <h1 className="text-8xl md:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FF3B00] to-white">
             404
           </h1>
         </motion.div>
 
-        {/* Message */}
         <motion.h2
-          className="mt-4 text-xl md:text-2xl font-semibold text-white text-center"
-          variants={itemVariants}
+          className="mt-4 text-xl md:text-2xl font-semibold text-white text-center animate-item"
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
         >
           Page Not Found
         </motion.h2>
 
-        {/* Short message */}
         <motion.p
-          className="mt-2 text-gray-300 text-center max-w-sm"
-          variants={itemVariants}
+          className="mt-2 text-gray-300 text-center max-w-sm animate-item"
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.4 }}
         >
           The page you're looking for doesn't exist.
         </motion.p>
 
-        {/* Button */}
         <motion.div
-          className="mt-8"
-          variants={itemVariants}
+          className="mt-8 animate-item"
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.5 }}
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
         >
@@ -72,7 +70,7 @@ function NotFoundPage() {
             href="/"
             className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-r from-[#FF3B00] to-[#FF7A00] p-0.5 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-[#FF3B00]"
           >
-            <span className="relative rounded-md bg-gradient-to-r from-[#FF3B00] to-[#FF7A00]  px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 flex items-center">
+            <span className="relative rounded-md bg-gradient-to-r from-[#FF3B00] to-[#FF7A00] px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 flex items-center">
               Return Home
               <span className="ml-2">
                 <TbHome size={16} />
@@ -80,9 +78,8 @@ function NotFoundPage() {
             </span>
           </Link>
         </motion.div>
-      </motion.div>
+      </div>
 
-      {/* Add simplified star styles */}
       <style jsx global>{`
         .stars {
           position: absolute;
@@ -106,7 +103,6 @@ function NotFoundPage() {
   );
 }
 
-// Simplified star generator
 function generateStars(count) {
   let stars = "";
   for (let i = 0; i < count; i++) {
