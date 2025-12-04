@@ -14,13 +14,12 @@ const Projects = () => {
           key={i}
           className="group flex flex-col mt-6 space-y-8 rounded-3xl border border-[#333] bg-[#111] p-4 md:h-48 md:flex-row md:space-y-0 md:space-x-8"
         >
-          <div className="overflow-hidden rounded-xl md:w-72">
-            <div className="relative h-full w-full overflow-hidden">
+          <div className="overflow-hidden rounded-xl md:w-72 aspect-[4/3]">
+            <div className="relative w-full h-full overflow-hidden">
               <Image
                 src={project.image}
                 alt="image"
                 fill
-                loading="eager"
                 className="object-cover rounded-xl transition-transform duration-300 ease-out will-change-transform group-hover:scale-[1.06]"
               />
             </div>
