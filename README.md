@@ -2,6 +2,8 @@
 
 # abhivarde.in
 
+![GitHub Repo Views](https://gitviews.com/repo/AbhiVarde/abhivarde.in.svg)
+
 - **Library**: [React](https://react.dev/)
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Deployment**: [Vercel](https://vercel.com)
