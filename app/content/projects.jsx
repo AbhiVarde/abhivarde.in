@@ -6,6 +6,14 @@ import Sendra from "../resources/images/project/sendra.webp";
 
 const projects = [
   {
+    image: SyncUI,
+    title: "Sync UI",
+    description:
+      "A sleek UI library for Design Engineers, offering beautifully designed components and templates built with MUI and Motion (motion/react).",
+    githubLink: "https://github.com/AbhiVarde/syncui",
+    url: "https://syncui.design",
+  },
+  {
     image: Sendra,
     title: "Sendra",
     description:
@@ -28,14 +36,6 @@ const projects = [
       "Manage and track side project ideas with React, built using the full Appwrite stack and Lingo.dev for multilingual support.",
     url: "https://idea-tracker-v2.appwrite.network/",
     githubLink: "https://github.com/AbhiVarde/Idea-tracker",
-  },
-  {
-    image: SyncUI,
-    title: "Sync UI",
-    description:
-      "A UI library with animated MUI components and premium templates. Built with Next.js, React, MUI, Framer Motion.",
-    githubLink: "https://github.com/AbhiVarde/syncui",
-    url: "https://syncui.design",
   },
   {
     image: Tracker,
