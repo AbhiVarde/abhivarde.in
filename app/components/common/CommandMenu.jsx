@@ -61,12 +61,12 @@ const CommandMenu = ({ open, onOpenChange }) => {
       onClick={() => onOpenChange(false)}
     >
       <Command
-        className="w-[32rem] max-w-[90vw] bg-[#111111] border border-[#333] rounded-3xl overflow-hidden shadow-2xl"
+        className="w-lg max-w-[90vw] bg-[#111111] border border-[#333] rounded-3xl overflow-hidden shadow-2xl"
         onClick={(e) => e.stopPropagation()}
         shouldFilter={true}
       >
         <div className="flex items-center gap-2 p-4 border-b border-[#333]">
-          <LuSearch className="w-5 h-5 text-white flex-shrink-0" />
+          <LuSearch className="w-5 h-5 text-white shrink-0" />
           <Command.Input
             value={search}
             onValueChange={setSearch}
@@ -85,7 +85,7 @@ const CommandMenu = ({ open, onOpenChange }) => {
 
           <Command.Group
             heading="Pages"
-            className="mb-4 [&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:pt-3 [&_[cmdk-group-heading]]:pb-2 [&_[cmdk-group-heading]]:text-sm [&_[cmdk-group-heading]]:text-white/60"
+            className="mb-4 **:[[cmdk-group-heading]]:px-3 **:[[cmdk-group-heading]]:pt-3 **:[[cmdk-group-heading]]:pb-2 **:[[cmdk-group-heading]]:text-sm **:[[cmdk-group-heading]]:text-white/60"
           >
             {pages.map((page) => (
               <Command.Item
@@ -109,7 +109,7 @@ const CommandMenu = ({ open, onOpenChange }) => {
 
           <Command.Group
             heading="Socials"
-            className="[&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:pt-3 [&_[cmdk-group-heading]]:pb-2 [&_[cmdk-group-heading]]:text-sm [&_[cmdk-group-heading]]:text-white/60"
+            className="**:[[cmdk-group-heading]]:px-3 **:[[cmdk-group-heading]]:pt-3 **:[[cmdk-group-heading]]:pb-2 **:[[cmdk-group-heading]]:text-sm **:[[cmdk-group-heading]]:text-white/60"
           >
             {socialLinks.map((social) => (
               <Command.Item

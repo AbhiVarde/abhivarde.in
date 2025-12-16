@@ -18,7 +18,7 @@ const PersonalIntroduction = () => {
             style={{ objectFit: "cover" }}
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"></div>
+          <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/30 to-black/50"></div>
         </div>
 
         <div className="relative z-10 flex flex-col p-4 sm:p-6">

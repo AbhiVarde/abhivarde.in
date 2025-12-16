@@ -1,9 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-25% - 0.25rem));
+  }
+}
 
 * {
   scroll-behavior: smooth !important;
+}
+
+.animate-scroll {
+  animation: scroll 8s linear infinite;
+}
+
+.animate-scroll-reverse {
+  animation: scroll 8s linear reverse infinite;
 }
 
 .animate-wave {

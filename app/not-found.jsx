@@ -35,7 +35,7 @@ function NotFoundPage() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.2 }}
         >
-          <h1 className="text-8xl md:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FF3B00] to-white">
+          <h1 className="text-8xl md:text-9xl font-bold text-transparent bg-clip-text bg-linear-to-r from-[#FF3B00] to-white">
             404
           </h1>
         </motion.div>
@@ -68,9 +68,9 @@ function NotFoundPage() {
         >
           <Link
             href="/"
-            className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-r from-[#FF3B00] to-[#FF7A00] p-0.5 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-[#FF3B00]"
+            className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-linear-to-r from-[#FF3B00] to-[#FF7A00] p-0.5 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-[#FF3B00]"
           >
-            <span className="relative rounded-md bg-gradient-to-r from-[#FF3B00] to-[#FF7A00] px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 flex items-center">
+            <span className="relative rounded-md bg-linear-to-r from-[#FF3B00] to-[#FF7A00] px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 flex items-center">
               Return Home
               <span className="ml-2">
                 <TbHome size={16} />

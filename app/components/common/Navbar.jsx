@@ -114,7 +114,7 @@ const Navbar = () => {
                   <button
                     data-nav-item={navLink.url}
                     onClick={() => setSelected(navLink.url)}
-                    className="relative px-3 py-2 rounded-lg tracking-wider font-normal"
+                    className="relative px-3 py-2 rounded-lg tracking-wider cursor-pointer font-normal"
                   >
                     <span
                       className={`relative z-10 transition-colors duration-150 ${

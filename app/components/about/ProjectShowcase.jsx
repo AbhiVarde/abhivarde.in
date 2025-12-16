@@ -43,7 +43,7 @@ const ProjectShowcase = () => {
 
   return (
     <div className="relative max-w-6xl mx-auto mt-8">
-      <div className="relative h-[300px] sm:h-[450px] overflow-hidden border border-white/20 rounded-3xl bg-black">
+      <div className="relative h-75 sm:h-112.5 overflow-hidden border border-white/20 rounded-3xl bg-black">
         <div
           className="absolute inset-0 transition-opacity duration-300"
           style={{ opacity: isTransitioning ? 0 : 1 }}
@@ -57,7 +57,7 @@ const ProjectShowcase = () => {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70" />
+              <div className="absolute inset-0 bg-linear-to-b from-black/20 via-black/40 to-black/70" />
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
                 <h2 className="text-xl sm:text-2xl font-medium mb-3 tracking-tight">
                   {projects[currentIndex].title}

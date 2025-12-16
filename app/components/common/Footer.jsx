@@ -12,7 +12,7 @@ import Vercel from "../../../public/vercel.svg";
 const Footer = () => {
   return (
     <footer className="relative mx-auto mt-14 mb-8 sm:mb-12 max-w-5xl px-4 sm:px-6 lg:px-8">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#FF3B00] to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#FF3B00] to-transparent" />
 
       <div className="py-8 sm:py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex flex-col items-center md:items-start">

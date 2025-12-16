@@ -63,7 +63,7 @@ const ProfessionalSummary = ({ works, skills }) => {
               {skills?.map((skill, i) => (
                 <div
                   key={i}
-                  className="flex flex-shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md shadow-sm border"
+                  className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md shadow-sm border"
                 >
                   <Image
                     src={skill.image}
@@ -82,7 +82,7 @@ const ProfessionalSummary = ({ works, skills }) => {
               {skills?.slice(0, 6).map((skill, i) => (
                 <div
                   key={i}
-                  className="flex flex-shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md shadow-sm border"
+                  className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md shadow-sm border"
                 >
                   <Image
                     src={skill.image}
@@ -97,11 +97,11 @@ const ProfessionalSummary = ({ works, skills }) => {
             </div>
           </div>
           <div className="mt-2 overflow-hidden flex sm:hidden lg:flex">
-            <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-scrollReverse">
+            <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-scroll-reverse">
               {skills?.slice(6, 12).map((skill, i) => (
                 <div
                   key={i}
-                  className="flex flex-shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md shadow-sm border"
+                  className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md shadow-sm border"
                 >
                   <Image
                     src={skill.image}
@@ -120,7 +120,7 @@ const ProfessionalSummary = ({ works, skills }) => {
               {skills?.slice(12).map((skill, i) => (
                 <div
                   key={i}
-                  className="flex flex-shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md shadow-sm border"
+                  className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md shadow-sm border"
                 >
                   <Image
                     src={skill.image}

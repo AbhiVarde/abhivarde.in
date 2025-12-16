@@ -27,7 +27,7 @@ const OverviewSection = () => {
             My Developer Space
           </div>
 
-          <div className="mt-4 flex-grow">
+          <div className="mt-4 grow">
             <p className="text-base sm:text-lg tracking-wide leading-relaxed mb-4">
               I build modern tools for developers and explore ideas that make
               engineering simpler, faster, and more enjoyable.
@@ -43,7 +43,7 @@ const OverviewSection = () => {
           </button>
         </div>
 
-        <div className="group p-4 sm:p-6 border border-[#333] rounded-3xl bg-[#111] relative overflow-hidden shadow-2xl min-h-[300px]">
+        <div className="group p-4 sm:p-6 border border-[#333] rounded-3xl bg-[#111] relative overflow-hidden shadow-2xl min-h-75">
           <div className="absolute inset-0">
             {!isVideoLoaded && (
               <Image
@@ -69,7 +69,7 @@ const OverviewSection = () => {
               onLoadedData={() => setIsVideoLoaded(true)}
             />
 
-            <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-70"></div>
+            <div className="absolute inset-0 bg-linear-to-r from-black to-transparent opacity-70"></div>
           </div>
 
           <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white z-10">

@@ -15,7 +15,7 @@ const Blogs = () => {
           href={blog.url}
           className="group relative rounded-3xl overflow-hidden border border-[#333] bg-[#111]"
         >
-          <div className="relative w-full h-[240px] overflow-hidden">
+          <div className="relative w-full h-60 overflow-hidden">
             <Image
               src={blog.image}
               alt={blog.title}
