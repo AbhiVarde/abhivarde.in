@@ -13,6 +13,7 @@ const Navbar = () => {
   const [selected, setSelected] = useState(pathname);
   const [pillStyle, setPillStyle] = useState({});
   const navRef = useRef(null);
+  const menuRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,9 +44,34 @@ const Navbar = () => {
     }
   }, [selected]);
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const handleScroll = () => {
+      setIsMobileMenuOpen(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isMobileMenuOpen]);
+
   return (
     <header className="fixed w-full top-0 z-40 flex justify-center px-4">
       <motion.nav
+        ref={menuRef}
         className="px-4 py-2 w-full max-w-5xl shadow-lg border border-[#333] rounded-3xl overflow-hidden"
         animate={{
           backgroundColor: isScrolled
