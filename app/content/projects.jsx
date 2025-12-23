@@ -1,10 +1,17 @@
-import Tracker from "../resources/images/project/tracker.webp";
 import SyncUI from "../resources/images/project/syncui.webp";
 import IdeaTracker from "../resources/images/project/ideatracker.webp";
 import ErrExplain from "../resources/images/project/errexplain.webp";
 import Sendra from "../resources/images/project/sendra.webp";
+import Drawer from "../resources/images/project/drawer.webp";
 
 const projects = [
+  {
+    image: Drawer,
+    title: "Svelte Drawer",
+    description: "A drawer component for Svelte 5, inspired by Vaul.",
+    githubLink: "https://github.com/AbhiVarde/svelte-drawer",
+    url: "https://drawer.abhivarde.in",
+  },
   {
     image: SyncUI,
     title: "Sync UI",
@@ -36,13 +43,6 @@ const projects = [
       "Manage and track side project ideas with React, built using the full Appwrite stack and Lingo.dev for multilingual support.",
     url: "https://idea-tracker-v2.appwrite.network/",
     githubLink: "https://github.com/AbhiVarde/Idea-tracker",
-  },
-  {
-    image: Tracker,
-    title: "SpaceX Launch Tracker",
-    description:
-      "A full-stack web application for tracking SpaceX launches, offering real-time updates on launch information and status.",
-    githubLink: "https://github.com/AbhiVarde/SpaceX-Launch-Tracker",
   },
 ];
 
