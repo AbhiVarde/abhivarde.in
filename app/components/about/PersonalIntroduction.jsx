@@ -70,15 +70,15 @@ const PersonalIntroduction = () => {
               </h2>
 
               <p className="mt-3 sm:hidden font-light leading-relaxed">
-                <span className="font-medium mr-1">90+ countries.</span>
-                <span className="font-medium">100+ GitHub stars.</span>
+                <span className="font-medium mr-1">100+ countries.</span>
+                <span className="font-medium">110+ GitHub stars.</span>
               </p>
 
               <p className="hidden sm:block mt-3 sm:mt-4 font-light leading-relaxed">
                 Reached developers in
-                <span className="font-medium mx-1">90+ countries</span> and
+                <span className="font-medium mx-1">100+ countries</span> and
                 earned
-                <span className="font-medium mx-1">100+ GitHub stars</span>
+                <span className="font-medium mx-1">110+ GitHub stars</span>
                 across my projects.
               </p>
             </div>

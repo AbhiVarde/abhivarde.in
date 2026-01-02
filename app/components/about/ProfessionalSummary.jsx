@@ -29,7 +29,7 @@ const ProfessionalSummary = ({ works, skills }) => {
                 alt={work.companyName}
                 width={48}
                 height={48}
-                className="h-12 w-12 object-cover bg-[#333] border border-[#333] bg-opacity-30 p-1 rounded-xl"
+                className="h-10 w-10 object-cover bg-[#333] border border-[#333] bg-opacity-30 p-1 rounded-xl"
               />
               <div className="flex w-full flex-col">
                 <p className="hidden sm:block font-medium">
