@@ -12,7 +12,7 @@ const OverviewSection = () => {
   const handleDownloadClick = () => {
     const link = document.createElement("a");
     link.href = "./abhivarde.pdf";
-    link.download = "AbhiVarde_CV.pdf";
+    link.download = "AbhiVarde_Resume.pdf";
     link.click();
   };
 
@@ -24,22 +24,22 @@ const OverviewSection = () => {
             <span className="bg-[#FF3B00] p-1.5 rounded-md">
               <VscVscode size={20} color="#FFFFFF" />
             </span>
-            My Developer Space
+            Design × Engineering
           </div>
 
           <div className="mt-4 grow">
             <p className="text-base sm:text-lg tracking-wide leading-relaxed mb-4">
-              I build modern tools for developers and explore ideas that make
-              engineering simpler, faster, and more enjoyable.
+              I design and build developer-first tools, focusing on thoughtful
+              UI, clean interactions, and polished web-native experiences.
             </p>
           </div>
 
           <button
             className="text-sm mt-3 bg-[#1a1a1a] border border-[#333] px-4 py-2 rounded-xl hover:bg-[#111111A0] transition-colors duration-300 ease-out will-change-transform active:scale-95"
             onClick={handleDownloadClick}
-            title="Download CV"
+            title="Download Resume"
           >
-            Download CV
+            Download Resume
           </button>
         </div>
 
