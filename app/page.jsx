@@ -26,23 +26,23 @@ export default function About() {
         " / __ \\| \\_\\ \\   Y  \\  |\\   /  / __ \\|  | \\/ /_/ \\  ___/     |  |   |  \\\n" +
         "(____  /___  /___|  /__| \\_/  (____  /__|  \\____ |\\___  > /\\ |__|___|  /\n" +
         "     \\/    \\/     \\/               \\/           \\/    \\/  \\/         \\/ \n",
-      "color: #ffffff; font-family: monospace; font-size: 11px; font-weight: bold;"
+      "color: #ffffff; font-family: monospace; font-size: 11px; font-weight: bold;",
     );
 
     console.log(
-      "%c🚀 Sync UI: loved by developers in 80+ countries\n" +
+      "%c🚀 Sync UI: loved by developers in 100+ countries\n" +
         "⭐️ 85+ stars and growing fast\n" +
         "🔗 Explore: https://syncui.design\n\n" +
         "💬 Like my work? Share your thoughts → https://abhivarde.in/guestbook\n" +
         "❤️ I'd love to connect and build great products together.",
-      "color: #ffffff; font-family: monospace; font-size: 12px; font-weight: bold;"
+      "color: #ffffff; font-family: monospace; font-size: 12px; font-weight: bold;",
     );
 
     const timers = [
       setTimeout(() => setShowSections((prev) => [true, ...prev.slice(1)]), 50),
       setTimeout(
         () => setShowSections((prev) => [prev[0], true, ...prev.slice(2)]),
-        150
+        150,
       ),
       setTimeout(
         () =>
@@ -51,15 +51,15 @@ export default function About() {
             true,
             ...prev.slice(3),
           ]),
-        250
+        250,
       ),
       setTimeout(
         () => setShowSections((prev) => [...prev.slice(0, 3), true, prev[4]]),
-        350
+        350,
       ),
       setTimeout(
         () => setShowSections((prev) => [...prev.slice(0, 4), true]),
-        450
+        450,
       ),
     ];
 

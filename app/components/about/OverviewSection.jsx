@@ -11,7 +11,7 @@ const OverviewSection = () => {
 
   const handleDownloadClick = () => {
     const link = document.createElement("a");
-    link.href = "./abhivarde.pdf";
+    link.href = "./AbhiVarde_Resume.pdf";
     link.download = "AbhiVarde_Resume.pdf";
     link.click();
   };
@@ -19,18 +19,19 @@ const OverviewSection = () => {
   return (
     <div className="mt-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="p-4 sm:p-6 border border-[#333] rounded-3xl bg-[#111] text-white shadow-2xl flex flex-col">
+        <div className="p-4 sm:p-6 min-h-64 md:min-h-auto border border-[#333] rounded-3xl bg-[#111] text-white shadow-2xl flex flex-col">
           <div className="uppercase tracking-wider flex gap-2 items-center text-sm sm:text-base">
             <span className="bg-[#FF3B00] p-1.5 rounded-md">
               <VscVscode size={20} color="#FFFFFF" />
             </span>
-            Design × Engineering
+            Product × Engineering
           </div>
 
           <div className="mt-4 grow">
-            <p className="text-base sm:text-lg tracking-wide leading-relaxed mb-4">
+            <p className="text-base md:text-lg tracking-normal leading-relaxed mb-4">
               I design and build developer-first tools, focusing on thoughtful
-              UI, clean interactions, and polished web-native experiences.
+              UI, clean interactions, and polished, performant web-native
+              experiences.
             </p>
           </div>
 

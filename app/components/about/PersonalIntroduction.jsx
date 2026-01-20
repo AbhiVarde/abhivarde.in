@@ -49,11 +49,8 @@ const PersonalIntroduction = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              I build
-              <span className="italic mx-1 font-medium">
-                developer tools and UI kits
-              </span>
-              crafting products that are simple, fast, and thoughtful.
+              I build developer tools and UI kits crafting products that are
+              simple, fast, and thoughtful.
             </motion.p>
           </div>
 
@@ -71,14 +68,14 @@ const PersonalIntroduction = () => {
 
               <p className="mt-3 sm:hidden font-light leading-relaxed">
                 <span className="font-medium mr-1">100+ countries.</span>
-                <span className="font-medium">110+ GitHub stars.</span>
+                <span className="font-medium">120+ GitHub stars.</span>
               </p>
 
               <p className="hidden sm:block mt-3 sm:mt-4 font-light leading-relaxed">
                 Reached developers in
                 <span className="font-medium mx-1">100+ countries</span> and
                 earned
-                <span className="font-medium mx-1">110+ GitHub stars</span>
+                <span className="font-medium mx-1">120+ GitHub stars</span>
                 across my projects.
               </p>
             </div>

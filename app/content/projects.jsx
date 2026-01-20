@@ -3,22 +3,22 @@ import IdeaTracker from "../resources/images/project/ideatracker.webp";
 import ErrExplain from "../resources/images/project/errexplain.webp";
 import Sendra from "../resources/images/project/sendra.webp";
 import Drawer from "../resources/images/project/drawer.webp";
+import Nothify from "../resources/images/project/nothify.webp";
 
 const projects = [
+  {
+    image: Nothify,
+    title: "Nothify",
+    description:
+      "Autonomous 404 page generator for Next.js. Paste a GitHub repo, detect routing & stack, preview instantly, and generate code or PRs automatically.",
+    url: "https://nothify.abhivarde.in",
+  },
   {
     image: Drawer,
     title: "Svelte Drawer",
     description: "A drawer component for Svelte 5, inspired by Vaul.",
     githubLink: "https://github.com/AbhiVarde/svelte-drawer",
     url: "https://drawer.abhivarde.in",
-  },
-  {
-    image: SyncUI,
-    title: "Sync UI",
-    description:
-      "A sleek UI library for Design Engineers, offering beautifully designed components and templates built with MUI and Motion (motion/react).",
-    githubLink: "https://github.com/AbhiVarde/syncui",
-    url: "https://syncui.design",
   },
   {
     image: Sendra,
@@ -43,6 +43,14 @@ const projects = [
       "Manage and track side project ideas with React, built using the full Appwrite stack and Lingo.dev for multilingual support.",
     url: "https://idea-tracker-v2.appwrite.network/",
     githubLink: "https://github.com/AbhiVarde/Idea-tracker",
+  },
+  {
+    image: SyncUI,
+    title: "Sync UI",
+    description:
+      "A sleek UI library for Design Engineers, offering beautifully designed components and templates built with MUI and Motion (motion/react).",
+    githubLink: "https://github.com/AbhiVarde/syncui",
+    url: "https://syncui.design",
   },
 ];
 
