@@ -3,8 +3,15 @@ import IdeaTracker from "../resources/images/blog/idea-tracker.webp";
 import SyncUI from "../resources/images/blog/syncui.webp";
 import ErrExplain from "../resources/images/project/errexplain.webp";
 import Sendra from "../resources/images/project/sendra.webp";
+import Nothify from "../resources/images/blog/nothify.webp";
 
 const blogs = [
+  {
+    image: Nothify,
+    title:
+      "I Built an AI Agent That Fixes One of the Most Ignored Parts of Next.js Apps",
+    url: "https://dev.to/abhivarde/i-built-an-ai-agent-that-fixes-one-of-the-most-ignored-parts-of-nextjs-apps-54aa",
+  },
   {
     image: Sendra,
     title:
