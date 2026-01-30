@@ -27,18 +27,25 @@ export default function ProjectShowcase() {
               {project.title}
             </h2>
 
-            <p className="text-xs sm:text-sm leading-relaxed max-w-md transition-all duration-500">
-              {project.description}
+            <p className="sm:text-sm leading-relaxed max-w-md transition-all duration-500">
+              <span className="block sm:hidden">
+                {project.shortDescription}
+              </span>
+              <span className="hidden sm:block">{project.description}</span>
             </p>
 
             <Link
               href={project.url || project.githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 text-sm text-white hover:opacity-80 transition-opacity w-fit"
+              className="hidden sm:inline-flex items-center gap-1.5 font-medium hover:opacity-80 transition-opacity w-fit group"
+              style={{ color: "#ff3800" }}
             >
               Open Project
-              <LuArrowUpRight size={15} />
+              <LuArrowUpRight
+                size={19}
+                className="transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1"
+              />
             </Link>
           </div>
 
