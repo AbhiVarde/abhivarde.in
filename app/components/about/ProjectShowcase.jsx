@@ -8,15 +8,37 @@ import projects from "@/app/content/projects";
 
 export default function ProjectShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
   const project = projects[currentIndex];
 
   useEffect(() => {
     const timer = setInterval(
       () => setCurrentIndex((i) => (i + 1) % projects.length),
-      4000,
+      3000,
     );
     return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 1024);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const imageContent = (
+    <Image
+      src={project.image}
+      alt={project.title}
+      width={800}
+      height={500}
+      priority
+      className="object-contain rounded-2xl w-full h-auto transition-transform duration-300"
+    />
+  );
 
   return (
     <section className="max-w-6xl mx-auto mt-8">
@@ -27,7 +49,7 @@ export default function ProjectShowcase() {
               {project.title}
             </h2>
 
-            <p className="sm:text-sm leading-relaxed max-w-md transition-all duration-500">
+            <p className="sm:text-sm leading-relaxed sm:max-w-md transition-all duration-500">
               <span className="block sm:hidden">
                 {project.shortDescription}
               </span>
@@ -50,24 +72,19 @@ export default function ProjectShowcase() {
           </div>
 
           <div className="lg:col-span-8 relative w-full">
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={800}
-              height={500}
-              priority
-              className="object-contain rounded-2xl w-full h-auto"
-            />
+            {isSmallScreen ? (
+              <Link
+                href={project.url || project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full"
+              >
+                {imageContent}
+              </Link>
+            ) : (
+              <div>{imageContent}</div>
+            )}
           </div>
-
-          <Link
-            href={project.url || project.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute top-3 right-3 text-white/80 hover:text-white transition lg:hidden"
-          >
-            <LuArrowUpRight size={18} />
-          </Link>
         </div>
       </div>
     </section>
