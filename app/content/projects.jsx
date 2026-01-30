@@ -4,19 +4,28 @@ import ErrExplain from "../resources/images/project/errexplain.webp";
 import Sendra from "../resources/images/project/sendra.webp";
 import Drawer from "../resources/images/project/drawer.webp";
 import Nothify from "../resources/images/project/nothify.webp";
+import Billow from "../resources/images/project/billow.webp";
 
 const projects = [
+  {
+    image: Billow,
+    title: "Billow",
+    description:
+      "Billow is a lightweight SaaS that helps Indian businesses generate GST-compliant sales invoices quickly and accurately, without relying on complex accounting software.",
+    url: "https://billow.abhivarde.in",
+  },
   {
     image: Nothify,
     title: "Nothify",
     description:
-      "Autonomous 404 page generator for Next.js. Paste a GitHub repo, detect routing & stack, preview instantly, and generate code or PRs automatically.",
+      "Nothify is an AI-powered automation agent that analyzes Next.js repositories, generates stack-aware 404 pages, and automatically opens GitHub pull requests with zero setup.",
     url: "https://nothify.abhivarde.in",
   },
   {
     image: Drawer,
     title: "Svelte Drawer",
-    description: "A drawer component for Svelte 5, inspired by Vaul.",
+    description:
+      "Svelte Drawer is a modern NPM package for Svelte 5 that provides an accessible, animated drawer component inspired by Vaul and built for smooth interactions.",
     githubLink: "https://github.com/AbhiVarde/svelte-drawer",
     url: "https://drawer.abhivarde.in",
   },
@@ -24,7 +33,7 @@ const projects = [
     image: Sendra,
     title: "Sendra",
     description:
-      "Monitors Appwrite Sites & Functions, sends instant failure alerts, and suggests AI-powered fixes - built with Appwrite, Resend, Vercel & Vercel AI SDK.",
+      "Sendra is a developer-focused monitoring tool that tracks Appwrite Sites and Functions, sends instant failure alerts, and suggests AI-powered fixes.",
     url: "https://sendra.vercel.app",
     githubLink: "https://github.com/AbhiVarde/sendra",
   },
@@ -32,7 +41,7 @@ const projects = [
     image: ErrExplain,
     title: "ErrExplain",
     description:
-      "Translate cryptic errors into plain English, built with Next.js, Vercel AI SDK, and Appwrite.",
+      "ErrExplain is a developer tool that converts cryptic runtime and build errors into clear, human-readable explanations for faster debugging.",
     url: "https://errexplain.appwrite.network/",
     githubLink: "https://github.com/AbhiVarde/ErrExplain",
   },
@@ -40,17 +49,9 @@ const projects = [
     image: IdeaTracker,
     title: "Idea Tracker",
     description:
-      "Manage and track side project ideas with React, built using the full Appwrite stack and Lingo.dev for multilingual support.",
+      "Idea Tracker is a productivity-focused SaaS that helps developers capture, organize, and manage side project ideas efficiently.",
     url: "https://idea-tracker-v2.appwrite.network/",
     githubLink: "https://github.com/AbhiVarde/Idea-tracker",
-  },
-  {
-    image: SyncUI,
-    title: "Sync UI",
-    description:
-      "A sleek UI library for Design Engineers, offering beautifully designed components and templates built with MUI and Motion (motion/react).",
-    githubLink: "https://github.com/AbhiVarde/syncui",
-    url: "https://syncui.design",
   },
 ];
 
