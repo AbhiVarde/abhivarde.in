@@ -55,7 +55,7 @@ const Projects = () => {
                 src={project.image}
                 alt="image"
                 fill
-                className="object-cover rounded-xl"
+                className="object-cover rounded-xl transition-transform duration-500 ease-out group-hover:scale-105"
               />
             </div>
           </div>

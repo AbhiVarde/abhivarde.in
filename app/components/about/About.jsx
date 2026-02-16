@@ -36,7 +36,7 @@ const About = () => {
           </div>
 
           <button
-            className="text-sm mt-3 bg-[#1a1a1a] border border-[#333] px-4 py-1.5 rounded-lg hover:bg-[#222] transition-colors"
+            className="cursor-pointer text-sm mt-3 bg-[#1a1a1a] border border-[#333] px-4 py-1.5 rounded-lg hover:bg-[#222] transition-colors"
             onClick={handleDownloadClick}
             title="Download Resume"
           >

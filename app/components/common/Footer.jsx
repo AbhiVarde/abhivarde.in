@@ -27,7 +27,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.name}
-                className="text-white hover:text-[#FF3B00] transition-colors duration-200 transform hover:scale-110"
+                className="text-white hover:text-[#FF3B00] transition-colors"
               >
                 {React.cloneElement(social.icon, { size: "1.25rem" })}
               </Link>
@@ -39,7 +39,7 @@ const Footer = () => {
           <h3 className="text-sm sm:text-base md:text-lg tracking-wider uppercase font-medium text-white mb-3 sm:mb-4">
             Powered By
           </h3>
-          <div className="flex flex-wrap justify-center md:justify-end gap-2 sm:gap-3">
+          <div className="flex flex-wrap justify-center md:justify-end gap-2">
             {[
               { name: "Next.js", logo: NextJS, url: "https://nextjs.org" },
               {
@@ -54,12 +54,12 @@ const Footer = () => {
                 href={tech.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center px-2 sm:px-3 py-1.5 sm:py-2 text-sm sm:text-base font-medium text-white rounded-xl bg-[#111111] hover:bg-[#222222] transition-all duration-200 border border-[#333] hover:border-[#FF3B00]"
+                className="flex items-center px-2.5 py-1 text-sm font-medium text-white rounded-lg bg-[#111111] hover:bg-[#1a1a1a] transition-colors border border-[#333] hover:border-[#444]"
               >
                 <Image
                   src={tech.logo}
                   alt={tech.name}
-                  className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2"
+                  className="w-3.5 h-3.5 mr-1.5"
                 />
                 {tech.name}
               </a>
@@ -69,19 +69,17 @@ const Footer = () => {
       </div>
 
       <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-[#333] flex flex-col sm:flex-row justify-between items-center">
-        <p className="text-white/80 mb-3 sm:mb-0 text-sm sm:text-base">
+        <p className="text-white/80 mb-3 sm:mb-0 text-sm">
           &copy; {new Date().getFullYear()} All rights reserved.
         </p>
         <Link
           href="https://twitter.com/varde_abhi"
-          className="inline-flex items-center space-x-1 text-white/85 hover:text-[#FF3B00] transition-colors duration-200 group"
+          className="inline-flex items-center space-x-1 text-white/85 hover:text-[#FF3B00] transition-colors group"
         >
-          <span className="text-sm sm:text-base">
-            Brought to you by Abhi Varde
-          </span>
+          <span className="text-sm">Brought to you by Abhi Varde</span>
           <GoArrowUpRight
-            size={16}
-            className="text-[#FF3B00] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"
+            size={14}
+            className="text-[#FF3B00] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
           />
         </Link>
       </div>

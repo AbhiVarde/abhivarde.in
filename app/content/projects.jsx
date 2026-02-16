@@ -59,6 +59,15 @@ const projects = [
     url: "https://idea-tracker-v2.appwrite.network/",
     githubLink: "https://github.com/AbhiVarde/Idea-tracker",
   },
+  {
+    image: SyncUI,
+    title: "Sync UI",
+    shortDescription: "React Component Library for Design Engineers",
+    description:
+      "A sleek UI library for Design Engineers with 125+ components, 10+ blocks, and 3 premium templates. Built with MUI and Motion (motion/react).",
+    githubLink: "https://github.com/AbhiVarde/syncui",
+    url: "https://syncui.design",
+  },
 ];
 
 export default projects;

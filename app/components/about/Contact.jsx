@@ -20,7 +20,7 @@ const Contact = () => {
         </h2>
         <button
           onClick={handleCopyEmail}
-          className="flex items-center space-x-2 bg-[#FF3B00] text-white px-4 py-1.5 rounded-xl sm:rounded-2xl hover:bg-[#E63500] transition-colors"
+          className="cursor-pointer flex items-center space-x-2 bg-[#FF3B00] text-white px-4 py-1.5 rounded-xl sm:rounded-2xl hover:bg-[#E63500] transition-colors"
         >
           {copied ? (
             <>

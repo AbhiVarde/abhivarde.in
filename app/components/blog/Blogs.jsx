@@ -20,7 +20,7 @@ const Blogs = () => {
               src={blog.image}
               alt={blog.title}
               fill
-              className="object-cover p-2 rounded-3xl transition-transform duration-300 ease-out will-change-transform group-hover:scale-[1.06]"
+              className="object-cover p-2 rounded-3xl transition-transform duration-500 ease-out group-hover:scale-105"
             />
           </div>
 
@@ -28,8 +28,8 @@ const Blogs = () => {
             {blog.title}
           </p>
 
-          <div className="absolute top-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-out">
-            <GoArrowUpRight size={21} />
+          <div className="absolute top-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out">
+            <GoArrowUpRight size={20} />
           </div>
         </Link>
       ))}
