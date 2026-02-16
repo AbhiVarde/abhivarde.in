@@ -22,17 +22,17 @@ const Hero = () => {
 
         <div className="relative z-10 flex flex-col p-4 sm:p-6">
           <div className="text-white max-w-lg">
-            <h2 className="font-medium uppercase tracking-wider flex items-center text-sm sm:text-base">
+            <h2 className="font-medium uppercase tracking-wider flex items-center text-sm">
               <LuGlobe className="mr-2" size={18} />
               About Me
             </h2>
 
-            <h1 className="mt-3 sm:mt-4 text-3xl sm:text-4xl font-bold tracking-tight">
+            <h1 className="mt-3 text-2xl sm:text-3xl font-semibold tracking-tight">
               Hey, I'm Abhi
               <span className="animate-wave inline-block ml-2">👋</span>
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg font-light leading-relaxed max-w-2xl">
+            <p className="mt-4 text-base sm:text-lg font-light leading-relaxed max-w-2xl">
               I build developer tools and UI kits crafting products that are
               simple, fast, and thoughtful.
             </p>

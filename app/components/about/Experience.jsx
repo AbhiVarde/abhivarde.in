@@ -10,15 +10,13 @@ const Experience = ({ works, skills }) => {
     <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
       <div className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111]">
         <div>
-          <div className="text-white uppercase tracking-wider flex gap-3 items-center">
-            <span className="bg-[#FF3B00] p-1.5 rounded-md">
-              <IoBriefcaseOutline size={20} color="#FFFFFF" />
+          <div className="uppercase tracking-widest flex gap-2 items-center text-sm">
+            <span className="bg-[#FF3B00] p-1 rounded-md">
+              <IoBriefcaseOutline size={18} color="#FFFFFF" />
             </span>
             Work Experience
           </div>
-          <p className="sm:text-lg mt-4">
-            My work history and accomplishments timeline.
-          </p>
+          <p className="mt-4">My work history and accomplishments timeline.</p>
           {works?.map((work, i) => (
             <div
               key={i}
@@ -49,13 +47,13 @@ const Experience = ({ works, skills }) => {
 
       <div className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111]">
         <div>
-          <div className="text-white uppercase tracking-wider flex gap-3 items-center">
-            <span className="bg-[#FF3B00] p-1.5 rounded-md">
-              <LuTerminal size={20} color="#FFFFFF" />
+          <div className="uppercase tracking-widest flex gap-2 items-center text-sm">
+            <span className="bg-[#FF3B00] p-1 rounded-md">
+              <LuTerminal size={18} color="#FFFFFF" />
             </span>
             Skills
           </div>
-          <p className="sm:text-lg mt-4">
+          <p className="mt-4">
             I've worked with the following but not limited to.
           </p>
           <div className="mt-6 overflow-hidden hidden sm:flex lg:hidden">

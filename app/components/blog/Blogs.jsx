@@ -24,9 +24,7 @@ const Blogs = () => {
             />
           </div>
 
-          <p className="font-medium text-white text-lg px-4 pb-4 mt-2">
-            {blog.title}
-          </p>
+          <p className="font-medium text-white px-4 pb-4 mt-2">{blog.title}</p>
 
           <div className="absolute top-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out">
             <GoArrowUpRight size={20} />

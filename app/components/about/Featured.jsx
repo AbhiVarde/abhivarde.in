@@ -45,7 +45,7 @@ const Featured = () => {
       <div className="relative rounded-3xl bg-[#0f0f0f] border border-white/10 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 p-4 md:p-6">
           <div className="lg:col-span-4 flex flex-col justify-center gap-3">
-            <h2 className="text-lg sm:text-xl md:text-2xl font-medium text-white tracking-tight">
+            <h2 className="text-lg sm:text-xl font-medium text-white tracking-tight">
               {project.title}
             </h2>
 

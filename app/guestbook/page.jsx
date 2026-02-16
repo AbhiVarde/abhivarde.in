@@ -12,11 +12,11 @@ const GuestBook = () => {
   return (
     <div className="max-w-5xl mx-auto px-4 pt-16 md:pt-18">
       <div className="mt-6 sm:mt-10">
-        <div className="mt-4 mb-2 sm:mb-4 md:mb-6 flex space-x-3 items-center">
-          <div className="bg-[#FF3B00] p-2 rounded-lg">
-            <LuBook size={22} color="#FFFFFF" />
+        <div className="mt-4 mb-2 sm:mb-4 flex space-x-3 items-center">
+          <div className="bg-[#FF3B00] p-1.5 rounded-lg">
+            <LuBook size={20} color="#FFFFFF" />
           </div>
-          <h2 className="sm:text-lg md:text-xl lg:text-2xl font-medium leading-4 md:leading-6 lg:leading-8 tracking-wide">
+          <h2 className="sm:text-lg md:text-xl font-medium leading-4 md:leading-6 lg:leading-8 tracking-wide">
             GuestBook
           </h2>
         </div>
