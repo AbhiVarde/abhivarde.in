@@ -1,15 +1,50 @@
 "use client";
 
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import projects from "../../content/projects";
-import { LuExternalLink, LuGithub, LuArrowRight } from "react-icons/lu";
+import { LuExternalLink, LuGithub, LuArrowRight, LuStar } from "react-icons/lu";
 
 const Projects = () => {
+  const [stars, setStars] = useState({});
+
+  useEffect(() => {
+    const fetchStars = async () => {
+      const starCounts = {};
+
+      for (const project of projects) {
+        if (project.githubLink) {
+          try {
+            const urlParts = project.githubLink
+              .split("github.com/")[1]
+              .split("/");
+            const owner = urlParts[0];
+            const repo = urlParts[1];
+
+            const response = await fetch(
+              `https://api.github.com/repos/${owner}/${repo}`,
+            );
+            const data = await response.json();
+
+            if (data.stargazers_count !== undefined) {
+              starCounts[project.githubLink] = data.stargazers_count;
+            }
+          } catch (error) {
+            console.error(`Failed to fetch stars for ${project.title}:`, error);
+          }
+        }
+      }
+
+      setStars(starCounts);
+    };
+
+    fetchStars();
+  }, []);
+
   return (
     <Fragment>
-      {projects?.slice(0, 6).map((project, i) => (
+      {projects?.map((project, i) => (
         <div
           key={i}
           className="group flex flex-col mt-6 space-y-8 rounded-3xl border border-[#333] bg-[#111] p-4 md:h-48 md:flex-row md:space-y-0 md:space-x-8"
@@ -20,7 +55,7 @@ const Projects = () => {
                 src={project.image}
                 alt="image"
                 fill
-                className="object-cover rounded-xl transition-transform duration-300 ease-out will-change-transform group-hover:scale-[1.06]"
+                className="object-cover rounded-xl"
               />
             </div>
           </div>
@@ -41,9 +76,9 @@ const Projects = () => {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex text-sm items-center justify-center gap-x-1.5 px-3 py-1.5 rounded-lg bg-[#F4F0E6] text-black transition-transform duration-200 ease-out will-change-transform hover:-translate-y-0.5"
+                  className="flex text-sm items-center justify-center gap-x-1.5 px-3 py-1 rounded-lg bg-[#F4F0E6] text-black hover:bg-[#e8e4da] transition-colors"
                 >
-                  <LuExternalLink size={16} /> <span>Live Demo</span>
+                  <LuExternalLink size={14} /> <span>View</span>
                 </Link>
               )}
 
@@ -52,9 +87,21 @@ const Projects = () => {
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex text-sm items-center justify-center gap-x-1.5 px-3 py-1.5 rounded-lg bg-[#F4F0E6] text-black transition-transform duration-200 ease-out will-change-transform hover:-translate-y-0.5"
+                  className="flex text-sm items-center justify-center gap-x-1.5 px-3 py-1 rounded-lg bg-[#F4F0E6] text-black hover:bg-[#e8e4da] transition-colors"
                 >
-                  <LuGithub size={16} /> <span>Source Code</span>
+                  <LuGithub size={14} />
+                  <span>Code</span>
+                  {stars[project.githubLink] !== undefined && (
+                    <span className="flex items-center gap-x-0.5 ml-1">
+                      <LuStar
+                        size={11}
+                        className="fill-black/50 text-black/50"
+                      />
+                      <span className="text-xs font-medium text-black/70">
+                        {stars[project.githubLink]}
+                      </span>
+                    </span>
+                  )}
                 </Link>
               )}
             </div>
@@ -66,12 +113,12 @@ const Projects = () => {
         <Link
           target="_blank"
           href="https://github.com/AbhiVarde"
-          className="group flex items-center justify-center space-x-2 rounded-xl bg-[#FF3B00] text-white shadow-md cursor-pointer px-6 py-2 transition-colors hover:bg-[#ff4b17]"
+          className="group flex items-center justify-center space-x-2 rounded-xl bg-[#FF3B00] text-white px-5 py-2 hover:bg-[#ff4b17] transition-colors"
         >
-          <span className="text-sm sm:text-sm">View more on Github</span>
+          <span className="text-sm">More Projects</span>
           <LuArrowRight
-            size={18}
-            className="transition-transform duration-300 ease-out will-change-transform group-hover:translate-x-1"
+            size={16}
+            className="transition-transform group-hover:translate-x-0.5"
           />
         </Link>
       </div>
