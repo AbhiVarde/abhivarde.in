@@ -56,6 +56,7 @@ const Experience = ({ works, skills }) => {
           <p className="mt-4">
             I've worked with the following but not limited to.
           </p>
+
           <div className="mt-6 overflow-hidden hidden sm:flex lg:hidden">
             <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-scroll">
               {skills?.map((skill, i) => (
@@ -75,9 +76,10 @@ const Experience = ({ works, skills }) => {
               ))}
             </div>
           </div>
+
           <div className="mt-6 overflow-hidden flex sm:hidden lg:flex">
             <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-scroll">
-              {skills?.slice(0, 6).map((skill, i) => (
+              {skills?.slice(0, 10).map((skill, i) => (
                 <div
                   key={i}
                   className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md border"
@@ -94,9 +96,10 @@ const Experience = ({ works, skills }) => {
               ))}
             </div>
           </div>
+
           <div className="mt-2 overflow-hidden flex sm:hidden lg:flex">
             <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-scroll-reverse">
-              {skills?.slice(6, 12).map((skill, i) => (
+              {skills?.slice(10, 20).map((skill, i) => (
                 <div
                   key={i}
                   className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md border"
@@ -113,9 +116,10 @@ const Experience = ({ works, skills }) => {
               ))}
             </div>
           </div>
+
           <div className="mt-2 overflow-hidden flex sm:hidden lg:flex">
             <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-scroll">
-              {skills?.slice(12).map((skill, i) => (
+              {skills?.slice(20).map((skill, i) => (
                 <div
                   key={i}
                   className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md border"
