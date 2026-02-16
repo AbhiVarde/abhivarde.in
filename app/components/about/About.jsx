@@ -76,7 +76,7 @@ const About = () => {
           <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white z-10">
             <h3 className="text-lg sm:text-xl font-medium mb-1">Sync UI 🚀</h3>
             <p className="text-sm sm:text-base mb-2 opacity-90">
-              A UI library with animated MUI components and premium templates.
+              React Component Library for Design Engineers
             </p>
 
             <a
