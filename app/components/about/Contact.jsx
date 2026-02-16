@@ -14,8 +14,8 @@ const Contact = () => {
 
   return (
     <div className="mt-8">
-      <div className="flex flex-col space-y-2 sm:space-y-0 sm:flex-row justify-between items-center border border-[#333] bg-[#F4F0E6] rounded-3xl p-2.5">
-        <h2 className="text-base font-medium tracking-wide text-black sm:pl-2">
+      <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row justify-between items-center border border-[#333] bg-[#F4F0E6] rounded-3xl p-2.5">
+        <h2 className="text-center sm:text-left text-base font-medium tracking-wide text-black sm:pl-2">
           Open for Product & Design Engineering roles
         </h2>
         <button

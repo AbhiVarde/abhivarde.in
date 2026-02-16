@@ -28,7 +28,7 @@ const About = () => {
           </div>
 
           <div className="mt-5 grow">
-            <p className="text-base leading-relaxed">
+            <p className="text-sm sm:text-base leading-relaxed">
               Building developer tools and AI-driven products with focus on
               polished UX and performant experiences. Open to Product, Design,
               and Frontend Engineering roles at product-based companies.
@@ -36,7 +36,7 @@ const About = () => {
           </div>
 
           <button
-            className="cursor-pointer text-sm mt-4 bg-[#1a1a1a] border border-[#333] px-4 py-1.5 rounded-lg hover:bg-[#222] transition-colors"
+            className="cursor-pointer text-sm mt-6 sm:mt-4 bg-[#1a1a1a] border border-[#333] px-4 py-1.5 rounded-lg hover:bg-[#222] transition-colors"
             onClick={handleDownloadClick}
             title="Download Resume"
           >
