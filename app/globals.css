@@ -10,6 +10,16 @@
   scroll-behavior: smooth !important;
 }
 
+/* Hide scrollbar for all browsers */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 .animate-scroll {
   animation: scroll 8s linear infinite;
 }
