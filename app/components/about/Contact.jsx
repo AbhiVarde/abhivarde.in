@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { LuCopy, LuCheck } from "react-icons/lu";
 
-const HireSection = () => {
+const Contact = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {
@@ -20,16 +20,16 @@ const HireSection = () => {
         </h2>
         <button
           onClick={handleCopyEmail}
-          className=" cursor-pointer flex items-center space-x-2 bg-[#FF3B00] text-white px-4 py-2 rounded-xl sm:rounded-2xl hover:bg-[#E63500] transition-colors duration-300"
+          className="flex items-center space-x-2 bg-[#FF3B00] text-white px-4 py-1.5 rounded-xl sm:rounded-2xl hover:bg-[#E63500] transition-colors"
         >
           {copied ? (
             <>
-              <LuCheck size={18} />
+              <LuCheck size={16} />
               <span className="text-sm">Copied!</span>
             </>
           ) : (
             <>
-              <LuCopy size={18} />
+              <LuCopy size={16} />
               <span className="text-sm">Copy Email</span>
             </>
           )}
@@ -39,4 +39,4 @@ const HireSection = () => {
   );
 };
 
-export default HireSection;
+export default Contact;

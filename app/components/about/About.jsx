@@ -5,7 +5,7 @@ import Image from "next/image";
 import { VscVscode } from "react-icons/vsc";
 import { LuExternalLink } from "react-icons/lu";
 
-const OverviewSection = () => {
+const About = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const videoRef = useRef(null);
 
@@ -36,7 +36,7 @@ const OverviewSection = () => {
           </div>
 
           <button
-            className="text-sm mt-3 bg-[#1a1a1a] border border-[#333] px-4 py-2 rounded-xl hover:bg-[#111111A0] transition-colors duration-300 ease-out will-change-transform active:scale-95"
+            className="text-sm mt-3 bg-[#1a1a1a] border border-[#333] px-4 py-1.5 rounded-lg hover:bg-[#222] transition-colors"
             onClick={handleDownloadClick}
             title="Download Resume"
           >
@@ -64,7 +64,7 @@ const OverviewSection = () => {
               muted
               playsInline
               preload="metadata"
-              className={`object-cover w-full h-full transition-opacity duration-300 ${
+              className={`object-cover w-full h-full transition-opacity ${
                 isVideoLoaded ? "opacity-100" : "opacity-0"
               }`}
               onLoadedData={() => setIsVideoLoaded(true)}
@@ -83,7 +83,7 @@ const OverviewSection = () => {
               href="https://syncui.design"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-3 py-1.5 rounded-lg hover:bg-white/20 transition-transform duration-300 ease-out will-change-transform active:scale-95 group"
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-3 py-1.5 rounded-lg hover:bg-white/20 transition-colors"
             >
               <span className="text-sm">syncui.design</span>
               <LuExternalLink size={14} />
@@ -95,4 +95,4 @@ const OverviewSection = () => {
   );
 };
 
-export default OverviewSection;
+export default About;

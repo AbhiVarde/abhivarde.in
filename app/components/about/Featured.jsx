@@ -6,7 +6,7 @@ import Link from "next/link";
 import { LuArrowUpRight } from "react-icons/lu";
 import projects from "@/app/content/projects";
 
-export default function ProjectShowcase() {
+const Featured = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const project = projects[currentIndex];
@@ -36,7 +36,7 @@ export default function ProjectShowcase() {
       width={800}
       height={500}
       priority
-      className="object-contain rounded-2xl w-full h-auto transition-transform duration-300"
+      className="object-contain rounded-2xl w-full h-auto"
     />
   );
 
@@ -45,11 +45,11 @@ export default function ProjectShowcase() {
       <div className="relative rounded-3xl bg-[#0f0f0f] border border-white/10 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 p-4 md:p-6">
           <div className="lg:col-span-4 flex flex-col justify-center gap-3">
-            <h2 className="text-lg sm:text-xl md:text-2xl font-medium text-white tracking-tight transition-all duration-500">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-medium text-white tracking-tight">
               {project.title}
             </h2>
 
-            <p className="sm:text-sm leading-relaxed sm:max-w-md transition-all duration-500">
+            <p className="sm:text-sm leading-relaxed sm:max-w-md">
               <span className="block sm:hidden">
                 {project.shortDescription}
               </span>
@@ -65,8 +65,8 @@ export default function ProjectShowcase() {
             >
               Open Project
               <LuArrowUpRight
-                size={19}
-                className="transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1"
+                size={16}
+                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </Link>
           </div>
@@ -89,4 +89,6 @@ export default function ProjectShowcase() {
       </div>
     </section>
   );
-}
+};
+
+export default Featured;

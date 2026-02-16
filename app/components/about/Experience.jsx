@@ -5,7 +5,7 @@ import { IoBriefcaseOutline } from "react-icons/io5";
 import { LuTerminal } from "react-icons/lu";
 import Image from "next/image";
 
-const ProfessionalSummary = ({ works, skills }) => {
+const Experience = ({ works, skills }) => {
   return (
     <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
       <div className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111]">
@@ -63,7 +63,7 @@ const ProfessionalSummary = ({ works, skills }) => {
               {skills?.map((skill, i) => (
                 <div
                   key={i}
-                  className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md shadow-sm border"
+                  className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md border"
                 >
                   <Image
                     src={skill.image}
@@ -82,7 +82,7 @@ const ProfessionalSummary = ({ works, skills }) => {
               {skills?.slice(0, 6).map((skill, i) => (
                 <div
                   key={i}
-                  className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md shadow-sm border"
+                  className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md border"
                 >
                   <Image
                     src={skill.image}
@@ -101,7 +101,7 @@ const ProfessionalSummary = ({ works, skills }) => {
               {skills?.slice(6, 12).map((skill, i) => (
                 <div
                   key={i}
-                  className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md shadow-sm border"
+                  className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md border"
                 >
                   <Image
                     src={skill.image}
@@ -120,7 +120,7 @@ const ProfessionalSummary = ({ works, skills }) => {
               {skills?.slice(12).map((skill, i) => (
                 <div
                   key={i}
-                  className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md shadow-sm border"
+                  className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md border"
                 >
                   <Image
                     src={skill.image}
@@ -140,4 +140,4 @@ const ProfessionalSummary = ({ works, skills }) => {
   );
 };
 
-export default ProfessionalSummary;
+export default Experience;

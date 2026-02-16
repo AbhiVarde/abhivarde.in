@@ -1,22 +1,18 @@
 "use client";
 
-import PersonalIntroduction from "./components/about/PersonalIntroduction";
-import ProjectShowcase from "./components/about/ProjectShowcase";
-import ProfessionalSummary from "./components/about/ProfessionalSummary";
-import HireSection from "./components/about/HireSection";
-import OverviewSection from "./components/about/OverviewSection";
+import { useEffect, useState } from "react";
 import works from "./content/works";
 import skills from "./content/skills";
-import { useEffect, useState } from "react";
+import Hero from "./components/about/Hero";
+import About from "./components/about/About";
+import Featured from "./components/about/Featured";
+import Experience from "./components/about/Experience";
+import Contact from "./components/about/Contact";
 
-export default function About() {
-  const [showSections, setShowSections] = useState([
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
+const sections = [Hero, About, Featured, Experience, Contact];
+
+export default function AboutPage() {
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     console.log(
@@ -38,70 +34,26 @@ export default function About() {
       "color: #ffffff; font-family: monospace; font-size: 12px; font-weight: bold;",
     );
 
-    const timers = [
-      setTimeout(() => setShowSections((prev) => [true, ...prev.slice(1)]), 50),
-      setTimeout(
-        () => setShowSections((prev) => [prev[0], true, ...prev.slice(2)]),
-        150,
-      ),
-      setTimeout(
-        () =>
-          setShowSections((prev) => [
-            ...prev.slice(0, 2),
-            true,
-            ...prev.slice(3),
-          ]),
-        250,
-      ),
-      setTimeout(
-        () => setShowSections((prev) => [...prev.slice(0, 3), true, prev[4]]),
-        350,
-      ),
-      setTimeout(
-        () => setShowSections((prev) => [...prev.slice(0, 4), true]),
-        450,
-      ),
-    ];
-
-    return () => timers.forEach(clearTimeout);
+    requestAnimationFrame(() => {
+      setMounted(true);
+    });
   }, []);
 
   return (
     <main className="max-w-5xl mx-auto px-5 pt-16 md:pt-18">
-      <div
-        className="transition-opacity duration-300"
-        style={{ opacity: showSections[0] ? 1 : 0 }}
-      >
-        <PersonalIntroduction />
-      </div>
-
-      <div
-        className="transition-opacity duration-300"
-        style={{ opacity: showSections[1] ? 1 : 0 }}
-      >
-        <OverviewSection />
-      </div>
-
-      <div
-        className="transition-opacity duration-300"
-        style={{ opacity: showSections[2] ? 1 : 0 }}
-      >
-        <ProjectShowcase />
-      </div>
-
-      <div
-        className="transition-opacity duration-300"
-        style={{ opacity: showSections[3] ? 1 : 0 }}
-      >
-        <ProfessionalSummary works={works} skills={skills} />
-      </div>
-
-      <div
-        className="transition-opacity duration-300"
-        style={{ opacity: showSections[4] ? 1 : 0 }}
-      >
-        <HireSection />
-      </div>
+      {sections.map((Section, i) => (
+        <div
+          key={i}
+          className="transition-opacity duration-500 ease-out"
+          style={{
+            opacity: mounted ? 1 : 0,
+            transform: mounted ? "translateY(0)" : "translateY(10px)",
+            transitionDelay: `${i * 80}ms`,
+          }}
+        >
+          <Section works={works} skills={skills} />
+        </div>
+      ))}
     </main>
   );
 }
