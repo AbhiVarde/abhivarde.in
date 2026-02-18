@@ -26,7 +26,7 @@ const works = [
   {
     image: SolGuruz,
     companyName: "SolGuruz",
-    role: "Software Engineering Intern",
+    role: "SE Intern",
     startAt: "Feb '23",
     endAt: "Jun '23",
   },
