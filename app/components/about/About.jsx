@@ -30,8 +30,8 @@ const About = () => {
           <div className="mt-5 grow">
             <p className="text-sm sm:text-base leading-relaxed">
               Building developer tools and AI-driven products with focus on
-              polished UX and performant experiences. Open to Product, Design,
-              and Frontend Engineering roles at product-based companies.
+              polished UX and performant experiences. Open to Product
+              Engineering roles at product-driven, AI-focused companies.
             </p>
           </div>
 
