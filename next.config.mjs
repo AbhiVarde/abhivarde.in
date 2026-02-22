@@ -5,6 +5,12 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
 
+    qualities: [55, 75],
+
+    deviceSizes: [390, 640, 750, 828, 1080, 1200, 1920],
+
+    minimumCacheTTL: 60 * 60 * 24 * 30,
+
     remotePatterns: [
       { protocol: "https", hostname: "appwrite.io" },
       { protocol: "https", hostname: "resend.com" },
@@ -22,8 +28,6 @@ const nextConfig = {
       { protocol: "https", hostname: "github.githubassets.com" },
       { protocol: "https", hostname: "socket.io" },
     ],
-
-    qualities: [75],
   },
 };
 
