@@ -5,15 +5,16 @@ import Sendra from "../resources/images/project/sendra.webp";
 import Drawer from "../resources/images/project/drawer.webp";
 import Nothify from "../resources/images/project/nothify.webp";
 import Billow from "../resources/images/project/billow.webp";
+import NodeFlow from "../resources/images/project/nodeflow.webp";
 
 const projects = [
   {
-    image: Billow,
-    title: "Billow",
-    shortDescription: "GST-compliant invoicing for Indian businesses.",
+    image: NodeFlow,
+    title: "NodeFlow",
+    shortDescription: "Visual workflow builder for the browser.",
     description:
-      "Billow is a lightweight SaaS that helps Indian businesses generate GST-compliant sales invoices quickly and accurately, without relying on complex accounting software.",
-    url: "https://billow.abhivarde.in",
+      "NodeFlow is a visual node-based workflow builder inspired by n8n. Design conditional flows with drag-and-drop nodes, share via URL, and export JSON all in the browser with zero backend.",
+    url: "https://nodeflow.abhivarde.in",
   },
   {
     image: Nothify,
@@ -24,6 +25,15 @@ const projects = [
     url: "https://nothify.abhivarde.in",
   },
   {
+    image: SyncUI,
+    title: "Sync UI",
+    shortDescription: "React Component Library for Design Engineers",
+    description:
+      "A sleek UI library for Design Engineers with 125+ components, 10+ blocks, and 3 premium templates. Built with MUI and Motion (motion/react).",
+    githubLink: "https://github.com/AbhiVarde/syncui",
+    url: "https://syncui.design",
+  },
+  {
     image: Drawer,
     title: "Svelte Drawer",
     shortDescription: "Accessible drawer component for Svelte 5.",
@@ -31,6 +41,14 @@ const projects = [
       "Svelte Drawer is a modern NPM package for Svelte 5 that provides an accessible, animated drawer component inspired by Vaul and built for smooth interactions.",
     githubLink: "https://github.com/AbhiVarde/svelte-drawer",
     url: "https://drawer.abhivarde.in",
+  },
+  {
+    image: Billow,
+    title: "Billow",
+    shortDescription: "GST-compliant invoicing for Indian businesses.",
+    description:
+      "Billow is a lightweight SaaS that helps Indian businesses generate GST-compliant sales invoices quickly and accurately, without relying on complex accounting software.",
+    url: "https://billow.abhivarde.in",
   },
   {
     image: Sendra,
@@ -58,15 +76,6 @@ const projects = [
       "Idea Tracker is a productivity-focused SaaS that helps developers capture, organize, and manage side project ideas efficiently.",
     url: "https://idea-tracker-v2.appwrite.network/",
     githubLink: "https://github.com/AbhiVarde/Idea-tracker",
-  },
-  {
-    image: SyncUI,
-    title: "Sync UI",
-    shortDescription: "React Component Library for Design Engineers",
-    description:
-      "A sleek UI library for Design Engineers with 125+ components, 10+ blocks, and 3 premium templates. Built with MUI and Motion (motion/react).",
-    githubLink: "https://github.com/AbhiVarde/syncui",
-    url: "https://syncui.design",
   },
 ];
 
