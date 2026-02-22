@@ -15,10 +15,14 @@ const Hero = () => {
             alt="Background"
             fill
             priority
-            sizes="100vw"
-            style={{ objectFit: "cover" }}
+            fetchPriority="high"
+            decoding="sync"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1280px"
+            quality={60}
+            className="object-cover"
+            placeholder="blur"
           />
-          <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/30 to-black/50"></div>
+          <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/30 to-black/50" />
         </div>
 
         <div className="relative z-10 flex flex-col p-4 sm:p-6">
