@@ -53,8 +53,10 @@ const Projects = () => {
             <div className="relative w-full h-full overflow-hidden">
               <Image
                 src={project.image}
-                alt="image"
+                alt={project.title}
                 fill
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 288px"
                 className="object-cover rounded-xl transition-transform duration-500 ease-out group-hover:scale-105"
               />
             </div>

@@ -20,6 +20,8 @@ const Blogs = () => {
               src={blog.image}
               alt={blog.title}
               fill
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover p-2 rounded-3xl transition-transform duration-500 ease-out group-hover:scale-105"
             />
           </div>

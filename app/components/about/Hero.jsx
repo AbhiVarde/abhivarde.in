@@ -14,8 +14,9 @@ const Hero = () => {
             src={HeroImage}
             alt="Background"
             fill
-            style={{ objectFit: "cover" }}
             priority
+            sizes="100vw"
+            style={{ objectFit: "cover" }}
           />
           <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/30 to-black/50"></div>
         </div>
