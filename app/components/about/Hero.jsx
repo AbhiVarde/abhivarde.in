@@ -16,7 +16,7 @@ const Hero = () => {
             fill
             priority
             fetchPriority="high"
-            decoding="async"
+            decoding="sync"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 984px"
             quality={55}
             className="object-cover"

@@ -50,6 +50,7 @@ const About = () => {
               <Image
                 src="/syncui-image.png"
                 fill
+                priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
                 alt="Sync UI preview"
@@ -63,7 +64,7 @@ const About = () => {
               loop
               muted
               playsInline
-              preload="none" // ✅ CHANGED from "metadata" to "none"
+              preload="none"
               className={`object-cover w-full h-full transition-opacity ${
                 isVideoLoaded ? "opacity-100" : "opacity-0"
               }`}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import works from "./content/works";
 import skills from "./content/skills";
 import Hero from "./components/about/Hero";
@@ -12,8 +12,6 @@ import Contact from "./components/about/Contact";
 const sections = [Hero, About, Featured, Experience, Contact];
 
 export default function AboutPage() {
-  const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
     console.log(
       "%c      ___.   .__    .__                        .___          .__        \n" +
@@ -33,23 +31,15 @@ export default function AboutPage() {
         "❤️ I'd love to connect and build great products together.",
       "color: #ffffff; font-family: monospace; font-size: 12px; font-weight: bold;",
     );
-
-    requestAnimationFrame(() => {
-      setMounted(true);
-    });
   }, []);
 
   return (
-    <main className="max-w-5xl mx-auto px-5 pt-16 md:pt-18">
+    <main className="max-w-5xl mx-auto px-5 pt-16 md:pt-18 animate-fade-in">
       {sections.map((Section, i) => (
         <div
           key={i}
-          className="transition-opacity duration-500 ease-out"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? "translateY(0)" : "translateY(10px)",
-            transitionDelay: `${i * 80}ms`,
-          }}
+          className="animate-slide-up"
+          style={{ animationDelay: `${i * 40}ms` }}
         >
           <Section works={works} skills={skills} />
         </div>
