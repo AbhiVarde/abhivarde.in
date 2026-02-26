@@ -19,7 +19,7 @@ export const metadata = {
     template: "%s // Abhi Varde",
   },
   description:
-    "Product Engineer building developer-first tools and contributing to product-based companies. Specializing in end-to-end product development, design systems, AI automation, and exceptional user experiences.",
+    "Product Engineer building AI-native products and developer-first tools. Actively contributing to product-based companies — contributed to Appwrite Console and Website improving UI and developer experience, opened and maintained issues and PRs reviewed and merged by core maintainers, collaborated with designers and product engineers on production improvements. Contributed to Umami website and react-zen with multiple merged PRs, improving UI, documentation, and navigation across production features. Improved mobile UX in Mintlify production docs by fixing layout behavior and enabling horizontal code scrolling. Specializing in end-to-end product development, design systems, AI automation, LLM applications, and exceptional user experiences.",
   keywords: [
     "Product Engineer",
     "Design Engineer",
@@ -30,6 +30,8 @@ export const metadata = {
     "Web Developer",
     "Developer Experience Engineer",
     "Open Source Contributor",
+    "AI-Native Products",
+    "AI Product Engineer",
     "Product Development",
     "Next.js",
     "React",
@@ -52,6 +54,14 @@ export const metadata = {
     "API Development",
     "Cloud Engineering",
     "System Design",
+    "Appwrite",
+    "Appwrite Console",
+    "Appwrite Contributor",
+    "Umami",
+    "Umami Contributor",
+    "react-zen",
+    "Mintlify",
+    "Mintlify Contributor",
     "Billow",
     "Nothify",
     "Svelte Drawer",
@@ -72,7 +82,7 @@ export const metadata = {
   openGraph: {
     title: "Abhi Varde // Product Engineer • AI & DevTools • OSS Contributor",
     description:
-      "Building developer-first tools and contributing to product-based companies. Creator of Billow, Nothify, Svelte Drawer, Sync UI, and more. Focused on product engineering, design systems, and AI automation.",
+      "Building developer-first tools and contributing to product-based companies like Appwrite, Umami, and Mintlify. Contributed to Appwrite Console and Website improving UI and DX, with PRs reviewed and merged by core maintainers. Improved Umami website and react-zen with multiple merged PRs across UI, docs, and navigation. Fixed mobile UX and layout issues in Mintlify production docs. Creator of Billow, Nothify, Svelte Drawer, Sync UI, and more. Focused on product engineering, design systems, and AI automation.",
     siteName:
       "Abhi Varde // Product Engineer • AI & DevTools • OSS Contributor",
     url: "https://abhivarde.in",
@@ -97,7 +107,7 @@ export const metadata = {
     site: "@varde_abhi",
     title: "Abhi Varde // Product Engineer • AI & DevTools • OSS Contributor",
     description:
-      "Product Engineer • AI & DevTools • OSS Contributor • Building developer-first tools",
+      "Product Engineer • AI & DevTools • OSS Contributor • Contributing to Appwrite, Umami & Mintlify • Building developer-first tools",
     images: "https://abhivarde.in/og-image.png",
   },
   robots: {

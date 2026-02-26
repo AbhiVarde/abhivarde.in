@@ -18,7 +18,6 @@ const nextConfig = {
       { protocol: "https", hostname: "framerusercontent.com" },
       { protocol: "https", hostname: "svelte.dev" },
       { protocol: "https", hostname: "ai-sdk.dev" },
-      { protocol: "https", hostname: "umami.is" },
       { protocol: "https", hostname: "ui.shadcn.com" },
       { protocol: "https", hostname: "openai.com" },
       { protocol: "https", hostname: "www.gstatic.com" },
@@ -26,7 +25,10 @@ const nextConfig = {
       { protocol: "https", hostname: "exa.ai" },
       { protocol: "https", hostname: "assets.stripeassets.com" },
       { protocol: "https", hostname: "github.githubassets.com" },
+      { protocol: "https", hostname: "avatars.githubusercontent.com" },
       { protocol: "https", hostname: "socket.io" },
+      { protocol: "https", hostname: "uniqualitech.com" },
+      { protocol: "https", hostname: "solguruz.com" },
     ],
   },
 };

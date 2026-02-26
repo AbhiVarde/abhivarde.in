@@ -1,30 +1,27 @@
-import Uniqual from "../resources/images/works/uniqual.jpeg";
-import SolGuruz from "../resources/images/works/solguruz.jpeg";
-
 const works = [
   {
-    image: "https://appwrite.io/images/logos/logo.svg",
+    image: "https://avatars.githubusercontent.com/u/25003669?s=200&v=4",
     companyName: "Appwrite",
-    role: "Product Engineer",
+    role: "Open Source Product Engineer",
     startAt: "Oct '25",
-    endAt: "Present",
+    endAt: "Jan '26",
   },
   {
-    image: "https://umami.is/favicon.ico",
+    image: "https://avatars.githubusercontent.com/u/105618662?s=200&v=4",
     companyName: "Umami",
-    role: "Frontend Engineer",
+    role: "Open Source Frontend Engineer",
     startAt: "Oct '25",
-    endAt: "Present",
+    endAt: "Dec '25",
   },
   {
-    image: Uniqual,
+    image: "https://uniqualitech.com/front/assets/favicon/favicon-32x32.png",
     companyName: "Uniqual iTech",
     role: "Frontend Dev",
     startAt: "Oct '23",
     endAt: "Oct '25",
   },
   {
-    image: SolGuruz,
+    image: "https://solguruz.com/favicon.png",
     companyName: "SolGuruz",
     role: "SE Intern",
     startAt: "Feb '23",
