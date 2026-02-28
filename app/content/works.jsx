@@ -4,7 +4,7 @@ const works = [
     companyName: "Appwrite",
     role: "Open Source Product Engineer",
     startAt: "Oct '25",
-    endAt: "Jan '26",
+    endAt: "Feb '26",
   },
   {
     image: "https://avatars.githubusercontent.com/u/105618662?s=200&v=4",
@@ -16,7 +16,7 @@ const works = [
   {
     image: "https://uniqualitech.com/front/assets/favicon/favicon-32x32.png",
     companyName: "Uniqual iTech",
-    role: "Frontend Dev",
+    role: "Frontend Developer",
     startAt: "Oct '23",
     endAt: "Oct '25",
   },
