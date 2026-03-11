@@ -19,7 +19,7 @@ const Hero = () => {
             quality={60}
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/30 to-black/50" />
+          <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/20 to-black/70" />
         </div>
 
         <div className="relative z-10 flex flex-col p-4 sm:p-6">
