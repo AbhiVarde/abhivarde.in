@@ -5,7 +5,8 @@ import Blogs from "../components/blog/Blogs";
 export const metadata = {
   title: "Blog",
   description:
-    "Read insightful articles and updates from Abhi Varde on software engineering, technology trends, and more.",
+    "Writing about AI tools, product engineering, open source, and things worth sharing.",
+  alternates: { canonical: "https://abhivarde.in/blog" },
 };
 
 const Blog = () => {

@@ -5,7 +5,8 @@ import Projects from "../components/project/Projects";
 export const metadata = {
   title: "Projects",
   description:
-    "Explore the projects and work done by Abhi Varde, showcasing a variety of skills in software engineering.",
+    "AI agents, workflow builders, UI systems, SaaS tools and more things Abhi Varde has built and shipped.",
+  alternates: { canonical: "https://abhivarde.in/projects" },
 };
 
 const Project = () => {

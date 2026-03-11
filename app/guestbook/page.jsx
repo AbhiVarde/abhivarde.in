@@ -5,7 +5,8 @@ import GiscusComponent from "../components/common/GiscusComponent";
 export const metadata = {
   title: "Guestbook",
   description:
-    "Leave a message for Abhi Varde and read what others have to say in the guestbook.",
+    "Leave a message for Abhi Varde. See what developers and creators from around the world have to say.",
+  alternates: { canonical: "https://abhivarde.in/guestbook" },
 };
 
 const GuestBook = () => {

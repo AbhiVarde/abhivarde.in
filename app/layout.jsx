@@ -24,84 +24,59 @@ const firaCode = Fira_Code({
 
 export const metadata = {
   title: {
-    default: "Abhi Varde // Product Engineer • AI & DevTools • OSS Contributor",
+    default: "Abhi Varde // Product Engineer · AI Tools · OSS",
     template: "%s // Abhi Varde",
   },
   description:
-    "Product Engineer building AI-native products and developer-first tools. Actively contributing to product-based companies — contributed to Appwrite Console and Website improving UI and developer experience, opened and maintained issues and PRs reviewed and merged by core maintainers, collaborated with designers and product engineers on production improvements. Contributed to Umami website and react-zen with multiple merged PRs, improving UI, documentation, and navigation across production features. Improved mobile UX in Mintlify production docs by fixing layout behavior and enabling horizontal code scrolling. Specializing in end-to-end product development, design systems, AI automation, LLM applications, and exceptional user experiences.",
+    "Product Engineer building AI-powered developer tools, automation-first SaaS, and production-grade UI systems. Open source contributor to Appwrite, Umami, Mintlify, and Archestra AI. Creator of Nothify, NodeFlow, Sync UI, Svelte Drawer, Billow, and more.",
   keywords: [
     "Product Engineer",
     "Design Engineer",
-    "Frontend Developer",
-    "Full-Stack Developer",
-    "Full Stack Engineer",
-    "Software Engineer",
-    "Web Developer",
-    "Developer Experience Engineer",
+    "AI Developer Tools",
     "Open Source Contributor",
-    "AI-Native Products",
-    "AI Product Engineer",
-    "Product Development",
-    "Next.js",
-    "React",
-    "Svelte",
+    "Next.js Developer",
+    "React Developer",
+    "Svelte Developer",
     "TypeScript",
     "JavaScript",
     "Design Systems",
-    "UI/UX Engineer",
-    "Component Libraries",
-    "Developer Tools",
+    "UI Component Library",
     "SaaS Developer",
-    "Product-Based Companies",
-    "Startup Engineer",
     "AI Automation",
     "AI Agent",
-    "Autonomous Systems",
     "LLM Applications",
-    "RAG Systems",
-    "Machine Learning",
-    "API Development",
-    "Cloud Engineering",
-    "System Design",
-    "Appwrite",
-    "Appwrite Console",
     "Appwrite Contributor",
-    "Umami",
     "Umami Contributor",
-    "react-zen",
-    "Mintlify",
     "Mintlify Contributor",
-    "Billow",
     "Nothify",
-    "Svelte Drawer",
+    "NodeFlow",
     "Sync UI",
-    "ErrExplain",
+    "Svelte Drawer",
+    "Billow",
     "Sendra",
+    "ErrExplain",
     "Idea Tracker",
-    "GST Invoice",
-    "404 Generator",
-    "Monitoring Tools",
-    "Error Analysis",
-    "UI Components",
     "Abhi Varde",
     "AbhiVarde",
-    "GitHub Portfolio",
-    "Tech Portfolio",
+    "abhivarde.in",
   ].join(", "),
+  authors: [{ name: "Abhi Varde", url: "https://abhivarde.in" }],
+  creator: "Abhi Varde",
+  metadataBase: new URL("https://abhivarde.in"),
   openGraph: {
-    title: "Abhi Varde // Product Engineer • AI & DevTools • OSS Contributor",
+    title: "Abhi Varde // Product Engineer · AI Tools · OSS",
     description:
-      "Building developer-first tools and contributing to product-based companies like Appwrite, Umami, and Mintlify. Contributed to Appwrite Console and Website improving UI and DX, with PRs reviewed and merged by core maintainers. Improved Umami website and react-zen with multiple merged PRs across UI, docs, and navigation. Fixed mobile UX and layout issues in Mintlify production docs. Creator of Billow, Nothify, Svelte Drawer, Sync UI, and more. Focused on product engineering, design systems, and AI automation.",
-    siteName:
-      "Abhi Varde // Product Engineer • AI & DevTools • OSS Contributor",
+      "Product Engineer building AI-powered tools, automation-first SaaS, and production-grade UI systems. OSS contributor to Appwrite, Umami, and Mintlify. Creator of Nothify, NodeFlow, Sync UI, and more.",
+    siteName: "Abhi Varde",
     url: "https://abhivarde.in",
     type: "profile",
+    locale: "en_US",
     images: [
       {
         url: "https://abhivarde.in/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Abhi Varde // Product Engineer • AI & DevTools • OSS Contributor",
+        alt: "Abhi Varde // Product Engineer · AI Tools · OSS",
       },
     ],
     profile: {
@@ -114,10 +89,11 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@varde_abhi",
-    title: "Abhi Varde // Product Engineer • AI & DevTools • OSS Contributor",
+    creator: "@varde_abhi",
+    title: "Abhi Varde // Product Engineer · AI Tools · OSS",
     description:
-      "Product Engineer • AI & DevTools • OSS Contributor • Contributing to Appwrite, Umami & Mintlify • Building developer-first tools",
-    images: "https://abhivarde.in/og-image.png",
+      "Building AI-powered tools, automation-first SaaS, and production-grade UI systems. OSS contributor · abhivarde.in",
+    images: ["https://abhivarde.in/og-image.png"],
   },
   robots: {
     index: true,
@@ -148,6 +124,36 @@ export default function RootLayout({ children }) {
           imageSrcSet="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fme.1a3d9f34.png&w=390&q=55 390w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fme.1a3d9f34.png&w=828&q=55 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fme.1a3d9f34.png&w=1080&q=55 1080w"
           imageSizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 984px"
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Abhi Varde",
+              url: "https://abhivarde.in",
+              image: "https://abhivarde.in/og-image.png",
+              jobTitle: "Product Engineer",
+              description:
+                "Product Engineer building AI-powered developer tools, automation-first SaaS, and production-grade UI systems.",
+              sameAs: [
+                "https://github.com/AbhiVarde",
+                "https://x.com/varde_abhi",
+                "https://linkedin.com/in/abhivarde",
+              ],
+              knowsAbout: [
+                "Product Engineering",
+                "AI Tools",
+                "Developer Tools",
+                "Design Systems",
+                "Open Source",
+                "Next.js",
+                "React",
+                "Svelte",
+              ],
+            }),
+          }}
+        />
       </head>
       <body
         className={`${plusJakartaSans.variable} ${firaCode.variable} bg-black text-white`}
@@ -163,11 +169,9 @@ export default function RootLayout({ children }) {
           <Suspense
             fallback={
               <main className="min-h-screen flex flex-col items-center justify-center">
-                <h1 className="text-center font-medium text-xl md:text-2xl">
-                  Loading...
-                </h1>
-                <p className="text-center mt-4 font-light">
-                  Hopefully not for too long :)
+                <h1 className="text-center font-medium text-xl">Loading</h1>
+                <p className="text-center mt-2 text-sm text-white/40 font-light">
+                  just a moment...
                 </p>
               </main>
             }
