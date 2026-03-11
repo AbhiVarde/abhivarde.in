@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+/* Font variables */
+body {
+  font-family: var(--font-sans), sans-serif;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono), monospace;
+}
+
 @keyframes scroll {
   to {
     transform: translate(calc(-25% - 0.25rem));
@@ -10,14 +22,13 @@
   scroll-behavior: smooth !important;
 }
 
-/* Hide scrollbar for all browsers */
 * {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 *::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 .animate-scroll {
@@ -63,7 +74,6 @@
   }
 }
 
-/* cmdk styles */
 [cmdk-root] {
   max-width: 90vw;
 }
@@ -94,15 +104,24 @@
   user-select: none;
 }
 
-
 @keyframes fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slide-up {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {

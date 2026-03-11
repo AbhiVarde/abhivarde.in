@@ -15,22 +15,17 @@ const Navbar = () => {
   const menuRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     if (!navRef.current) return;
-
     const activeItem = hoveredItem || pathname;
     const activeButton = navRef.current.querySelector(
       `[data-nav-item="${activeItem}"]`,
     );
-
     if (activeButton) {
       const { offsetLeft, offsetWidth } = activeButton;
       setIndicatorStyle({
@@ -43,17 +38,13 @@ const Navbar = () => {
 
   useEffect(() => {
     if (!isMobileMenuOpen) return;
-
     const handleScroll = () => setIsMobileMenuOpen(false);
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target))
         setIsMobileMenuOpen(false);
-      }
     };
-
     window.addEventListener("scroll", handleScroll);
     document.addEventListener("mousedown", handleClickOutside);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mousedown", handleClickOutside);
@@ -61,11 +52,8 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   const getTextColor = (navUrl) => {
-    // If hovering, only the hovered item is black
-    if (hoveredItem) {
+    if (hoveredItem)
       return hoveredItem === navUrl ? "text-black" : "text-white";
-    }
-    // If not hovering, only the active page is black
     return pathname === navUrl ? "text-black" : "text-white";
   };
 
@@ -84,16 +72,13 @@ const Navbar = () => {
       >
         <div className="flex justify-between items-center">
           <div className="flex space-x-2">
-            <Link
-              href="/"
-              className="md:text-lg tracking-wide text-[#F4F0E6] font-normal"
-            >
+            <Link href="/" className="tracking-wide text-[#F4F0E6] font-normal">
               ~{pathname === "/" && <span className="ml-1">abhivarde</span>}
             </Link>
             {pathname !== "/" && (
               <Link
                 href={pathname}
-                className="md:text-lg tracking-wide text-[#F4F0E6] font-normal"
+                className="tracking-wide text-[#F4F0E6] font-normal"
               >
                 <span className="text-[#F4F0E6]">/</span>&nbsp;
                 {pathname.charAt(1).toUpperCase() + pathname.slice(2)}
@@ -108,14 +93,10 @@ const Navbar = () => {
               aria-label="Toggle menu"
             >
               <span
-                className={`block h-0.5 w-5 bg-[#F4F0E6] rounded transition-transform duration-200 ${
-                  isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
-                }`}
+                className={`block h-0.5 w-5 bg-[#F4F0E6] rounded transition-transform duration-200 ${isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""}`}
               />
               <span
-                className={`block h-0.5 w-5 bg-[#F4F0E6] rounded transition-transform duration-200 ${
-                  isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
-                }`}
+                className={`block h-0.5 w-5 bg-[#F4F0E6] rounded transition-transform duration-200 ${isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}
               />
             </button>
           </div>
@@ -150,12 +131,10 @@ const Navbar = () => {
         </div>
 
         <div
-          className={`md:hidden overflow-hidden transition-all duration-200 ease-out ${
-            isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-          }`}
+          className={`md:hidden overflow-hidden transition-all duration-200 ease-out ${isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
         >
           <div className="border-t border-[#333]/30 mt-3 pt-3">
-            <ul className="flex flex-col space-y-2">
+            <ul className="flex flex-col space-y-1">
               {headerNavLinks.map((item) => (
                 <li key={item.url}>
                   <Link

@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Fira_Code } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import CommandBarInvokar from "./components/common/CommandBarInvokar";
@@ -6,11 +6,20 @@ import LayoutWrapper from "./components/common/LayoutWrapper";
 import Script from "next/script";
 import { Suspense } from "react";
 
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
   preload: true,
+  variable: "--font-sans",
+});
+
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+  preload: true,
+  variable: "--font-mono",
 });
 
 export const metadata = {
@@ -140,7 +149,10 @@ export default function RootLayout({ children }) {
           imageSizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 984px"
         />
       </head>
-      <body className={`${inter.className} bg-black text-white`}>
+      <body
+        className={`${plusJakartaSans.variable} ${firaCode.variable} bg-black text-white`}
+        style={{ fontFamily: "var(--font-sans), sans-serif" }}
+      >
         <Script
           defer
           src="https://analytics.umami.is/script.js"

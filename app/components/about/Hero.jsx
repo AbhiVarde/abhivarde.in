@@ -35,36 +35,30 @@ const Hero = () => {
             </h1>
 
             <p className="mt-4 text-base sm:text-lg font-light leading-relaxed max-w-2xl">
-              I build developer tools and UI kits crafting products that are
-              simple, fast, and thoughtful.
+              Product Engineer building AI-powered tools, automation first SaaS,
+              and production-grade UI systems.
             </p>
           </div>
 
           <div className="mt-auto pt-8 sm:pt-10 max-w-lg">
-            <div
-              className="
-  rounded-2xl sm:rounded-3xl p-3 sm:p-4 text-white
-  bg-black/25
-  backdrop-blur-md
-  border border-white/10
-"
-            >
+            <div className="rounded-2xl sm:rounded-3xl p-3 sm:p-4 text-white bg-black/25 backdrop-blur-md border border-white/10">
               <h2 className="font-normal uppercase tracking-wider flex items-center text-sm">
                 <LuRocket className="mr-2" size={18} />
                 Highlights
               </h2>
 
               <p className="mt-3 sm:hidden font-light leading-relaxed">
-                <span className="font-medium mr-1">110+ countries.</span>
-                <span className="font-medium">130+ GitHub stars.</span>
+                <span className="font-medium mr-1">137+ GitHub stars.</span>
+                <span className="font-medium">110+ countries.</span>
               </p>
 
               <p className="hidden sm:block mt-3 sm:mt-4 font-light leading-relaxed">
-                Reached developers in
-                <span className="font-medium mx-1">110+ countries</span> and
-                earned
-                <span className="font-medium mx-1">130+ GitHub stars</span>
-                across my projects.
+                <span className="font-medium">137+ GitHub stars</span>
+                {" · "}
+                <span className="font-medium">3,000+ npm downloads</span>
+                {" · "}
+                used by developers in
+                <span className="font-medium ml-1">110+ countries</span>
               </p>
             </div>
           </div>

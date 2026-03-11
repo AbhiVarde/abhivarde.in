@@ -16,7 +16,7 @@ const Footer = () => {
 
       <div className="py-8 sm:py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex flex-col items-center md:items-start">
-          <h3 className="text-sm sm:text-base md:text-lg tracking-wider uppercase font-medium text-white mb-3 sm:mb-4">
+          <h3 className="text-xs tracking-widest uppercase text-white/40 mb-3">
             Connect
           </h3>
           <div className="flex space-x-3 sm:space-x-4">
@@ -27,7 +27,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.name}
-                className="text-white hover:text-[#FF3B00] transition-colors"
+                className="text-white/60 hover:text-[#FF3B00] transition-colors"
               >
                 {React.cloneElement(social.icon, { size: "1.25rem" })}
               </Link>
@@ -36,14 +36,14 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col items-center md:items-end">
-          <h3 className="text-sm sm:text-base md:text-lg tracking-wider uppercase font-medium text-white mb-3 sm:mb-4">
-            Powered By
+          <h3 className="text-xs tracking-widest uppercase text-white/40 mb-3">
+            Built with
           </h3>
           <div className="flex flex-wrap justify-center md:justify-end gap-2">
             {[
               { name: "Next.js", logo: NextJS, url: "https://nextjs.org" },
               {
-                name: "TailwindCSS",
+                name: "Tailwind",
                 logo: TailwindCSS,
                 url: "https://tailwindcss.com",
               },
@@ -54,7 +54,7 @@ const Footer = () => {
                 href={tech.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center px-2.5 py-1 text-sm font-medium text-white rounded-lg bg-[#111111] hover:bg-[#1a1a1a] transition-colors border border-[#333] hover:border-[#444]"
+                className="flex items-center px-2.5 py-1 text-xs text-white/60 rounded-lg bg-[#111] hover:bg-[#1a1a1a] transition-colors border border-[#333] hover:text-white"
               >
                 <Image
                   src={tech.logo}
@@ -68,18 +68,20 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-[#333] flex flex-col sm:flex-row justify-between items-center">
-        <p className="text-white/80 mb-3 sm:mb-0 text-sm">
-          &copy; {new Date().getFullYear()} All rights reserved.
+      <div className="pt-6 border-t border-[#333] flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p className="text-xs text-white/30">
+          &copy; {new Date().getFullYear()} Abhi Varde
         </p>
         <Link
           href="https://twitter.com/varde_abhi"
-          className="inline-flex items-center space-x-1 text-white/85 hover:text-[#FF3B00] transition-colors group"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-xs text-white/40 hover:text-[#FF3B00] transition-colors group"
         >
-          <span className="text-sm">Brought to you by Abhi Varde</span>
+          <span>abhivarde.in</span>
           <GoArrowUpRight
-            size={14}
-            className="text-[#FF3B00] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+            size={12}
+            className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
           />
         </Link>
       </div>

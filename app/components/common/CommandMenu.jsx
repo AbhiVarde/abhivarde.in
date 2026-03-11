@@ -12,37 +12,35 @@ const CommandMenu = ({ open, onOpenChange }) => {
   const [search, setSearch] = React.useState("");
 
   React.useEffect(() => {
-    if (!open) {
-      setSearch("");
-    }
+    if (!open) setSearch("");
   }, [open]);
 
   const pages = [
     {
       id: "blog",
       name: "Blog",
-      icon: <TbLayout size={20} />,
+      icon: <TbLayout size={16} />,
       action: () => router.push("/blog"),
       shortcut: "B",
     },
     {
       id: "projects",
       name: "Projects",
-      icon: <LuTarget size={19} />,
+      icon: <LuTarget size={16} />,
       action: () => router.push("/projects"),
       shortcut: "P",
     },
     {
       id: "guestbook",
       name: "Guestbook",
-      icon: <LuBook size={20} />,
+      icon: <LuBook size={16} />,
       action: () => router.push("/guestbook"),
       shortcut: "G",
     },
     {
       id: "about",
       name: "About",
-      icon: <LuUser size={20} />,
+      icon: <LuUser size={16} />,
       action: () => router.push("/"),
       shortcut: "A",
     },
@@ -61,45 +59,45 @@ const CommandMenu = ({ open, onOpenChange }) => {
       onClick={() => onOpenChange(false)}
     >
       <Command
-        className="w-lg max-w-[90vw] bg-[#111111] border border-[#333] rounded-3xl overflow-hidden shadow-2xl"
+        className="w-lg max-w-[90vw] bg-[#111] border border-[#333] rounded-2xl overflow-hidden shadow-2xl"
         onClick={(e) => e.stopPropagation()}
         shouldFilter={true}
       >
-        <div className="flex items-center gap-2 p-4 border-b border-[#333]">
-          <LuSearch className="w-5 h-5 text-white shrink-0" />
+        <div className="flex items-center gap-2 p-3 border-b border-[#333]">
+          <LuSearch className="w-4 h-4 text-white/40 shrink-0" />
           <Command.Input
             value={search}
             onValueChange={setSearch}
-            placeholder="Type a command or search..."
-            className="flex-1 bg-transparent border-none outline-none text-white placeholder:text-white/50"
+            placeholder="Search..."
+            className="flex-1 bg-transparent border-none outline-none text-white text-sm placeholder:text-white/30"
           />
-          <kbd className="bg-[#333] border border-[#333] bg-opacity-30 px-2 py-0.5 text-sm rounded-md text-white font-mono">
+          <kbd className="bg-[#1a1a1a] border border-[#333] px-1.5 py-0.5 text-xs rounded text-white/40 font-mono">
             esc
           </kbd>
         </div>
 
-        <Command.List className="p-2">
-          <Command.Empty className="py-8 text-center text-white/50 text-sm">
+        <Command.List className="p-1.5">
+          <Command.Empty className="py-8 text-center text-white/30 text-sm">
             No results found.
           </Command.Empty>
 
           <Command.Group
             heading="Pages"
-            className="mb-4 **:[[cmdk-group-heading]]:px-3 **:[[cmdk-group-heading]]:pt-3 **:[[cmdk-group-heading]]:pb-2 **:[[cmdk-group-heading]]:text-sm **:[[cmdk-group-heading]]:text-white/60"
+            className="mb-2 **:[[cmdk-group-heading]]:px-2 **:[[cmdk-group-heading]]:pt-2 **:[[cmdk-group-heading]]:pb-1 **:[[cmdk-group-heading]]:text-xs **:[[cmdk-group-heading]]:text-white/30 **:[[cmdk-group-heading]]:uppercase **:[[cmdk-group-heading]]:tracking-widest"
           >
             {pages.map((page) => (
               <Command.Item
                 key={page.id}
                 value={page.name}
                 onSelect={() => handleSelect(page.action)}
-                className="flex items-center justify-between px-6 py-2 rounded-lg cursor-pointer text-white aria-selected:bg-white/10"
+                className="flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer text-white text-sm aria-selected:bg-white/5"
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 text-white/70">
                   {page.icon}
                   <span>{page.name}</span>
                 </div>
                 {page.shortcut && (
-                  <kbd className="bg-[#333] border border-[#333] bg-opacity-30 px-2 py-0.5 text-sm rounded-md font-mono">
+                  <kbd className="bg-[#1a1a1a] border border-[#333] px-1.5 py-0.5 text-xs rounded font-mono text-white/30">
                     {page.shortcut}
                   </kbd>
                 )}
@@ -109,7 +107,7 @@ const CommandMenu = ({ open, onOpenChange }) => {
 
           <Command.Group
             heading="Socials"
-            className="**:[[cmdk-group-heading]]:px-3 **:[[cmdk-group-heading]]:pt-3 **:[[cmdk-group-heading]]:pb-2 **:[[cmdk-group-heading]]:text-sm **:[[cmdk-group-heading]]:text-white/60"
+            className="**:[[cmdk-group-heading]]:px-2 **:[[cmdk-group-heading]]:pt-2 **:[[cmdk-group-heading]]:pb-1 **:[[cmdk-group-heading]]:text-xs **:[[cmdk-group-heading]]:text-white/30 **:[[cmdk-group-heading]]:uppercase **:[[cmdk-group-heading]]:tracking-widest"
           >
             {socialLinks.map((social) => (
               <Command.Item
@@ -118,7 +116,7 @@ const CommandMenu = ({ open, onOpenChange }) => {
                 onSelect={() =>
                   handleSelect(() => window.open(social.url, "_blank"))
                 }
-                className="flex items-center justify-between px-6 py-2 rounded-lg cursor-pointer text-white aria-selected:bg-white/10"
+                className="flex items-center px-3 py-2 rounded-lg cursor-pointer text-sm text-white/70 aria-selected:bg-white/5"
               >
                 <div className="flex items-center gap-2">
                   {social.icon}

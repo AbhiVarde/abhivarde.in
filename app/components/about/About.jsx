@@ -29,14 +29,17 @@ const About = () => {
 
           <div className="mt-5 grow">
             <p className="text-sm sm:text-base leading-relaxed">
-              Building developer tools and AI-driven products with focus on
-              polished UX and performant experiences. Open to Product
-              Engineering roles at product-driven, AI-focused companies.
+              Focused on clean architecture, thoughtful UX, and shipping things
+              that last.
+            </p>
+            <p className="text-sm sm:text-base leading-relaxed mt-3 text-white/60">
+              Open to Product Engineer and Design Engineer roles at
+              product-driven companies.
             </p>
           </div>
 
           <button
-            className="cursor-pointer text-sm mt-6 sm:mt-4 bg-[#1a1a1a] border border-[#333] px-4 py-1.5 rounded-lg hover:bg-[#222] transition-colors"
+            className="cursor-pointer text-sm mt-6 sm:mt-4 bg-[#1a1a1a] border border-[#333] px-4 py-1.5 rounded-lg hover:bg-[#222] transition-colors w-fit"
             onClick={handleDownloadClick}
             title="Download Resume"
           >
@@ -71,17 +74,14 @@ const About = () => {
               onLoadedData={() => setIsVideoLoaded(true)}
             />
 
-            <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent" />
           </div>
 
           <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white z-10">
-            <h3 className="text-lg font-medium mb-1 drop-shadow-lg">
-              Sync UI 🚀
-            </h3>
-            <p className="text-sm font-normal mb-3 text-white/95 drop-shadow-md">
-              React Component Library for Design Engineers
+            <h3 className="text-lg font-medium mb-1 drop-shadow-lg">Sync UI</h3>
+            <p className="text-sm font-normal mb-3 text-white/70 drop-shadow-md">
+              React component library for Design Engineers
             </p>
-
             <a
               href="https://syncui.design"
               target="_blank"

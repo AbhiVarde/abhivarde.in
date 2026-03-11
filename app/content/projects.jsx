@@ -13,7 +13,7 @@ const projects = [
     title: "NodeFlow",
     shortDescription: "Visual workflow builder for the browser.",
     description:
-      "NodeFlow is a visual node-based workflow builder inspired by n8n. Design conditional flows with drag-and-drop nodes, share via URL, and export JSON all in the browser with zero backend.",
+      "Visual node-based workflow builder. Design conditional flows with drag-and-drop nodes, share via URL and export JSON. All in the browser, zero backend.",
     url: "https://nodeflow.abhivarde.in",
   },
   {
@@ -21,33 +21,33 @@ const projects = [
     title: "Nothify",
     shortDescription: "AI agent that auto-generates 404 pages via PRs.",
     description:
-      "Nothify is an AI-powered automation agent that analyzes Next.js repositories, generates stack-aware 404 pages, and automatically opens GitHub pull requests with zero setup.",
+      "Analyzes any Next.js repo, generates a stack-aware 404 page, and opens a GitHub PR automatically. Works with public, private, and forked repos.",
     url: "https://nothify.abhivarde.in",
   },
   {
     image: SyncUI,
     title: "Sync UI",
-    shortDescription: "React Component Library for Design Engineers",
+    shortDescription: "React component library for Design Engineers.",
     description:
-      "A sleek UI library for Design Engineers with 125+ components, 10+ blocks, and 3 premium templates. Built with MUI and Motion (motion/react).",
-    githubLink: "https://github.com/AbhiVarde/syncui",
+      "125+ components, 10+ blocks, and 3 premium templates. Built with MUI and Motion for Design Engineers who care about detail.",
     url: "https://syncui.design",
+    githubLink: "https://github.com/AbhiVarde/syncui",
   },
   {
     image: Drawer,
     title: "Svelte Drawer",
     shortDescription: "Accessible drawer component for Svelte 5.",
     description:
-      "Svelte Drawer is a modern NPM package for Svelte 5 that provides an accessible, animated drawer component inspired by Vaul and built for smooth interactions.",
-    githubLink: "https://github.com/AbhiVarde/svelte-drawer",
+      "A modern NPM package for Svelte 5. Accessible, animated, and inspired by Vaul. Supports multiple directions, nested drawers, and snap points.",
     url: "https://drawer.abhivarde.in",
+    githubLink: "https://github.com/AbhiVarde/svelte-drawer",
   },
   {
     image: Billow,
     title: "Billow",
-    shortDescription: "GST-compliant invoicing for Indian businesses.",
+    shortDescription: "GST invoicing for Indian businesses, without the bloat.",
     description:
-      "Billow is a lightweight SaaS that helps Indian businesses generate GST-compliant sales invoices quickly and accurately, without relying on complex accounting software.",
+      "Generate GST-compliant sales invoices quickly and accurately. No complex accounting software, no unnecessary overhead.",
     url: "https://billow.abhivarde.in",
   },
   {
@@ -55,7 +55,7 @@ const projects = [
     title: "Sendra",
     shortDescription: "Monitor Appwrite apps with instant alerts.",
     description:
-      "Sendra is a developer-focused monitoring tool that tracks Appwrite Sites and Functions, sends instant failure alerts, and suggests AI-powered fixes.",
+      "Tracks Appwrite Sites and Functions, sends instant failure alerts, and suggests AI-powered fixes. Built for developers who ship fast.",
     url: "https://sendra.vercel.app",
     githubLink: "https://github.com/AbhiVarde/sendra",
   },
@@ -64,16 +64,16 @@ const projects = [
     title: "ErrExplain",
     shortDescription: "Turn cryptic errors into plain English.",
     description:
-      "ErrExplain is a developer tool that converts cryptic runtime and build errors into clear, human-readable explanations for faster debugging.",
+      "Converts runtime and build errors into clear, human-readable explanations. Less time debugging, more time shipping.",
     url: "https://errexplain.appwrite.network/",
     githubLink: "https://github.com/AbhiVarde/ErrExplain",
   },
   {
     image: IdeaTracker,
     title: "Idea Tracker",
-    shortDescription: "Track and organize side project ideas.",
+    shortDescription: "Capture and manage side project ideas.",
     description:
-      "Idea Tracker is a productivity-focused SaaS that helps developers capture, organize, and manage side project ideas efficiently.",
+      "A focused SaaS for developers to capture, organize, and prioritize side project ideas without the noise.",
     url: "https://idea-tracker-v2.appwrite.network/",
     githubLink: "https://github.com/AbhiVarde/Idea-tracker",
   },

@@ -17,7 +17,6 @@ const CommandBarInvokar = () => {
         setOpen((prev) => !prev);
       }
     };
-
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, []);
@@ -27,13 +26,13 @@ const CommandBarInvokar = () => {
   return (
     <>
       <button
-        className="fixed z-10 right-6 bottom-6 p-2 md:p-3 flex gap-1 font-medium border border-[#333] bg-[#111111] text-white rounded-2xl transition-transform duration-200 hover:-translate-y-1 focus:outline-none"
+        className="fixed z-10 right-6 bottom-6 p-2 md:p-2.5 flex items-center gap-1.5 text-xs font-medium border border-[#333] bg-[#111] text-white/60 rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:text-white focus:outline-none"
         onClick={() => setOpen(true)}
         aria-label="Command Bar"
       >
-        <LuCommand size={23} /> K
+        <LuCommand size={16} />
+        <span>K</span>
       </button>
-
       <CommandMenu open={open} onOpenChange={setOpen} />
     </>
   );
