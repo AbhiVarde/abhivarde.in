@@ -36,35 +36,37 @@ const skills = [
   { image: TypeScript, title: "TypeScript" },
   { image: JavaScript, title: "JavaScript" },
 
-  // Frameworks & Libraries
+  // Frameworks & UI
   { image: React, title: "React" },
   { image: NextJS, title: "Next.js" },
   { image: SvelteKit, title: "SvelteKit" },
-  { image: Shadcn, title: "shadcn/ui" },
   { image: TailwindCSS, title: "Tailwind CSS" },
+  { image: Shadcn, title: "shadcn/ui" },
   { image: Mui, title: "Material UI" },
   { image: Motion, title: "Motion" },
   { image: Redux, title: "Redux" },
 
-  // DevTools & Platforms
+  // Dev Platforms & Devtools
   { image: Lingo, title: "Lingo.dev" },
   { image: Appwrite, title: "Appwrite" },
   { image: Vercel, title: "Vercel" },
   { image: Resend, title: "Resend" },
-  { image: Github, title: "GitHub" },
 
-  // AI & SDKs
+  // AI & AI SDKs
+  { image: Exa, title: "Exa AI" },
   { image: AISDK, title: "AI SDK" },
   { image: Groq, title: "Groq" },
-  { image: Exa, title: "Exa AI" },
-  { image: OpenAI, title: "OpenAI" },
   { image: Gemini, title: "Gemini" },
+  { image: OpenAI, title: "OpenAI" },
 
-  // Version Control & Real-time
-  { image: SocketIO, title: "Socket.io" },
+  // Version Control
+  { image: Github, title: "GitHub" },
+
+  // Real-time & CI
   { image: GitHubActions, title: "GitHub Actions" },
+  { image: SocketIO, title: "Socket.io" },
 
-  // Payment Integration
+  // Payments
   { image: Stripe, title: "Stripe" },
   { image: Razorpay, title: "Razorpay" },
 
