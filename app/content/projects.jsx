@@ -3,8 +3,9 @@ import IdeaTracker from "../resources/images/project/ideatracker.webp";
 import ErrExplain from "../resources/images/project/errexplain.webp";
 import Sendra from "../resources/images/project/sendra.webp";
 import Drawer from "../resources/images/project/drawer.webp";
-import Nothify from "../resources/images/project/nothify.webp";
 import Billow from "../resources/images/project/billow.webp";
+import Jobs from "../resources/images/project/jobs.webp";
+import Nothify from "../resources/images/project/nothify.webp";
 import NodeFlow from "../resources/images/project/nodeflow.webp";
 
 const projects = [
@@ -49,6 +50,14 @@ const projects = [
     description:
       "Generate GST-compliant sales invoices quickly and accurately. No complex accounting software, no unnecessary overhead.",
     url: "https://billow.abhivarde.in",
+  },
+  {
+    image: Jobs,
+    title: "Jobs",
+    shortDescription: "AI platform that matches resumes with real jobs.",
+    description:
+      "AI-powered job matching platform where companies submit careers page URLs for automatic job extraction and job seekers upload resumes. AI finds relevant roles from a curated database or across the web using semantic search.",
+    url: "https://jobs.abhivarde.in",
   },
   {
     image: Sendra,
