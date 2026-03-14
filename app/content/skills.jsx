@@ -71,8 +71,8 @@ const skills = [
   { image: Razorpay, title: "Razorpay" },
 
   // Cloud & Infrastructure
-  { image: GoogleCloud, title: "Google Cloud" },
   { image: AWS, title: "AWS" },
+  { image: GoogleCloud, title: "Google Cloud" },
 
   // Design
   { image: Figma, title: "Figma" },
