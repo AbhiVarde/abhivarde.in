@@ -101,13 +101,13 @@ const Navbar = () => {
             aria-label="Toggle menu"
           >
             <span
-              className={`absolute h-0.5 w-5 bg-[#F4F0E6] rounded transition-all duration-200 ${
-                isMobileMenuOpen ? "rotate-45" : "-translate-y-1"
+              className={`absolute h-[1.5px] w-4 bg-[#F4F0E6] rounded transition-all duration-300 ${
+                isMobileMenuOpen ? "rotate-45" : "-translate-y-0.75"
               }`}
             />
             <span
-              className={`absolute h-0.5 w-5 bg-[#F4F0E6] rounded transition-all duration-200 ${
-                isMobileMenuOpen ? "-rotate-45" : "translate-y-1"
+              className={`absolute h-[1.5px] w-4 bg-[#F4F0E6] rounded transition-all duration-300 ${
+                isMobileMenuOpen ? "-rotate-45" : "translate-y-0.75"
               }`}
             />
           </button>
