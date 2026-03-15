@@ -7,7 +7,7 @@ import HeroImage from "../../resources/images/me.png";
 
 const Hero = () => {
   return (
-    <div className="mt-8 md:mt-10">
+    <div>
       <div className="relative overflow-hidden rounded-3xl shadow-2xl">
         <div className="absolute inset-0 z-0">
           <Image

@@ -44,20 +44,20 @@ const projects = [
     githubLink: "https://github.com/AbhiVarde/svelte-drawer",
   },
   {
-    image: Billow,
-    title: "Billow",
-    shortDescription: "GST invoicing for Indian businesses, without the bloat.",
-    description:
-      "Generate GST-compliant sales invoices quickly and accurately. No complex accounting software, no unnecessary overhead.",
-    url: "https://billow.abhivarde.in",
-  },
-  {
     image: Jobs,
     title: "Jobs",
     shortDescription: "AI platform that matches resumes with real jobs.",
     description:
       "AI-powered job matching platform where companies submit careers page URLs for automatic job extraction and job seekers upload resumes. AI finds relevant roles from a curated database or across the web using semantic search.",
     url: "https://jobs.abhivarde.in",
+  },
+  {
+    image: Billow,
+    title: "Billow",
+    shortDescription: "GST invoicing for Indian businesses, without the bloat.",
+    description:
+      "Generate GST-compliant sales invoices quickly and accurately. No complex accounting software, no unnecessary overhead.",
+    url: "https://billow.abhivarde.in",
   },
   {
     image: Sendra,

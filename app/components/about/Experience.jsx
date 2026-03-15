@@ -9,8 +9,8 @@ const Experience = ({ works, skills }) => {
   const isRemote = (src) => typeof src === "string" && src.startsWith("http");
 
   return (
-    <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <div className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111]">
+    <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+      <div className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111] flex flex-col h-full">
         <div className="uppercase tracking-widest flex gap-2 items-center text-sm">
           <span className="bg-[#FF3B00] p-1 rounded-md">
             <IoBriefcaseOutline size={18} color="#FFFFFF" />
@@ -19,38 +19,42 @@ const Experience = ({ works, skills }) => {
         </div>
 
         <p className="mt-4 text-sm text-white/60">
-          Where I've worked and what I've shipped.
+          Where I've worked, contributed, and shipped things that matter.
         </p>
 
-        {works?.map((work, i) => (
-          <div
-            key={i}
-            className={`flex items-center gap-4 ${i === 0 ? "mt-6" : "mt-3"}`}
-          >
-            <img
-              src={work.image}
-              alt={work.companyName}
-              width={48}
-              height={48}
-              loading="lazy"
-              decoding="async"
-              referrerPolicy="no-referrer"
-              className="h-10 w-10 object-cover bg-[#333] border border-[#333] bg-opacity-30 p-1 rounded-xl"
-            />
-            <div className="flex w-full flex-col">
-              <p className="hidden sm:block font-medium">{work.companyName}</p>
-              <div className="flex flex-col sm:flex-row justify-between">
-                <p className="text-sm text-white/70">{work.role}</p>
-                <p className="text-sm text-white/40">
-                  {work.startAt} - {work.endAt}
+        <div className="flex flex-col flex-1 justify-between mt-6">
+          {works?.map((work, i) => (
+            <div
+              key={i}
+              className={`flex items-center gap-4 ${i !== 0 ? "mt-3" : ""}`}
+            >
+              <img
+                src={work.image}
+                alt={work.companyName}
+                width={48}
+                height={48}
+                loading="lazy"
+                decoding="async"
+                referrerPolicy="no-referrer"
+                className="h-10 w-10 object-cover bg-[#333] border border-[#333] bg-opacity-30 p-1 rounded-xl"
+              />
+              <div className="flex w-full flex-col">
+                <p className="hidden sm:block font-medium">
+                  {work.companyName}
                 </p>
+                <div className="flex flex-col sm:flex-row justify-between">
+                  <p className="text-sm text-white/70">{work.role}</p>
+                  <p className="text-sm text-white/40">
+                    {work.startAt} - {work.endAt}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      <div className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111]">
+      <div className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111] flex flex-col h-full">
         <div className="uppercase tracking-widest flex gap-2 items-center text-sm">
           <span className="bg-[#FF3B00] p-1 rounded-md">
             <LuTerminal size={18} color="#FFFFFF" />
@@ -59,87 +63,52 @@ const Experience = ({ works, skills }) => {
         </div>
 
         <p className="mt-4 text-sm text-white/60">
-          Tools and technologies I work with.
+          Tools and technologies I work with, and keep reaching for.
         </p>
 
-        <div className="mt-6 overflow-hidden hidden sm:flex lg:hidden">
-          <div className="flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap animate-scroll">
-            {skills?.map((skill, i) => (
-              <div
-                key={i}
-                className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md border"
-              >
-                {isRemote(skill.image) ? (
-                  <img
-                    src={skill.image}
-                    alt={skill.title}
-                    width={16}
-                    height={16}
-                    loading="lazy"
-                    decoding="async"
-                    referrerPolicy="no-referrer"
-                    className="w-4 h-4"
-                  />
-                ) : (
-                  <Image
-                    src={skill.image}
-                    alt={skill.title}
-                    width={16}
-                    height={16}
-                    className="w-4 h-4"
-                  />
-                )}
-                <span className="text-black">{skill.title}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {[skills?.slice(0, 10), skills?.slice(10, 20), skills?.slice(20)]
-          .filter(Boolean)
-          .map((group, groupIndex) => (
-            <div
-              key={groupIndex}
-              className="mt-2 overflow-hidden flex sm:hidden lg:flex"
-            >
-              <div
-                className={`flex min-w-full shrink-0 space-x-4 py-4 w-max flex-nowrap ${
-                  groupIndex % 2 === 1
-                    ? "animate-scroll-reverse"
-                    : "animate-scroll"
-                }`}
-              >
-                {group?.map((skill, i) => (
+        <div className="mt-6 space-y-3">
+          {[
+            { title: "Languages", items: skills.slice(0, 4) },
+            { title: "Frameworks", items: skills.slice(4, 10) },
+            { title: "UI", items: skills.slice(10, 14) },
+            { title: "Platforms", items: skills.slice(14, 18) },
+            { title: "AI", items: skills.slice(18, 24) },
+            { title: "Infrastructure", items: skills.slice(25, 29) },
+          ].map((group, i) => (
+            <div key={i}>
+              <p className="text-xs uppercase tracking-wider text-white/40 mb-2">
+                {group.title}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {group.items.map((skill, j) => (
                   <div
-                    key={i}
-                    className="flex shrink-0 items-center space-x-1 bg-[#F4F0E6] px-2 py-1 text-xs sm:text-sm rounded-md border"
+                    key={j}
+                    className="flex items-center gap-2 bg-[#F4F0E6] text-black px-2.5 py-1 rounded-md text-xs"
                   >
                     {isRemote(skill.image) ? (
                       <img
                         src={skill.image}
                         alt={skill.title}
-                        width={16}
-                        height={16}
-                        loading="lazy"
-                        decoding="async"
-                        referrerPolicy="no-referrer"
-                        className="w-4 h-4"
+                        width={14}
+                        height={14}
+                        className="w-3.5 h-3.5"
                       />
                     ) : (
                       <Image
                         src={skill.image}
                         alt={skill.title}
-                        width={16}
-                        height={16}
-                        className="w-4 h-4"
+                        width={14}
+                        height={14}
+                        className="w-3.5 h-3.5"
                       />
                     )}
-                    <span className="text-black">{skill.title}</span>
+                    {skill.title}
                   </div>
                 ))}
               </div>
             </div>
           ))}
+        </div>
       </div>
     </div>
   );

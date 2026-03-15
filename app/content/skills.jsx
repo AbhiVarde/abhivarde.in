@@ -17,6 +17,10 @@ const Lingo = "https://lingo.dev/favicon.ico";
 const Motion =
   "https://framerusercontent.com/images/3aQX5dnH5Yqgsn98QXKF2ZXxIE.png";
 const SvelteKit = "https://svelte.dev/favicon.png";
+const Svelte = "https://svelte.dev/favicon.png";
+const NodeJS = "https://nodejs.org/static/images/favicons/favicon.png";
+const Python = "https://www.python.org/static/favicon.ico";
+const SQL = "https://cdn.simpleicons.org/postgresql/ffffff";
 const AISDK = "https://ai-sdk.dev/apple-icon.png";
 const Shadcn = "https://ui.shadcn.com/favicon.ico";
 const OpenAI = "https://openai.com/favicon.ico";
@@ -24,6 +28,7 @@ const Gemini =
   "https://www.gstatic.com/lamda/images/favicon_v1_150160cddff7f294ce30.svg";
 const Groq = "https://groq.com/favicon.ico";
 const Exa = "https://exa.ai/images/favicon-32x32.png";
+const OpenRouter = "https://openrouter.ai/favicon.ico";
 const Stripe =
   "https://assets.stripeassets.com/fzn2n1nzq965/nu0iR4KqmkdJ52fgRts09/c3a10df318e7ffb1f516073daadea625/favicon.ico";
 const Razorpay =
@@ -35,42 +40,45 @@ const skills = [
   // Languages
   { image: TypeScript, title: "TypeScript" },
   { image: JavaScript, title: "JavaScript" },
+  { image: Python, title: "Python" },
+  { image: SQL, title: "SQL" },
 
-  // Frameworks & UI
+  // Frameworks
   { image: React, title: "React" },
   { image: NextJS, title: "Next.js" },
+  { image: Svelte, title: "Svelte" },
   { image: SvelteKit, title: "SvelteKit" },
+  { image: NodeJS, title: "Node.js" },
   { image: TailwindCSS, title: "Tailwind CSS" },
+
+  // UI
   { image: Shadcn, title: "shadcn/ui" },
   { image: Mui, title: "Material UI" },
   { image: Motion, title: "Motion" },
   { image: Redux, title: "Redux" },
 
-  // Dev Platforms & Devtools
+  // Platforms
   { image: Lingo, title: "Lingo.dev" },
   { image: Appwrite, title: "Appwrite" },
   { image: Vercel, title: "Vercel" },
   { image: Resend, title: "Resend" },
 
   // AI & AI SDKs
-  { image: Exa, title: "Exa AI" },
   { image: AISDK, title: "AI SDK" },
+  { image: Exa, title: "Exa AI" },
   { image: Groq, title: "Groq" },
-  { image: Gemini, title: "Gemini" },
-  { image: OpenAI, title: "OpenAI" },
+  { image: OpenRouter, title: "OpenRouter" },
 
   // Version Control
   { image: Github, title: "GitHub" },
 
-  // Real-time & CI
+  // Infrastructure
   { image: GitHubActions, title: "GitHub Actions" },
   { image: SocketIO, title: "Socket.io" },
-
-  // Payments
   { image: Stripe, title: "Stripe" },
   { image: Razorpay, title: "Razorpay" },
 
-  // Cloud & Infrastructure
+  // Cloud
   { image: AWS, title: "AWS" },
   { image: GoogleCloud, title: "Google Cloud" },
 

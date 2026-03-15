@@ -11,23 +11,26 @@ export const metadata = {
 
 const GuestBook = () => {
   return (
-    <div className="max-w-5xl mx-auto px-4 pt-16 md:pt-18">
-      <div className="mt-6 sm:mt-10">
-        <div className="mt-4 mb-2 sm:mb-4 flex space-x-3 items-center">
+    <main className="max-w-5xl mx-auto px-4 pt-24">
+      <div className="mb-8">
+        <div className="flex items-center gap-3 mb-2">
           <div className="bg-[#FF3B00] p-1.5 rounded-lg">
             <LuBook size={20} color="#FFFFFF" />
           </div>
-          <h2 className="sm:text-lg md:text-xl font-medium tracking-wide">
+
+          <h1 className="text-lg md:text-xl font-medium tracking-wide">
             Guestbook
-          </h2>
+          </h1>
         </div>
-        <p className="text-sm sm:text-base text-white/60 leading-relaxed">
+
+        <p className="text-sm md:text-base text-white/60 leading-relaxed">
           Leave a message for future visitors. Thoughts, feedback, or just a
           hello.
         </p>
       </div>
+
       <GiscusComponent />
-    </div>
+    </main>
   );
 };
 

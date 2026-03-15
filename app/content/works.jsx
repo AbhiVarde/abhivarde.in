@@ -1,10 +1,24 @@
 const works = [
   {
+    image: "https://avatars.githubusercontent.com/u/163827765?s=200&v=4",
+    companyName: "Better Auth",
+    role: "Open Source Frontend Engineer",
+    startAt: "Mar '26",
+    endAt: "Present",
+  },
+  {
+    image: "https://avatars.githubusercontent.com/mintlify?s=200&v=4",
+    companyName: "Mintlify",
+    role: "Open Source Design Engineer",
+    startAt: "Jan '26",
+    endAt: "Present",
+  },
+  {
     image: "https://avatars.githubusercontent.com/u/25003669?s=200&v=4",
     companyName: "Appwrite",
     role: "Open Source Product Engineer",
     startAt: "Oct '25",
-    endAt: "Feb '26",
+    endAt: "Present",
   },
   {
     image: "https://avatars.githubusercontent.com/u/105618662?s=200&v=4",
