@@ -1,6 +1,6 @@
 import React from "react";
 import { LuBook } from "react-icons/lu";
-import GiscusComponent from "../components/common/GiscusComponent";
+import GiscusComponent from "../components/sections/guestbook/GiscusComponent";
 
 export const metadata = {
   title: "Guestbook",
