@@ -36,8 +36,8 @@ const Hero = () => {
             </h1>
 
             <p className="mt-4 text-base sm:text-lg font-light leading-relaxed max-w-2xl">
-              Product Engineer building AI-powered tools, automation first SaaS,
-              and production-grade UI systems.
+              Product Engineer building AI tools, automation SaaS, and
+              production UI.
             </p>
           </div>
 
@@ -48,13 +48,24 @@ const Hero = () => {
                 Highlights
               </h2>
               <p className="mt-3 sm:hidden font-light leading-relaxed">
-                <span className="font-medium mr-1">137+ GitHub stars.</span>
-                <span className="font-medium">110+ countries.</span>
+                <span className="font-medium">
+                  137+ GitHub <span className="mx-1">★</span>
+                </span>
+                {" · "}
+                <span className="font-medium">
+                  3K+ npm <span className="mx-1">↓</span>
+                </span>
+                {" · "}
+                <span className="font-medium">110+ countries</span>
               </p>
               <p className="hidden sm:block mt-3 sm:mt-4 font-light leading-relaxed">
-                <span className="font-medium">137+ GitHub stars</span>
+                <span className="font-medium">
+                  137+ GitHub <span className="mx-1">★</span>
+                </span>
                 {" · "}
-                <span className="font-medium">3,000+ npm downloads</span>
+                <span className="font-medium">
+                  3,000+ npm <span className="mx-1">↓</span>
+                </span>
                 {" · "}
                 used by developers in
                 <span className="font-medium ml-1">110+ countries</span>

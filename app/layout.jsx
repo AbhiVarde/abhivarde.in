@@ -28,7 +28,7 @@ export const metadata = {
     template: "%s // Abhi Varde",
   },
   description:
-    "Product Engineer building AI-powered developer tools, automation-first SaaS, and production-grade UI systems. Open source contributor to Appwrite, Umami, Mintlify, and Archestra AI. Creator of Nothify, NodeFlow, Sync UI, Svelte Drawer, Billow, and more.",
+    "Product Engineer building AI tools, automation SaaS, and production UI. Open source contributor to Appwrite, Umami, Mintlify, and Archestra AI. Creator of Nothify, NodeFlow, Sync UI, Svelte Drawer, Billow, and more.",
   keywords: [
     "Product Engineer",
     "Design Engineer",
@@ -135,7 +135,7 @@ export default function RootLayout({ children }) {
               image: "https://abhivarde.in/og-image.png",
               jobTitle: "Product Engineer",
               description:
-                "Product Engineer building AI-powered developer tools, automation-first SaaS, and production-grade UI systems.",
+                "Product Engineer building AI tools, automation SaaS, and production UI.",
               sameAs: [
                 "https://github.com/AbhiVarde",
                 "https://x.com/varde_abhi",
