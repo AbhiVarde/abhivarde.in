@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { LuGlobe, LuRocket } from "react-icons/lu";
-import HeroImage from "../../resources/images/me.png";
 
 const Hero = () => {
   return (
@@ -11,7 +10,7 @@ const Hero = () => {
       <div className="relative overflow-hidden rounded-3xl shadow-2xl">
         <div className="absolute inset-0 z-0">
           <Image
-            src={HeroImage}
+            src="/images/hero-bg.jpg"
             alt="Background"
             fill
             priority

@@ -1,10 +1,10 @@
 import { Plus_Jakarta_Sans, Fira_Code } from "next/font/google";
 import "./globals.css";
-import { Providers } from "./providers";
-import CommandBarInvokar from "./components/common/CommandBarInvokar";
-import LayoutWrapper from "./components/common/LayoutWrapper";
 import Script from "next/script";
 import { Suspense } from "react";
+import { Providers } from "./providers";
+import CommandBarInvokar from "./components/command/CommandBarInvokar";
+import LayoutWrapper from "./components/layout/LayoutWrapper";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],

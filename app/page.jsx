@@ -3,11 +3,11 @@
 import { useEffect } from "react";
 import works from "./content/works";
 import skills from "./content/skills";
-import Hero from "./components/about/Hero";
-import About from "./components/about/About";
-import Featured from "./components/about/Featured";
-import Experience from "./components/about/Experience";
-import Contact from "./components/about/Contact";
+import Hero from "./components/sections/about/Hero";
+import About from "./components/sections/about/About";
+import Featured from "./components/sections/about/Featured";
+import Experience from "./components/sections/about/Experience";
+import Contact from "./components/sections/about/Contact";
 
 const sections = [Hero, About, Featured, Experience, Contact];
 

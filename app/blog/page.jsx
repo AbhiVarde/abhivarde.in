@@ -1,6 +1,6 @@
 import React from "react";
 import { TbLayout } from "react-icons/tb";
-import Blogs from "../components/blog/Blogs";
+import Blogs from "../components/sections/blog/Blogs";
 
 export const metadata = {
   title: "Blog",
@@ -11,7 +11,7 @@ export const metadata = {
 
 const Blog = () => {
   return (
-    <main className="max-w-5xl mx-auto px-4 pt-24">
+    <main className="max-w-5xl mx-auto px-4 pt-24 pb-16">
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
           <div className="bg-[#FF3B00] p-1.5 rounded-lg">

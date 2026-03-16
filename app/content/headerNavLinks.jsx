@@ -8,11 +8,11 @@ const headerNavLinks = [
     url: "/projects",
     icon: <LuTarget color="#FFFFFF" />,
   },
-  // {
-  //   title: "Oss",
-  //   url: "/oss",
-  //   icon: <LuCode color="#FFFFFF" />,
-  // },
+  {
+    title: "Oss",
+    url: "/oss",
+    icon: <LuCode color="#FFFFFF" />,
+  },
   { title: "Blog", url: "/blog", icon: <LuBook color="#FFFFFF" /> },
   {
     title: "GuestBook",

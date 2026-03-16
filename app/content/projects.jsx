@@ -14,7 +14,7 @@ const projects = [
     title: "NodeFlow",
     shortDescription: "Visual workflow builder for the browser.",
     description:
-      "Visual node-based workflow builder. Design conditional flows with drag-and-drop nodes, share via URL and export JSON. All in the browser, zero backend.",
+      "Visual node-based workflow builder. Design conditional flows with drag-and-drop nodes, share via URL and export JSON.",
     url: "https://nodeflow.abhivarde.in",
   },
   {
@@ -22,7 +22,7 @@ const projects = [
     title: "Nothify",
     shortDescription: "AI agent that auto-generates 404 pages via PRs.",
     description:
-      "Analyzes any Next.js repo, generates a stack-aware 404 page, and opens a GitHub PR automatically. Works with public, private, and forked repos.",
+      "Analyzes any Next.js repo, generates a stack-aware 404 page, and opens a GitHub PR automatically.",
     url: "https://nothify.abhivarde.in",
   },
   {
@@ -30,7 +30,7 @@ const projects = [
     title: "Sync UI",
     shortDescription: "React component library for Design Engineers.",
     description:
-      "125+ components, 10+ blocks, and 3 premium templates. Built with MUI and Motion for Design Engineers who care about detail.",
+      "125+ components, 10+ blocks, and 3 premium templates. Built with MUI and Motion for Design Engineers.",
     url: "https://syncui.design",
     githubLink: "https://github.com/AbhiVarde/syncui",
   },
@@ -39,7 +39,7 @@ const projects = [
     title: "Svelte Drawer",
     shortDescription: "Accessible drawer component for Svelte 5.",
     description:
-      "A modern NPM package for Svelte 5. Accessible, animated, and inspired by Vaul. Supports multiple directions, nested drawers, and snap points.",
+      "A modern NPM package for Svelte 5. Accessible, animated, inspired by Vaul. Supports nested drawers and snap points.",
     url: "https://drawer.abhivarde.in",
     githubLink: "https://github.com/AbhiVarde/svelte-drawer",
   },
@@ -48,7 +48,7 @@ const projects = [
     title: "Jobs",
     shortDescription: "AI platform that matches resumes with real jobs.",
     description:
-      "AI-powered job matching platform where companies submit careers page URLs for automatic job extraction and job seekers upload resumes. AI finds relevant roles from a curated database or across the web using semantic search.",
+      "AI-powered job matching — companies submit careers URLs, job seekers upload resumes, AI finds relevant roles via semantic search.",
     url: "https://jobs.abhivarde.in",
   },
   {
@@ -64,7 +64,7 @@ const projects = [
     title: "Sendra",
     shortDescription: "Monitor Appwrite apps with instant alerts.",
     description:
-      "Tracks Appwrite Sites and Functions, sends instant failure alerts, and suggests AI-powered fixes. Built for developers who ship fast.",
+      "Tracks Appwrite Sites and Functions, sends instant failure alerts, and suggests AI-powered fixes.",
     url: "https://sendra.vercel.app",
     githubLink: "https://github.com/AbhiVarde/sendra",
   },
@@ -82,7 +82,7 @@ const projects = [
     title: "Idea Tracker",
     shortDescription: "Capture and manage side project ideas.",
     description:
-      "A focused SaaS for developers to capture, organize, and prioritize side project ideas without the noise.",
+      "A focused SaaS to capture, organize, and prioritize side project ideas without the noise.",
     url: "https://idea-tracker-v2.appwrite.network/",
     githubLink: "https://github.com/AbhiVarde/Idea-tracker",
   },

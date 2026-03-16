@@ -1,6 +1,6 @@
 import React from "react";
 import { LuTarget } from "react-icons/lu";
-import Projects from "../components/project/Projects";
+import Projects from "../components/sections/project/Projects";
 
 export const metadata = {
   title: "Projects",
