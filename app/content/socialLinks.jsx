@@ -1,11 +1,6 @@
 import { LuGithub } from "react-icons/lu";
-import {
-  FaLinkedinIn,
-  FaXTwitter,
-  FaInstagram,
-  FaSpotify,
-} from "react-icons/fa6";
-import { SiPeerlist, SiDevdotto } from "react-icons/si";
+import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import { SiPeerlist, SiDevdotto, SiDiscord } from "react-icons/si";
 
 const socialLinks = [
   {
@@ -21,6 +16,12 @@ const socialLinks = [
     icon: <FaLinkedinIn size={20} color="#FFFFFF" />,
   },
   {
+    id: "twitter",
+    name: "Twitter",
+    url: "https://twitter.com/varde_abhi",
+    icon: <FaXTwitter size={20} color="#FFFFFF" />,
+  },
+  {
     id: "devto",
     name: "Dev.to",
     url: "https://dev.to/abhivarde",
@@ -33,22 +34,10 @@ const socialLinks = [
     icon: <SiPeerlist size={20} color="#FFFFFF" />,
   },
   {
-    id: "twitter",
-    name: "Twitter",
-    url: "https://twitter.com/varde_abhi",
-    icon: <FaXTwitter size={20} color="#FFFFFF" />,
-  },
-  {
-    id: "instagram",
-    name: "Instagram",
-    url: "https://www.instagram.com/abhivarde.in/",
-    icon: <FaInstagram size={20} color="#FFFFFF" />,
-  },
-  {
-    id: "spotify",
-    name: "Spotify",
-    url: "https://open.spotify.com/user/31eubskrhf2mhf2lz7wzbcllwqai?si=a517cf8739404b25",
-    icon: <FaSpotify size={20} color="#FFFFFF" />,
+    id: "discord",
+    name: "Discord",
+    url: "https://discord.com/users/1163337031099883550",
+    icon: <SiDiscord size={20} color="#FFFFFF" />,
   },
 ];
 

@@ -8,6 +8,15 @@ import { LuTerminal } from "react-icons/lu";
 const Experience = ({ works, skills }) => {
   const isRemote = (src) => typeof src === "string" && src.startsWith("http");
 
+  const groups = [
+    { title: "Languages", items: skills.slice(0, 4) },
+    { title: "Frameworks", items: skills.slice(4, 10) },
+    { title: "UI", items: skills.slice(10, 14) },
+    { title: "Platforms", items: skills.slice(14, 18) },
+    { title: "AI & SDKs", items: skills.slice(18, 23) },
+    { title: "Infrastructure", items: skills.slice(23, 27) },
+  ];
+
   return (
     <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
       <div className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111] flex flex-col h-full">
@@ -67,14 +76,7 @@ const Experience = ({ works, skills }) => {
         </p>
 
         <div className="mt-6 space-y-3">
-          {[
-            { title: "Languages", items: skills.slice(0, 4) },
-            { title: "Frameworks", items: skills.slice(4, 10) },
-            { title: "UI", items: skills.slice(10, 14) },
-            { title: "Platforms", items: skills.slice(14, 18) },
-            { title: "AI", items: skills.slice(18, 24) },
-            { title: "Infrastructure", items: skills.slice(25, 29) },
-          ].map((group, i) => (
+          {groups.map((group, i) => (
             <div key={i}>
               <p className="text-xs uppercase tracking-wider text-white/40 mb-2">
                 {group.title}

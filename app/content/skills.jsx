@@ -1,40 +1,38 @@
 import TailwindCSS from "../resources/svgs/tailwindCSS.svg";
-import Github from "../resources/svgs/github.svg";
 import NextJS from "../../public/next.svg";
 import Vercel from "../../public/vercel.svg";
 import Mui from "../resources/svgs/mui.svg";
 import TypeScript from "../resources/svgs/typeScript.svg";
-import React from "../resources/svgs/react.svg";
+import ReactIcon from "../resources/svgs/react.svg";
 import Redux from "../resources/svgs/redux.svg";
 import JavaScript from "../resources/svgs/javaScript.svg";
-import Figma from "../resources/svgs/figma.svg";
 import AWS from "../resources/svgs/aws.svg";
 import GoogleCloud from "../resources/svgs/cloud.svg";
 
+const SQL = "https://cdn.simpleicons.org/postgresql/336791"; // fixed: was white
+const Python = "https://www.python.org/static/favicon.ico";
+const NodeJS = "https://nodejs.org/static/images/favicons/favicon.png";
+const Svelte = "https://svelte.dev/favicon.png";
+const SvelteKit = "https://svelte.dev/favicon.png";
+const Shadcn = "https://ui.shadcn.com/favicon.ico";
+const Motion =
+  "https://framerusercontent.com/images/3aQX5dnH5Yqgsn98QXKF2ZXxIE.png";
 const Appwrite = "https://appwrite.io/images/logos/logo.svg";
 const Resend = "https://resend.com/static/favicons/favicon.ico";
 const Lingo = "https://lingo.dev/favicon.ico";
-const Motion =
-  "https://framerusercontent.com/images/3aQX5dnH5Yqgsn98QXKF2ZXxIE.png";
-const SvelteKit = "https://svelte.dev/favicon.png";
-const Svelte = "https://svelte.dev/favicon.png";
-const NodeJS = "https://nodejs.org/static/images/favicons/favicon.png";
-const Python = "https://www.python.org/static/favicon.ico";
-const SQL = "https://cdn.simpleicons.org/postgresql/ffffff";
+const Vercel_ =
+  "https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico";
 const AISDK = "https://ai-sdk.dev/apple-icon.png";
-const Shadcn = "https://ui.shadcn.com/favicon.ico";
 const OpenAI = "https://openai.com/favicon.ico";
-const Gemini =
-  "https://www.gstatic.com/lamda/images/favicon_v1_150160cddff7f294ce30.svg";
 const Groq = "https://groq.com/favicon.ico";
-const Exa = "https://exa.ai/images/favicon-32x32.png";
 const OpenRouter = "https://openrouter.ai/favicon.ico";
+const Exa = "https://exa.ai/images/favicon-32x32.png";
+const GHActions = "https://github.githubassets.com/favicons/favicon.svg";
+const SocketIO = "https://socket.io/images/favicon.png";
 const Stripe =
   "https://assets.stripeassets.com/fzn2n1nzq965/nu0iR4KqmkdJ52fgRts09/c3a10df318e7ffb1f516073daadea625/favicon.ico";
 const Razorpay =
   "https://framerusercontent.com/images/CU1m0xFonUl76ZeaW0IdkQ0M.png";
-const GitHubActions = "https://github.githubassets.com/favicons/favicon.svg";
-const SocketIO = "https://socket.io/images/favicon.png";
 
 const skills = [
   // Languages
@@ -44,7 +42,7 @@ const skills = [
   { image: SQL, title: "SQL" },
 
   // Frameworks
-  { image: React, title: "React" },
+  { image: ReactIcon, title: "React" },
   { image: NextJS, title: "Next.js" },
   { image: Svelte, title: "Svelte" },
   { image: SvelteKit, title: "SvelteKit" },
@@ -58,32 +56,23 @@ const skills = [
   { image: Redux, title: "Redux" },
 
   // Platforms
-  { image: Lingo, title: "Lingo.dev" },
-  { image: Appwrite, title: "Appwrite" },
   { image: Vercel, title: "Vercel" },
+  { image: Appwrite, title: "Appwrite" },
   { image: Resend, title: "Resend" },
+  { image: Lingo, title: "Lingo.dev" },
 
-  // AI & AI SDKs
+  // AI & SDKs
   { image: AISDK, title: "AI SDK" },
-  { image: Exa, title: "Exa AI" },
+  { image: OpenAI, title: "OpenAI" },
   { image: Groq, title: "Groq" },
   { image: OpenRouter, title: "OpenRouter" },
-
-  // Version Control
-  { image: Github, title: "GitHub" },
+  { image: Exa, title: "Exa AI" },
 
   // Infrastructure
-  { image: GitHubActions, title: "GitHub Actions" },
+  { image: GHActions, title: "GitHub Actions" },
   { image: SocketIO, title: "Socket.io" },
-  { image: Stripe, title: "Stripe" },
-  { image: Razorpay, title: "Razorpay" },
-
-  // Cloud
   { image: AWS, title: "AWS" },
   { image: GoogleCloud, title: "Google Cloud" },
-
-  // Design
-  { image: Figma, title: "Figma" },
 ];
 
 export default skills;

@@ -3,8 +3,8 @@
 import React from "react";
 import { Command } from "cmdk";
 import { useRouter } from "next/navigation";
-import { LuSearch, LuBook, LuUser, LuTarget } from "react-icons/lu";
-import { TbLayout } from "react-icons/tb";
+import { LuSearch } from "react-icons/lu";
+import headerNavLinks from "@/app/content/headerNavLinks";
 import socialLinks from "@/app/content/socialLinks";
 
 const CommandMenu = ({ open, onOpenChange }) => {
@@ -15,36 +15,13 @@ const CommandMenu = ({ open, onOpenChange }) => {
     if (!open) setSearch("");
   }, [open]);
 
-  const pages = [
-    {
-      id: "blog",
-      name: "Blog",
-      icon: <TbLayout size={16} />,
-      action: () => router.push("/blog"),
-      shortcut: "B",
-    },
-    {
-      id: "projects",
-      name: "Projects",
-      icon: <LuTarget size={16} />,
-      action: () => router.push("/projects"),
-      shortcut: "P",
-    },
-    {
-      id: "guestbook",
-      name: "Guestbook",
-      icon: <LuBook size={16} />,
-      action: () => router.push("/guestbook"),
-      shortcut: "G",
-    },
-    {
-      id: "about",
-      name: "About",
-      icon: <LuUser size={16} />,
-      action: () => router.push("/"),
-      shortcut: "A",
-    },
-  ];
+  const pages = headerNavLinks.map((link) => ({
+    id: link.title.toLowerCase(),
+    name: link.title,
+    icon: link.icon,
+    action: () => router.push(link.url),
+    shortcut: link.title[0].toUpperCase(),
+  }));
 
   const handleSelect = (callback) => {
     callback();

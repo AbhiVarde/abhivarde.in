@@ -2,7 +2,7 @@ const works = [
   {
     image: "https://avatars.githubusercontent.com/u/163827765?s=200&v=4",
     companyName: "Better Auth",
-    role: "Open Source Frontend Engineer",
+    role: "Open Source Product Engineer",
     startAt: "Mar '26",
     endAt: "Present",
   },

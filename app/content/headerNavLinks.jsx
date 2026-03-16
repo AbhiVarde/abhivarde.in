@@ -9,7 +9,7 @@ const headerNavLinks = [
     icon: <LuTarget color="#FFFFFF" />,
   },
   // {
-  //   title: "OSS",
+  //   title: "Oss",
   //   url: "/oss",
   //   icon: <LuCode color="#FFFFFF" />,
   // },
