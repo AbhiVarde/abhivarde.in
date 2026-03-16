@@ -14,13 +14,14 @@ const Contact = () => {
 
   return (
     <div className="mt-8">
-      <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row justify-between items-center border border-[#333] bg-[#F4F0E6] rounded-3xl p-2.5">
-        <h2 className="text-center sm:text-left text-base font-medium tracking-wide text-black sm:pl-2">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 border border-[#333] bg-[#F4F0E6] rounded-3xl px-4 py-3">
+        <h2 className="text-sm sm:text-base font-medium tracking-wide text-black text-center sm:text-left">
           Open to Product Engineer and Design Engineer roles
         </h2>
+
         <button
           onClick={handleCopyEmail}
-          className="cursor-pointer flex items-center space-x-2 bg-[#FF3B00] text-white px-4 py-1.5 rounded-xl sm:rounded-2xl hover:bg-[#E63500] transition-colors"
+          className="flex items-center gap-2 bg-[#FF3B00] text-white px-4 py-1.5 rounded-xl hover:bg-[#E63500] transition-colors cursor-pointer"
         >
           {copied ? (
             <>
