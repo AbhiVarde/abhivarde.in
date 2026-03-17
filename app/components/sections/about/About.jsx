@@ -21,11 +21,18 @@ const About = () => {
     <div className="mt-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="p-4 sm:p-6 min-h-64 md:min-h-auto border border-[#333] rounded-3xl bg-[#111] text-white shadow-2xl flex flex-col">
-          <div className="uppercase tracking-widest flex gap-2 items-center text-sm">
-            <span className="bg-[#FF3B00] p-1 rounded-md">
+          <div className="uppercase tracking-widest flex items-center gap-2 text-sm">
+            <span className="bg-[#FF3B00] p-1 rounded-md shrink-0">
               <VscVscode size={18} color="#FFFFFF" />
             </span>
-            Design × Product × Engineering
+
+            <div className="flex items-center gap-x-1.5 leading-tight">
+              <span>Design</span>
+              <span className="text-white/40">×</span>
+              <span>Product</span>
+              <span className="hidden sm:inline text-white/40">×</span>
+              <span className="hidden sm:inline">Engineering</span>
+            </div>
           </div>
 
           <div className="mt-5 grow">
