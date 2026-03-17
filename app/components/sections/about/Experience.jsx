@@ -17,6 +17,8 @@ const Experience = ({ works, skills }) => {
     { title: "Infrastructure", items: skills.slice(23, 27) },
   ];
 
+  const shouldInvert = ["Vercel", "GitHub Actions", "Socket.io", "AWS"];
+
   return (
     <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
       <div className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111] flex flex-col h-full">
@@ -93,7 +95,9 @@ const Experience = ({ works, skills }) => {
                         alt={skill.title}
                         width={12}
                         height={12}
-                        className="w-3 h-3 shrink-0"
+                        className={`w-3 h-3 shrink-0 object-contain ${
+                          shouldInvert.includes(skill.title) ? "invert" : ""
+                        }`}
                       />
                     ) : (
                       <Image
@@ -101,7 +105,9 @@ const Experience = ({ works, skills }) => {
                         alt={skill.title}
                         width={12}
                         height={12}
-                        className="w-3 h-3 shrink-0"
+                        className={`w-3 h-3 shrink-0 object-contain ${
+                          shouldInvert.includes(skill.title) ? "invert" : ""
+                        }`}
                       />
                     )}
                     {skill.title}

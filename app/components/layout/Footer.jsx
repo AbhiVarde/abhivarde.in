@@ -61,7 +61,7 @@ const Footer = () => {
                 <Image
                   src={tech.logo}
                   alt={tech.name}
-                  className="w-3.5 h-3.5"
+                  className={`w-3.5 h-3.5 ${tech.name === "Vercel" ? "invert" : ""}`}
                 />
                 <span>{tech.name}</span>
               </Link>
