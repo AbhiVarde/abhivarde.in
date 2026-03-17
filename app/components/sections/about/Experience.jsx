@@ -85,23 +85,23 @@ const Experience = ({ works, skills }) => {
                 {group.items.map((skill, j) => (
                   <div
                     key={j}
-                    className="flex items-center gap-2 bg-[#F4F0E6] text-black px-2.5 py-1 rounded-md text-xs"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/15 bg-transparent text-xs"
                   >
                     {isRemote(skill.image) ? (
                       <img
                         src={skill.image}
                         alt={skill.title}
-                        width={14}
-                        height={14}
-                        className="w-3.5 h-3.5"
+                        width={12}
+                        height={12}
+                        className="w-3 h-3 shrink-0"
                       />
                     ) : (
                       <Image
                         src={skill.image}
                         alt={skill.title}
-                        width={14}
-                        height={14}
-                        className="w-3.5 h-3.5"
+                        width={12}
+                        height={12}
+                        className="w-3 h-3 shrink-0"
                       />
                     )}
                     {skill.title}

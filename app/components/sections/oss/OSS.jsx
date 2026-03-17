@@ -87,7 +87,7 @@ export default function OSS() {
       )}
 
       {!loading && !error && (
-        <div className="relative overflow-hidden max-h-130">
+        <div className="relative overflow-hidden max-h-130 pb-12">
           <div className="space-y-2">
             {items.map((item) => {
               const { label, icon: Icon, color } = getStatus(item);
@@ -116,18 +116,16 @@ export default function OSS() {
               );
             })}
           </div>
-
           <div className="absolute bottom-0 left-0 right-0 h-36 bg-linear-to-t from-[#0a0a0a] to-transparent pointer-events-none" />
-
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+          <div className="absolute bottom-5 left-0 right-0 flex justify-center">
             <Link
               href={`https://github.com/${USER}`}
               target="_blank"
               rel="noreferrer"
-              className="flex cursor-pointer items-center gap-2 px-5 py-2 rounded-lg border border-white/15 bg-[#1a1a1a] text-sm text-white/80 hover:text-white hover:border-white/25 hover:bg-[#222] transition"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-white/10 bg-transparent text-xs text-white/60"
             >
               See more
-              <LuExternalLink size={12} />
+              <LuExternalLink size={11} />
             </Link>
           </div>
         </div>

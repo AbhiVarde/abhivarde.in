@@ -42,8 +42,22 @@ const Projects = () => {
     fetchStars();
   }, []);
 
+  const getRepoLabel = (githubLink) => {
+    const parts = githubLink.split("github.com/")[1]?.split("/");
+    if (!parts) return githubLink;
+    return `${parts[0]}/${parts[1]}`;
+  };
+
+  const getDomainLabel = (url) => {
+    try {
+      return new URL(url).host;
+    } catch {
+      return url;
+    }
+  };
+
   return (
-    <div className="relative overflow-hidden max-h-350 md:max-h-275">
+    <div className="relative overflow-hidden max-h-350 md:max-h-275 pb-14">
       <div className="space-y-3">
         {projects?.map((project, i) => (
           <div
@@ -74,39 +88,38 @@ const Projects = () => {
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 mt-3 md:mt-0">
-                {project.url && (
-                  <Link
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex cursor-pointer items-center gap-1.5 px-3 py-1 rounded-lg bg-[#F4F0E6] text-black text-sm hover:bg-[#e8e4da] transition-colors"
-                  >
-                    <LuExternalLink size={13} />
-                    <span>View</span>
-                  </Link>
-                )}
-
+              <div className="flex flex-wrap items-center gap-2 mt-3 md:mt-0">
                 {project.githubLink && (
                   <Link
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex cursor-pointer items-center gap-1.5 px-3 py-1 rounded-lg bg-[#F4F0E6] text-black text-sm hover:bg-[#e8e4da] transition-colors"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/15 bg-transparent text-white/70 text-xs hover:border-white/30 hover:text-white/90 transition-colors"
                   >
-                    <LuGithub size={13} />
-                    <span>Code</span>
+                    <LuGithub size={12} className="shrink-0" />
+                    <span className="truncate max-w-35 sm:max-w-none">
+                      {getRepoLabel(project.githubLink)}
+                    </span>
                     {stars[project.githubLink] !== undefined && (
-                      <span className="flex items-center gap-0.5 ml-1">
-                        <LuStar
-                          size={11}
-                          className="fill-black/50 text-black/50"
-                        />
-                        <span className="text-xs font-medium text-black/70">
-                          {stars[project.githubLink]}
-                        </span>
+                      <span className="flex items-center gap-0.5 ml-0.5 text-white/40">
+                        <LuStar size={10} className="fill-white/40" />
+                        <span>{stars[project.githubLink]}</span>
                       </span>
                     )}
+                  </Link>
+                )}
+
+                {project.url && (
+                  <Link
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/15 bg-transparent text-white/70 text-xs hover:border-white/30 hover:text-white/90 transition-colors"
+                  >
+                    <LuExternalLink size={12} className="shrink-0" />
+                    <span className="truncate max-w-35 sm:max-w-none">
+                      {getDomainLabel(project.url)}
+                    </span>
                   </Link>
                 )}
               </div>
@@ -114,17 +127,15 @@ const Projects = () => {
           </div>
         ))}
       </div>
-
       <div className="absolute bottom-0 left-0 right-0 h-36 bg-linear-to-t from-[#0a0a0a] to-transparent pointer-events-none" />
-
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+      <div className="absolute bottom-6 left-0 right-0 flex justify-center">
         <Link
           target="_blank"
           href="https://github.com/AbhiVarde"
-          className="flex cursor-pointer items-center gap-2 px-5 py-2 rounded-lg border border-white/15 bg-[#1a1a1a] text-sm text-white/80 hover:text-white hover:border-white/25 hover:bg-[#222] transition"
+          className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-white/10 bg-transparent text-xs text-white/60"
         >
           See more
-          <LuExternalLink size={12} />
+          <LuExternalLink size={11} />
         </Link>
       </div>
     </div>
