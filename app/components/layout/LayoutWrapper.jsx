@@ -16,9 +16,11 @@ export default function LayoutWrapper({ children }) {
     <>
       <ScrollToTop />
       <Analytics />
-      {!is404 && <Navbar />}
-      {children}
-      {!is404 && <Footer />}
+      <div className="flex flex-col min-h-screen">
+        {!is404 && <Navbar />}
+        <div className="flex-1">{children}</div>
+        {!is404 && <Footer />}
+      </div>
     </>
   );
 }
