@@ -57,7 +57,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="relative overflow-hidden max-h-350 md:max-h-275 pb-14">
+    <div className="relative overflow-hidden max-h-375 md:max-h-275 pb-14">
       <div className="space-y-3">
         {projects?.map((project, i) => (
           <div

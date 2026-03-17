@@ -8,7 +8,7 @@ import { GoArrowUpRight } from "react-icons/go";
 
 const Blogs = () => {
   return (
-    <div className="relative overflow-hidden max-h-350 md:max-h-275">
+    <div className="relative overflow-hidden max-h-375 md:max-h-275">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {blogs.map((blog, index) => (
           <Link
