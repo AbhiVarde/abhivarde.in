@@ -43,7 +43,7 @@ const Blogs = () => {
         <Link
           target="_blank"
           href="https://dev.to/abhivarde"
-          className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-white/10 bg-transparent text-xs text-white/60"
+          className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-white/10 bg-[#0a0a0a]/80 backdrop-blur text-xs text-white/60 hover:text-white/90 transition"
         >
           See more
           <LuExternalLink size={11} />

@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const USER = "AbhiVarde";
-const LIMIT = 9;
+const LIMIT = 11;
 const API = `https://api.github.com/search/issues?q=author:${USER}+-user:${USER}&sort=created&order=desc&per_page=${LIMIT}`;
 
 function repoName(url) {
@@ -87,7 +87,7 @@ export default function OSS() {
       )}
 
       {!loading && !error && (
-        <div className="relative overflow-hidden max-h-130 pb-12">
+        <div className="relative overflow-hidden max-h-150">
           <div className="space-y-2">
             {items.map((item) => {
               const { label, icon: Icon, color } = getStatus(item);
@@ -122,7 +122,7 @@ export default function OSS() {
               href={`https://github.com/${USER}`}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-white/10 bg-transparent text-xs text-white/60"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-white/10 bg-[#0a0a0a]/80 backdrop-blur text-xs text-white/60 hover:text-white/90 transition"
             >
               See more
               <LuExternalLink size={11} />
