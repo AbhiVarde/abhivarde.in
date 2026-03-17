@@ -12,8 +12,9 @@ import Vercel from "../../../public/vercel.svg";
 const Footer = () => {
   return (
     <footer className="relative mt-14">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-8 sm:pb-10">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-8">
         <div className="h-px bg-linear-to-r from-transparent via-[#FF3B00] to-transparent" />
+
         <div className="py-8 sm:py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-xs tracking-widest uppercase text-white/40 mb-3">
@@ -54,14 +55,14 @@ const Footer = () => {
                   href={tech.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full 
-    border border-white/10 text-white/60 text-xs 
-    hover:text-white/90 hover:border-white/25 transition-colors"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-white/10 text-white/60 text-xs hover:text-white/90 hover:border-white/25 transition-colors"
                 >
                   <Image
                     src={tech.logo}
                     alt={tech.name}
-                    className={`w-3.5 h-3.5 ${tech.name === "Vercel" ? "invert" : ""}`}
+                    className={`w-3.5 h-3.5 ${
+                      tech.name === "Vercel" ? "invert" : ""
+                    }`}
                   />
                   <span>{tech.name}</span>
                 </Link>
@@ -69,22 +70,26 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="pt-6 border-t border-[#333] flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-xs text-white/30">
-            &copy; {new Date().getFullYear()} Abhi Varde
-          </p>
-          <Link
-            href="https://twitter.com/varde_abhi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-xs text-white/40 hover:text-[#FF3B00] transition-colors group"
-          >
-            <span>abhivarde.in</span>
-            <GoArrowUpRight
-              size={12}
-              className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-            />
-          </Link>
+
+        <div className="pt-6">
+          <div className="h-px bg-linear-to-r from-transparent via-white/20 to-transparent mb-6" />
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
+            <p className="text-xs text-white/30">
+              &copy; {new Date().getFullYear()} Abhi Varde
+            </p>
+            <Link
+              href="https://twitter.com/varde_abhi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-xs text-white/40 hover:text-[#FF3B00] transition-colors group"
+            >
+              <span>abhivarde.in</span>
+              <GoArrowUpRight
+                size={12}
+                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+              />
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
