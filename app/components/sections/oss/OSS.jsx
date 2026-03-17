@@ -74,7 +74,7 @@ export default function OSS() {
           {Array.from({ length: LIMIT }).map((_, i) => (
             <div
               key={i}
-              className="h-14 rounded-xl border border-[#2a2a2a] animate-pulse"
+              className="h-14 rounded-2xl border border-[#2a2a2a] animate-pulse"
             />
           ))}
         </div>
@@ -97,7 +97,7 @@ export default function OSS() {
                   href={item.html_url}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex cursor-pointer items-center justify-between gap-4 px-4 py-3 rounded-xl border border-[#2a2a2a] hover:bg-[#141414] transition"
+                  className="flex cursor-pointer items-center justify-between gap-4 px-4 py-3 rounded-2xl border border-[#2a2a2a] hover:bg-[#141414] transition"
                 >
                   <div className="flex items-start gap-3 min-w-0">
                     <Icon size={16} className={`mt-0.5 shrink-0 ${color}`} />
