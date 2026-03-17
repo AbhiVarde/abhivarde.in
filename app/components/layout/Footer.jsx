@@ -49,20 +49,22 @@ const Footer = () => {
               },
               { name: "Vercel", logo: Vercel, url: "https://vercel.com" },
             ].map((tech) => (
-              <a
+              <Link
                 key={tech.name}
                 href={tech.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center px-2.5 py-1 text-xs text-white/60 rounded-lg bg-[#111] hover:bg-[#1a1a1a] transition-colors border border-[#333] hover:text-white"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full 
+    border border-white/10 text-white/60 text-xs 
+    hover:text-white/90 hover:border-white/25 transition-colors"
               >
                 <Image
                   src={tech.logo}
                   alt={tech.name}
-                  className="w-3.5 h-3.5 mr-1.5"
+                  className="w-3.5 h-3.5"
                 />
-                {tech.name}
-              </a>
+                <span>{tech.name}</span>
+              </Link>
             ))}
           </div>
         </div>

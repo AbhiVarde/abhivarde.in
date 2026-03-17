@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import { VscVscode } from "react-icons/vsc";
 import { LuExternalLink } from "react-icons/lu";
+import Link from "next/link";
 
 const About = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -39,7 +40,7 @@ const About = () => {
           </div>
 
           <button
-            className="cursor-pointer text-sm mt-6 sm:mt-4 bg-[#1a1a1a] border border-[#333] px-4 py-1.5 rounded-lg hover:bg-[#222] transition-colors w-fit"
+            className="cursor-pointer text-sm mt-6 sm:mt-4 bg-[#1a1a1a] border border-[#333] px-3.5 py-1.5 rounded-full hover:bg-[#222] transition-colors w-fit"
             onClick={handleDownloadClick}
             title="Download Resume"
           >
@@ -82,15 +83,19 @@ const About = () => {
             <p className="text-sm font-normal mb-3 text-white/70 drop-shadow-md">
               React component library for Design Engineers
             </p>
-            <a
+            <Link
               href="https://syncui.design"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/25 text-white px-3 py-1.5 rounded-lg hover:bg-white/25 transition-colors shadow-lg"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full 
+  bg-white/10 backdrop-blur-md border border-white/20 
+  text-white/80 text-sm font-medium 
+  hover:bg-white/20 hover:border-white/30 hover:text-white 
+  transition-colors"
             >
-              <span className="text-sm font-medium">syncui.design</span>
-              <LuExternalLink size={14} />
-            </a>
+              <span>syncui.design</span>
+              <LuExternalLink size={12} />
+            </Link>
           </div>
         </div>
       </div>
