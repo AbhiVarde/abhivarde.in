@@ -12,9 +12,9 @@ const Experience = ({ works, skills }) => {
     { title: "Languages", items: skills.slice(0, 4) },
     { title: "Frameworks", items: skills.slice(4, 10) },
     { title: "UI", items: skills.slice(10, 14) },
-    { title: "Platforms", items: skills.slice(14, 18) },
-    { title: "AI & SDKs", items: skills.slice(18, 23) },
-    { title: "Infrastructure", items: skills.slice(23, 27) },
+    { title: "Platforms", items: skills.slice(14, 20) },
+    { title: "AI & SDKs", items: skills.slice(20, 25) },
+    { title: "Infrastructure", items: skills.slice(25, 30) },
   ];
 
   const shouldInvert = ["Vercel", "GitHub Actions", "Socket.io", "AWS"];
@@ -29,34 +29,38 @@ const Experience = ({ works, skills }) => {
           Work Experience
         </div>
 
-        <p className="mt-4 text-sm text-white/60">
+        <p className="mt-2 text-sm text-white/60">
           Where I've worked, contributed, and shipped things that matter.
         </p>
 
-        <div className="flex flex-col flex-1 justify-between mt-6">
+        <div className="mt-6 flex flex-col flex-1 justify-between">
           {works?.map((work, i) => (
-            <div
-              key={i}
-              className={`flex items-center gap-4 ${i !== 0 ? "mt-3" : ""}`}
-            >
+            <div key={i} className="flex items-start gap-3">
               <img
                 src={work.image}
                 alt={work.companyName}
-                width={48}
-                height={48}
+                width={36}
+                height={36}
                 loading="lazy"
                 decoding="async"
                 referrerPolicy="no-referrer"
-                className="h-10 w-10 object-cover bg-[#333] border border-[#333] bg-opacity-30 p-1 rounded-xl"
+                className="h-9 w-9 shrink-0 object-cover bg-[#222] border border-[#333] p-1 rounded-xl mt-0.5"
               />
-              <div className="flex w-full flex-col">
-                <p className="hidden sm:block font-medium">
-                  {work.companyName}
-                </p>
-                <div className="flex flex-col sm:flex-row justify-between">
-                  <p className="text-sm text-white/70">{work.role}</p>
-                  <p className="text-sm text-white/40">
-                    {work.startAt} - {work.endAt}
+              <div className="flex flex-col w-full min-w-0">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <p className="font-medium text-sm text-white leading-tight">
+                    {work.companyName}
+                  </p>
+                  {work.type && (
+                    <span className="text-[10px] px-2 py-0.5 rounded-full border border-white/10 text-white/40 shrink-0">
+                      {work.type}
+                    </span>
+                  )}
+                </div>
+                <div className="flex flex-row justify-between items-center mt-0.5">
+                  <p className="text-xs text-white/50">{work.role}</p>
+                  <p className="text-xs text-white/30 shrink-0 ml-2">
+                    {work.startAt} – {work.endAt}
                   </p>
                 </div>
               </div>
@@ -73,29 +77,29 @@ const Experience = ({ works, skills }) => {
           Skills
         </div>
 
-        <p className="mt-4 text-sm text-white/60">
+        <p className="mt-2 text-sm text-white/60">
           Tools and technologies I work with, and keep reaching for.
         </p>
 
-        <div className="mt-6 space-y-3">
+        <div className="mt-4 flex flex-col flex-1 justify-between">
           {groups.map((group, i) => (
             <div key={i}>
-              <p className="text-xs uppercase tracking-wider text-white/40 mb-2">
+              <p className="text-[10px] uppercase tracking-wider text-white/35 mb-1.5 mt-1">
                 {group.title}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5">
                 {group.items.map((skill, j) => (
                   <div
                     key={j}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/15 bg-transparent text-xs"
+                    className="flex items-center gap-1 px-2.5 py-1 rounded-full border border-white/10 bg-transparent text-[11px] text-white/70"
                   >
                     {isRemote(skill.image) ? (
                       <img
                         src={skill.image}
                         alt={skill.title}
-                        width={12}
-                        height={12}
-                        className={`w-3 h-3 shrink-0 object-contain ${
+                        width={11}
+                        height={11}
+                        className={`w-2.5 h-2.5 shrink-0 object-contain ${
                           shouldInvert.includes(skill.title) ? "invert" : ""
                         }`}
                       />
@@ -103,9 +107,9 @@ const Experience = ({ works, skills }) => {
                       <Image
                         src={skill.image}
                         alt={skill.title}
-                        width={12}
-                        height={12}
-                        className={`w-3 h-3 shrink-0 object-contain ${
+                        width={11}
+                        height={11}
+                        className={`w-2.5 h-2.5 shrink-0 object-contain ${
                           shouldInvert.includes(skill.title) ? "invert" : ""
                         }`}
                       />

@@ -20,8 +20,6 @@ const Motion =
 const Appwrite = "https://appwrite.io/images/logos/logo.svg";
 const Resend = "https://resend.com/static/favicons/favicon.ico";
 const Lingo = "https://lingo.dev/favicon.ico";
-const Vercel_ =
-  "https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico";
 const AISDK = "https://ai-sdk.dev/apple-icon.png";
 const OpenAI = "https://openai.com/favicon.ico";
 const Groq = "https://groq.com/favicon.ico";
@@ -33,6 +31,7 @@ const Stripe =
   "https://assets.stripeassets.com/fzn2n1nzq965/nu0iR4KqmkdJ52fgRts09/c3a10df318e7ffb1f516073daadea625/favicon.ico";
 const Razorpay =
   "https://framerusercontent.com/images/CU1m0xFonUl76ZeaW0IdkQ0M.png";
+const Docker = "https://cdn.simpleicons.org/docker/2496ED";
 
 const skills = [
   // Languages
@@ -60,6 +59,8 @@ const skills = [
   { image: Appwrite, title: "Appwrite" },
   { image: Resend, title: "Resend" },
   { image: Lingo, title: "Lingo.dev" },
+  { image: Stripe, title: "Stripe" },
+  { image: Razorpay, title: "Razorpay" },
 
   // AI & SDKs
   { image: AISDK, title: "AI SDK" },
@@ -73,6 +74,7 @@ const skills = [
   { image: SocketIO, title: "Socket.io" },
   { image: AWS, title: "AWS" },
   { image: GoogleCloud, title: "Google Cloud" },
+  { image: Docker, title: "Docker" },
 ];
 
 export default skills;
