@@ -34,7 +34,7 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <main className="max-w-5xl mx-auto px-5 pt-24 animate-fade-in">
+    <main className="max-w-5xl mx-auto px-5 pt-20 animate-fade-in">
       {sections.map((Section, i) => (
         <div
           key={i}
