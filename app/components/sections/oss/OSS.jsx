@@ -11,6 +11,7 @@ import {
 } from "react-icons/lu";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { PageHeader } from "../../layout/PageHeader";
 
 const USER = "AbhiVarde";
 const LIMIT = 11;
@@ -56,14 +57,8 @@ export default function OSS() {
   return (
     <>
       <div className="mb-8">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="bg-[#FF3B00] p-1.5 rounded-lg">
-            <LuCode size={20} color="#FFFFFF" />
-          </div>
-          <h1 className="text-lg md:text-xl font-medium tracking-wide">
-            Open Source
-          </h1>
-        </div>
+        <PageHeader icon={LuCode} title="Open Source" />
+
         <p className="text-sm md:text-base text-white/60 leading-relaxed">
           Issues and pull requests across open source projects.
         </p>

@@ -1,6 +1,7 @@
 import React from "react";
 import { LuBook } from "react-icons/lu";
 import GiscusComponent from "../components/sections/guestbook/GiscusComponent";
+import { PageHeader } from "../components/layout/PageHeader";
 
 export const metadata = {
   title: "Guestbook",
@@ -13,15 +14,7 @@ const GuestBook = () => {
   return (
     <main className="max-w-5xl mx-auto px-4 pt-16 sm:pt-20">
       <div className="mb-8">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="bg-[#FF3B00] p-1.5 rounded-lg">
-            <LuBook size={20} color="#FFFFFF" />
-          </div>
-
-          <h1 className="text-lg md:text-xl font-medium tracking-wide">
-            Guestbook
-          </h1>
-        </div>
+        <PageHeader icon={LuBook} title="Guestbook" />
 
         <p className="text-sm md:text-base text-white/60 leading-relaxed">
           Leave a message for future visitors. Thoughts, feedback, or just a

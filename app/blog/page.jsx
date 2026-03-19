@@ -1,6 +1,7 @@
 import React from "react";
 import { TbLayout } from "react-icons/tb";
 import Blogs from "../components/sections/blog/Blogs";
+import { PageHeader } from "../components/layout/PageHeader";
 
 export const metadata = {
   title: "Blog",
@@ -13,12 +14,7 @@ const Blog = () => {
   return (
     <main className="max-w-5xl mx-auto px-4 pt-16 sm:pt-20 pb-16">
       <div className="mb-8">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="bg-[#FF3B00] p-1.5 rounded-lg">
-            <TbLayout size={20} color="#FFFFFF" />
-          </div>
-          <h1 className="text-lg md:text-xl font-medium tracking-wide">Blog</h1>
-        </div>
+        <PageHeader icon={TbLayout} title="Blog" />
 
         <p className="text-sm md:text-base text-white/60 leading-relaxed">
           Writing about things I build, learn, and find worth sharing.
