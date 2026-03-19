@@ -58,7 +58,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full z-40 flex justify-center px-4 py-2">
+    <header className="fixed top-0 w-full z-40 flex justify-center px-3 py-2">
       <nav
         ref={menuRef}
         className={`relative px-4 w-full max-w-5xl rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] overflow-hidden transition-all duration-200 ease-out ${

@@ -9,7 +9,7 @@ export const metadata = {
 
 const OSSPage = () => {
   return (
-    <main className="max-w-5xl mx-auto px-4 pt-20 pb-16">
+    <main className="max-w-5xl mx-auto px-4 pt-16 sm:pt-20 pb-16">
       <OSS />
     </main>
   );

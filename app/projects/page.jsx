@@ -11,7 +11,7 @@ export const metadata = {
 
 const Project = () => {
   return (
-    <main className="max-w-5xl mx-auto px-4 pt-20">
+    <main className="max-w-5xl mx-auto px-4 pt-16 sm:pt-20">
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
           <div className="bg-[#FF3B00] p-1.5 rounded-lg">
