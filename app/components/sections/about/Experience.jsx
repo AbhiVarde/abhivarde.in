@@ -22,7 +22,7 @@ const Experience = ({ works, skills }) => {
   return (
     <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5 items-stretch">
       <div className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111] flex flex-col">
-        <div className="uppercase tracking-widest flex gap-2 items-center text-sm">
+        <div className="uppercase tracking-widest flex gap-2 items-center text-sm font-medium">
           <span className="bg-[#FF3B00] p-1 rounded-md">
             <IoBriefcaseOutline size={18} color="#FFFFFF" />
           </span>
@@ -77,7 +77,7 @@ const Experience = ({ works, skills }) => {
       </div>
 
       <div className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111] flex flex-col">
-        <div className="uppercase tracking-widest flex gap-2 items-center text-sm">
+        <div className="uppercase tracking-widest flex gap-2 items-center text-sm font-medium">
           <span className="bg-[#FF3B00] p-1 rounded-md">
             <LuTerminal size={18} color="#FFFFFF" />
           </span>

@@ -26,7 +26,7 @@ const About = () => {
               <VscVscode size={18} color="#FFFFFF" />
             </span>
 
-            <div className="flex items-center gap-x-1.5 leading-tight">
+            <div className="flex items-center gap-x-1.5 font-medium leading-tight">
               <span>Design</span>
               <span className="text-white/40">×</span>
               <span>Product</span>
