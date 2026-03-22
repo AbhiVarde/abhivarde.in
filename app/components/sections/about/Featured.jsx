@@ -9,8 +9,13 @@ import projects from "@/app/content/projects";
 const Featured = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   const project = useMemo(() => projects[currentIndex], [currentIndex]);
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [currentIndex]);
 
   useEffect(() => {
     if (!projects?.length) return;
@@ -34,11 +39,30 @@ const Featured = () => {
     <div className="relative w-full h-55 sm:h-70 lg:h-85">
       <Image
         src={project.image}
+        alt=""
+        aria-hidden
+        fill
+        sizes="(max-width: 1024px) 100vw, 66vw"
+        className="object-cover rounded-2xl"
+        style={{
+          filter: "blur(18px)",
+          transform: "scale(1.08)",
+          opacity: loaded ? 0 : 1,
+          transition: "opacity 0.35s ease",
+        }}
+      />
+      <Image
+        src={project.image}
         alt={project.title}
         fill
         priority={currentIndex === 0}
         sizes="(max-width: 1024px) 100vw, 66vw"
         className="object-cover rounded-2xl"
+        onLoad={() => setLoaded(true)}
+        style={{
+          opacity: loaded ? 1 : 0,
+          transition: "opacity 0.35s ease",
+        }}
       />
     </div>
   );
