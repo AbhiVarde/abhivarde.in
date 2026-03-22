@@ -158,6 +158,9 @@ const Navbar = () => {
         className="md:hidden fixed inset-0 z-30"
         style={{
           top: "52px",
+          backgroundColor: "rgba(0,0,0,0.6)",
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
           opacity: isMobileMenuOpen ? 1 : 0,
           pointerEvents: isMobileMenuOpen ? "auto" : "none",
           transition: "opacity 0.15s ease",
@@ -165,52 +168,45 @@ const Navbar = () => {
         onClick={() => setIsMobileMenuOpen(false)}
       >
         <div
-          className="h-full w-full"
-          style={{
-            backgroundColor: "rgba(0,0,0,0.6)",
-            backdropFilter: "blur(8px)",
-            WebkitBackdropFilter: "blur(8px)",
-          }}
+          className="max-w-5xl w-full mx-auto px-6 py-6"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="max-w-5xl w-full mx-auto px-6 py-6">
-            <span className="text-[#F4F0E6]/40 uppercase tracking-widest text-xs mb-4 block">
-              Navigation
-            </span>
-            <ul className="flex flex-col">
-              {headerNavLinks.map((item, index) => (
-                <li key={item.url}>
-                  <Link
-                    href={item.url}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`flex items-center justify-between py-4 transition-colors ${
-                      index < headerNavLinks.length - 1
-                        ? "border-b border-white/10"
-                        : ""
-                    } ${
-                      pathname === item.url
-                        ? "text-[#F4F0E6]"
-                        : "text-[#F4F0E6]/50 hover:text-[#F4F0E6]"
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      {item.icon && (
-                        <span className="flex items-center justify-center w-5 h-5 opacity-70">
-                          {item.icon}
-                        </span>
-                      )}
-                      <span className="text-base font-medium tracking-wide">
-                        {item.title}
+          <span className="text-[#F4F0E6]/40 uppercase tracking-widest text-xs mb-4 block">
+            Navigation
+          </span>
+          <ul className="flex flex-col">
+            {headerNavLinks.map((item, index) => (
+              <li key={item.url}>
+                <Link
+                  href={item.url}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`flex items-center justify-between py-4 transition-colors ${
+                    index < headerNavLinks.length - 1
+                      ? "border-b border-white/10"
+                      : ""
+                  } ${
+                    pathname === item.url
+                      ? "text-[#F4F0E6]"
+                      : "text-[#F4F0E6]/50 hover:text-[#F4F0E6]"
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    {item.icon && (
+                      <span className="flex items-center justify-center w-5 h-5 opacity-70">
+                        {item.icon}
                       </span>
-                    </div>
-                    {pathname === item.url && (
-                      <span className="text-[#F4F0E6] text-sm">✸</span>
                     )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+                    <span className="text-base font-medium tracking-wide">
+                      {item.title}
+                    </span>
+                  </div>
+                  {pathname === item.url && (
+                    <span className="text-[#F4F0E6] text-sm">✸</span>
+                  )}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </>
