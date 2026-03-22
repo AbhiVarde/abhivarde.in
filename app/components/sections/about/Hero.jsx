@@ -1,15 +1,33 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { LuGlobe, LuRocket } from "react-icons/lu";
 import HeroImg from "../../../resources/images/me.png";
 
 const Hero = () => {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <div>
       <div className="relative overflow-hidden rounded-3xl shadow-2xl">
         <div className="absolute inset-0 z-0">
+          <Image
+            src={HeroImg}
+            alt=""
+            aria-hidden
+            fill
+            priority
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 984px"
+            quality={60}
+            className="object-cover"
+            style={{
+              filter: "blur(18px)",
+              transform: "scale(1.08)",
+              opacity: loaded ? 0 : 1,
+              transition: "opacity 0.35s ease",
+            }}
+          />
           <Image
             src={HeroImg}
             alt="Background"
@@ -18,6 +36,11 @@ const Hero = () => {
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 984px"
             quality={60}
             className="object-cover"
+            onLoad={() => setLoaded(true)}
+            style={{
+              opacity: loaded ? 1 : 0,
+              transition: "opacity 0.35s ease",
+            }}
           />
           <div className="absolute inset-0 bg-black/50" />
           <div className="absolute inset-0 bg-linear-to-b from-black/30 via-transparent to-black/80" />
