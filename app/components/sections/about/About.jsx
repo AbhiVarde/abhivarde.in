@@ -1,14 +1,12 @@
 "use client";
 
-import { useState, useRef } from "react";
-import Image from "next/image";
+import { useState } from "react";
 import { VscVscode } from "react-icons/vsc";
 import { LuExternalLink } from "react-icons/lu";
 import Link from "next/link";
 
 const About = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const videoRef = useRef(null);
 
   const handleDownloadClick = () => {
     const link = document.createElement("a");
@@ -25,7 +23,6 @@ const About = () => {
             <span className="bg-[#FF3B00] p-1 rounded-md shrink-0">
               <VscVscode size={18} color="#FFFFFF" />
             </span>
-
             <div className="flex items-center gap-x-1.5 font-medium leading-tight">
               <span>Design</span>
               <span className="text-white/40">×</span>
@@ -57,31 +54,21 @@ const About = () => {
 
         <div className="group border border-[#333] rounded-3xl bg-[#111] relative overflow-hidden shadow-2xl min-h-75">
           <div className="absolute inset-0">
-            {!isVideoLoaded && (
-              <Image
-                src="/syncui-image.png"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-                alt="Sync UI preview"
-              />
-            )}
-
             <video
-              ref={videoRef}
               src="/SyncUI.mov"
               autoPlay
               loop
               muted
               playsInline
               preload="none"
-              className={`object-cover w-full h-full transition-opacity ${
-                isVideoLoaded ? "opacity-100" : "opacity-0"
-              }`}
               onLoadedData={() => setIsVideoLoaded(true)}
+              className="object-cover w-full h-full"
+              style={{
+                filter: isVideoLoaded ? "none" : "blur(18px)",
+                transform: isVideoLoaded ? "scale(1)" : "scale(1.08)",
+                transition: "filter 0.35s ease, transform 0.35s ease",
+              }}
             />
-
             <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent" />
           </div>
 
@@ -94,11 +81,7 @@ const About = () => {
               href="https://syncui.design"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full 
-  bg-white/10 backdrop-blur-md border border-white/20 
-  text-white/80 text-sm font-medium 
-  hover:bg-white/20 hover:border-white/30 hover:text-white 
-  transition-colors"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/80 text-sm font-medium hover:bg-white/20 hover:border-white/30 hover:text-white transition-colors"
             >
               <span>syncui.design</span>
               <LuExternalLink size={12} />
