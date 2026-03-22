@@ -2,10 +2,12 @@
 
 import React from "react";
 import Image from "next/image";
+import works from "@/app/content/works";
+import skills from "@/app/content/skills";
 import { IoBriefcaseOutline } from "react-icons/io5";
 import { LuTerminal } from "react-icons/lu";
 
-const Experience = ({ works, skills }) => {
+const Experience = () => {
   const isRemote = (src) => typeof src === "string" && src.startsWith("http");
 
   const groups = [
