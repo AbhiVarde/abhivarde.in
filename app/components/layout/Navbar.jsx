@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import headerNavLinks from "@/app/content/headerNavLinks";
@@ -10,45 +10,58 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
-  const [indicatorStyle, setIndicatorStyle] = useState({});
+  const [indicatorStyle, setIndicatorStyle] = useState(null);
   const navRef = useRef(null);
-  const menuRef = useRef(null);
+  const toggleBtnRef = useRef(null);
+  const isFirstRender = useRef(true);
+
+  const updateIndicator = useCallback(
+    (animate = true) => {
+      if (!navRef.current) return;
+      const activeItem = hoveredItem || pathname;
+      const activeButton = navRef.current.querySelector(
+        `[data-nav-item="${activeItem}"]`,
+      );
+      if (activeButton) {
+        const { offsetLeft, offsetWidth } = activeButton;
+        setIndicatorStyle({
+          left: `${offsetLeft}px`,
+          width: `${offsetWidth}px`,
+          opacity: 1,
+          willChange: "left, width",
+          transition: animate ? "left 0.18s ease, width 0.18s ease" : "none",
+        });
+      }
+    },
+    [hoveredItem, pathname],
+  );
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const isFirst = isFirstRender.current;
+    if (isFirst) isFirstRender.current = false;
+    updateIndicator(!isFirst);
+  }, [hoveredItem, pathname, updateIndicator]);
+
+  useEffect(() => {
+    const handleResize = () => updateIndicator(false);
+    window.addEventListener("resize", handleResize, { passive: true });
+    return () => window.removeEventListener("resize", handleResize);
+  }, [updateIndicator]);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    if (!navRef.current) return;
-    const activeItem = hoveredItem || pathname;
-    const activeButton = navRef.current.querySelector(
-      `[data-nav-item="${activeItem}"]`,
-    );
-    if (activeButton) {
-      const { offsetLeft, offsetWidth } = activeButton;
-      setIndicatorStyle({
-        left: `${offsetLeft}px`,
-        width: `${offsetWidth}px`,
-        opacity: 1,
-      });
-    }
-  }, [hoveredItem, pathname]);
-
-  useEffect(() => {
-    if (!isMobileMenuOpen) return;
-    const handleScroll = () => setIsMobileMenuOpen(false);
-    const handleClickOutside = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
-        setIsMobileMenuOpen(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    document.addEventListener("mousedown", handleClickOutside);
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.body.style.overflow = "";
     };
   }, [isMobileMenuOpen]);
 
@@ -58,116 +71,149 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full z-40 flex justify-center px-3 py-2">
-      <nav
-        ref={menuRef}
-        className={`relative px-4 w-full max-w-5xl rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] overflow-hidden transition-all duration-200 ease-out ${
-          isScrolled
-            ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent after:content-['']"
-            : ""
-        }`}
-        style={{
-          backgroundColor: isScrolled ? "rgba(0,0,0,0.8)" : "rgba(0,0,0,0.2)",
-          backdropFilter: isScrolled ? "blur(12px)" : "blur(8px)",
-        }}
-      >
-        <div className="flex items-center justify-between py-2">
-          <div className="flex items-center gap-1 text-[#F4F0E6] tracking-wide">
-            <Link
-              href="/"
-              className="opacity-90 hover:opacity-100 transition-colors"
-            >
-              ~abhivarde
-            </Link>
-            {pathname !== "/" && (
-              <>
-                <span className="opacity-40">/</span>
-                <span className="capitalize opacity-80">
-                  {pathname.split("/")[1]}
-                </span>
-              </>
-            )}
-          </div>
-
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden relative w-6 h-6 flex items-center justify-center cursor-pointer"
-          >
-            <span
-              className={`absolute h-[1.5px] w-4 bg-[#F4F0E6] rounded transition-all duration-300 ${
-                isMobileMenuOpen ? "rotate-45" : "-translate-y-0.75"
-              }`}
-            />
-            <span
-              className={`absolute h-[1.5px] w-4 bg-[#F4F0E6] rounded transition-all duration-300 ${
-                isMobileMenuOpen ? "-rotate-45" : "translate-y-0.75"
-              }`}
-            />
-          </button>
-
-          <ul
-            ref={navRef}
-            className="hidden md:flex items-center gap-2 relative"
-            onMouseLeave={() => setHoveredItem(null)}
-          >
-            <span
-              className="absolute bg-[#F4F0E6] rounded-lg h-8 top-1/2 -translate-y-1/2 transition-all duration-200 ease-out"
-              style={indicatorStyle}
-            />
-            {headerNavLinks.map((navLink) => (
-              <li key={navLink.url}>
-                <Link href={navLink.url}>
-                  <button
-                    data-nav-item={navLink.url}
-                    onMouseEnter={() => setHoveredItem(navLink.url)}
-                    className="relative px-3 py-1.5 rounded-md text-sm tracking-wide transition-colors cursor-pointer"
-                  >
-                    <span
-                      className={`relative z-10 transition-colors duration-150 ${getTextColor(navLink.url)}`}
-                    >
-                      {navLink.title}
-                    </span>
-                  </button>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div
-          className={`md:hidden overflow-hidden transition-all duration-200 ease-out ${
-            isMobileMenuOpen ? "max-h-96 opacity-100 py-2" : "max-h-0 opacity-0"
+    <>
+      <header className="fixed top-0 w-full z-40 flex justify-center px-3 py-2">
+        <nav
+          className={`relative px-4 w-full max-w-5xl rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] overflow-hidden transition-all duration-200 ease-out ${
+            isScrolled
+              ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent after:content-['']"
+              : ""
           }`}
+          style={{
+            backgroundColor: isScrolled ? "rgba(0,0,0,0.8)" : "rgba(0,0,0,0.2)",
+            backdropFilter: isScrolled ? "blur(12px)" : "blur(8px)",
+            WebkitBackdropFilter: isScrolled ? "blur(12px)" : "blur(8px)",
+          }}
         >
-          <div className="w-full h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
-          <ul className="flex flex-col pt-3">
-            {headerNavLinks.map((item) => (
-              <li key={item.url}>
-                <Link
-                  href={item.url}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`flex items-center gap-3 px-2 py-2 rounded-md text-sm tracking-wide transition-colors cursor-pointer ${
-                    pathname === item.url
-                      ? "text-[#F4F0E6]"
-                      : "text-[#F4F0E6]/80 hover:text-white hover:bg-white/5"
-                  }`}
-                >
-                  {item?.icon && (
-                    <span className="flex items-center justify-center w-4 h-4 opacity-80">
-                      {item.icon}
-                    </span>
-                  )}
-                  <span>{item.title}</span>
-                  {pathname === item.url && (
-                    <span className="ml-auto text-[#F4F0E6] text-sm">✸</span>
-                  )}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="flex items-center justify-between py-2">
+            <div className="flex items-center gap-1 text-[#F4F0E6] tracking-wide">
+              <Link
+                href="/"
+                className="opacity-90 hover:opacity-100 transition-opacity"
+              >
+                ~abhivarde
+              </Link>
+              {pathname !== "/" && (
+                <>
+                  <span className="opacity-40">/</span>
+                  <span className="capitalize opacity-80">
+                    {pathname.split("/")[1]}
+                  </span>
+                </>
+              )}
+            </div>
+
+            <button
+              ref={toggleBtnRef}
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+              className="md:hidden relative w-6 h-6 flex items-center justify-center cursor-pointer"
+              aria-label="Toggle menu"
+            >
+              <span
+                className={`absolute h-[1.5px] w-4 bg-[#F4F0E6] rounded transition-all duration-200 ${
+                  isMobileMenuOpen ? "rotate-45" : "-translate-y-0.75"
+                }`}
+              />
+              <span
+                className={`absolute h-[1.5px] w-4 bg-[#F4F0E6] rounded transition-all duration-200 ${
+                  isMobileMenuOpen ? "-rotate-45" : "translate-y-0.75"
+                }`}
+              />
+            </button>
+
+            <ul
+              ref={navRef}
+              className="hidden md:flex items-center gap-2 relative"
+              onMouseLeave={() => setHoveredItem(null)}
+            >
+              {indicatorStyle && (
+                <span
+                  className="absolute bg-[#F4F0E6] rounded-lg h-8 top-1/2 -translate-y-1/2"
+                  style={indicatorStyle}
+                />
+              )}
+              {headerNavLinks.map((navLink) => (
+                <li key={navLink.url}>
+                  <Link href={navLink.url}>
+                    <button
+                      data-nav-item={navLink.url}
+                      onMouseEnter={() => setHoveredItem(navLink.url)}
+                      className="relative px-3 py-1.5 rounded-md text-sm tracking-wide cursor-pointer"
+                    >
+                      <span
+                        className={`relative z-10 transition-colors duration-150 ${getTextColor(navLink.url)}`}
+                      >
+                        {navLink.title}
+                      </span>
+                    </button>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <div
+        className="md:hidden fixed inset-0 z-30"
+        style={{
+          top: "52px",
+          opacity: isMobileMenuOpen ? 1 : 0,
+          pointerEvents: isMobileMenuOpen ? "auto" : "none",
+          transition: "opacity 0.15s ease",
+        }}
+        onClick={() => setIsMobileMenuOpen(false)}
+      >
+        <div
+          className="h-full w-full"
+          style={{
+            backgroundColor: "rgba(0,0,0,0.6)",
+            backdropFilter: "blur(8px)",
+            WebkitBackdropFilter: "blur(8px)",
+          }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="max-w-5xl w-full mx-auto px-6 py-6">
+            <span className="text-[#F4F0E6]/40 uppercase tracking-widest text-xs mb-4 block">
+              Navigation
+            </span>
+            <ul className="flex flex-col">
+              {headerNavLinks.map((item, index) => (
+                <li key={item.url}>
+                  <Link
+                    href={item.url}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`flex items-center justify-between py-4 transition-colors ${
+                      index < headerNavLinks.length - 1
+                        ? "border-b border-white/10"
+                        : ""
+                    } ${
+                      pathname === item.url
+                        ? "text-[#F4F0E6]"
+                        : "text-[#F4F0E6]/50 hover:text-[#F4F0E6]"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      {item.icon && (
+                        <span className="flex items-center justify-center w-5 h-5 opacity-70">
+                          {item.icon}
+                        </span>
+                      )}
+                      <span className="text-base font-medium tracking-wide">
+                        {item.title}
+                      </span>
+                    </div>
+                    {pathname === item.url && (
+                      <span className="text-[#F4F0E6] text-sm">✸</span>
+                    )}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </>
   );
 };
 
