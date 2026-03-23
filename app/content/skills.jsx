@@ -45,16 +45,15 @@ const skills = [
   { image: NextJS, title: "Next.js" },
   { image: Svelte, title: "Svelte" },
   { image: SvelteKit, title: "SvelteKit" },
-  { image: NodeJS, title: "Node.js" },
-  { image: TailwindCSS, title: "Tailwind CSS" },
 
-  // UI
+  // UI & Styling
   { image: Shadcn, title: "shadcn/ui" },
   { image: Mui, title: "Material UI" },
   { image: Motion, title: "Motion" },
   { image: Redux, title: "Redux" },
+  { image: TailwindCSS, title: "Tailwind CSS" },
 
-  // Platforms
+  // Platform
   { image: Vercel, title: "Vercel" },
   { image: Appwrite, title: "Appwrite" },
   { image: Resend, title: "Resend" },
@@ -75,6 +74,7 @@ const skills = [
   { image: AWS, title: "AWS" },
   { image: GoogleCloud, title: "Google Cloud" },
   { image: Docker, title: "Docker" },
+  { image: NodeJS, title: "Node.js" },
 ];
 
 export default skills;

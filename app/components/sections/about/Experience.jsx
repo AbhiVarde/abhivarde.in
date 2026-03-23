@@ -12,11 +12,11 @@ const Experience = () => {
 
   const groups = [
     { title: "Languages", items: skills.slice(0, 4) },
-    { title: "Frameworks", items: skills.slice(4, 10) },
-    { title: "UI", items: skills.slice(10, 14) },
-    { title: "Platforms", items: skills.slice(14, 20) },
-    { title: "AI & SDKs", items: skills.slice(20, 25) },
-    { title: "Infrastructure", items: skills.slice(25, 30) },
+    { title: "Frameworks", items: skills.slice(4, 8) },
+    { title: "UI & Styling", items: skills.slice(8, 13) },
+    { title: "Platforms", items: skills.slice(13, 19) },
+    { title: "AI & SDKs", items: skills.slice(19, 24) },
+    { title: "Infrastructure", items: skills.slice(24, 30) },
   ];
 
   const shouldInvert = ["Vercel", "GitHub Actions", "Socket.io", "AWS"];
