@@ -48,10 +48,10 @@ const skills = [
 
   // UI & Styling
   { image: Shadcn, title: "shadcn/ui" },
+  { image: TailwindCSS, title: "Tailwind CSS" },
   { image: Mui, title: "Material UI" },
   { image: Motion, title: "Motion" },
   { image: Redux, title: "Redux" },
-  { image: TailwindCSS, title: "Tailwind CSS" },
 
   // Platform
   { image: Vercel, title: "Vercel" },
