@@ -8,20 +8,20 @@ const works = [
     endAt: "Present",
   },
   {
-    image: "https://avatars.githubusercontent.com/mintlify?s=200&v=4",
-    companyName: "Mintlify",
-    role: "Design Engineer",
-    type: "OSS",
-    startAt: "Jan '26",
-    endAt: "Present",
-  },
-  {
     image: "https://avatars.githubusercontent.com/u/25003669?s=200&v=4",
     companyName: "Appwrite",
     role: "Product Engineer",
     type: "OSS",
     startAt: "Oct '25",
     endAt: "Present",
+  },
+  {
+    image: "https://avatars.githubusercontent.com/mintlify?s=200&v=4",
+    companyName: "Mintlify",
+    role: "Frontend Engineer",
+    type: "OSS",
+    startAt: "Jan '26",
+    endAt: "Feb '26",
   },
   {
     image: "https://avatars.githubusercontent.com/u/105618662?s=200&v=4",
