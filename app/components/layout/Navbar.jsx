@@ -11,6 +11,8 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const [indicatorStyle, setIndicatorStyle] = useState(null);
+  const [navbarHeight, setNavbarHeight] = useState(0);
+  const headerRef = useRef(null);
   const navRef = useRef(null);
   const toggleBtnRef = useRef(null);
   const isFirstRender = useRef(true);
@@ -47,6 +49,17 @@ const Navbar = () => {
   }, [hoveredItem, pathname, updateIndicator]);
 
   useEffect(() => {
+    const measure = () => {
+      if (headerRef.current) {
+        setNavbarHeight(headerRef.current.offsetHeight);
+      }
+    };
+    measure();
+    window.addEventListener("resize", measure, { passive: true });
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
+  useEffect(() => {
     const handleResize = () => updateIndicator(false);
     window.addEventListener("resize", handleResize, { passive: true });
     return () => window.removeEventListener("resize", handleResize);
@@ -72,19 +85,27 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="fixed top-0 w-full z-40 flex justify-center px-3 py-2">
+      <header
+        ref={headerRef}
+        className="fixed top-0 w-full z-40 flex justify-center px-3 py-2"
+      >
         <nav
-          className={`relative px-4 w-full max-w-5xl rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] overflow-hidden transition-all duration-200 ease-out ${
-            isScrolled
-              ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-linear-to-r after:from-transparent after:via-white/20 after:to-transparent after:content-['']"
-              : ""
-          }`}
+          className="relative px-4 w-full max-w-5xl rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] overflow-hidden transition-[background-color,backdrop-filter] duration-200 ease-out"
           style={{
             backgroundColor: isScrolled ? "rgba(0,0,0,0.8)" : "rgba(0,0,0,0.2)",
             backdropFilter: isScrolled ? "blur(12px)" : "blur(8px)",
             WebkitBackdropFilter: isScrolled ? "blur(12px)" : "blur(8px)",
           }}
         >
+          <div
+            className="absolute bottom-0 left-0 w-full h-px transition-opacity duration-200"
+            style={{
+              background:
+                "linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent)",
+              opacity: isScrolled ? 1 : 0,
+            }}
+          />
+
           <div className="flex items-center justify-between py-2">
             <div className="flex items-center gap-1 text-[#F4F0E6] tracking-wide">
               <Link
@@ -157,7 +178,6 @@ const Navbar = () => {
       <div
         className="md:hidden fixed inset-0 z-30"
         style={{
-          top: "52px",
           backgroundColor: "rgba(0,0,0,0.6)",
           backdropFilter: "blur(8px)",
           WebkitBackdropFilter: "blur(8px)",
@@ -168,7 +188,8 @@ const Navbar = () => {
         onClick={() => setIsMobileMenuOpen(false)}
       >
         <div
-          className="max-w-5xl w-full mx-auto px-6 py-6"
+          className="max-w-5xl w-full mx-auto px-6 pb-6"
+          style={{ paddingTop: `${navbarHeight + 8}px` }}
           onClick={(e) => e.stopPropagation()}
         >
           <span className="text-[#F4F0E6]/40 uppercase tracking-widest text-xs mb-4 block">
@@ -187,7 +208,7 @@ const Navbar = () => {
                   } ${
                     pathname === item.url
                       ? "text-[#F4F0E6]"
-                      : "text-[#F4F0E6]/50 hover:text-[#F4F0E6]"
+                      : "text-[#F4F0E6]/60 hover:text-[#F4F0E6]"
                   }`}
                 >
                   <div className="flex items-center gap-3">
