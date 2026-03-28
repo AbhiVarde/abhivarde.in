@@ -34,33 +34,38 @@ function ProjectCard({ project, starCount }) {
           sizes="(max-width: 768px) 100vw, 256px"
           className="object-cover"
           style={{
-            filter: "blur(18px)",
-            transform: "scale(1.08)",
+            filter: "blur(16px)",
+            transform: "scale(1.06)",
             opacity: loaded ? 0 : 1,
-            transition: "opacity 0.35s ease",
+            transition: "opacity 0.2s ease-out",
           }}
         />
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          loading="lazy"
-          sizes="(max-width: 768px) 100vw, 256px"
-          className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-          onLoad={() => setLoaded(true)}
-          style={{
-            opacity: loaded ? 1 : 0,
-            transition: "opacity 0.35s ease",
-          }}
-        />
+
+        <div className="h-full w-full transition-transform duration-200 ease-out group-hover:scale-[1.04]">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 256px"
+            className="object-cover"
+            onLoad={() => setLoaded(true)}
+            style={{
+              opacity: loaded ? 1 : 0,
+              transition: "opacity 0.2s ease-out",
+            }}
+          />
+        </div>
       </div>
 
       <div className="flex flex-1 flex-col justify-between pt-3 md:pt-0">
         <div className="space-y-1.5">
           <h2 className="text-base font-medium text-white">{project.title}</h2>
+
           <p className="text-sm text-white/60 leading-relaxed md:hidden">
             {project.shortDescription}
           </p>
+
           <p className="hidden text-sm text-white/60 leading-relaxed line-clamp-2 md:block">
             {project.description}
           </p>
@@ -72,9 +77,9 @@ function ProjectCard({ project, starCount }) {
               href={project.githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/15 bg-transparent text-white/70 text-xs hover:border-white/30 hover:text-white/90 transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/15 text-white/70 text-xs hover:border-white/30 hover:text-white/90 transition-colors duration-150"
             >
-              <LuGithub size={12} className="shrink-0" />
+              <LuGithub size={12} />
               <span className="truncate max-w-35 sm:max-w-none">
                 {getRepoLabel(project.githubLink)}
               </span>
@@ -92,9 +97,9 @@ function ProjectCard({ project, starCount }) {
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/15 bg-transparent text-white/70 text-xs hover:border-white/30 hover:text-white/90 transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/15 text-white/70 text-xs hover:border-white/30 hover:text-white/90 transition-colors duration-150"
             >
-              <LuExternalLink size={12} className="shrink-0" />
+              <LuExternalLink size={12} />
               <span className="truncate max-w-35 sm:max-w-none">
                 {getDomainLabel(project.url)}
               </span>

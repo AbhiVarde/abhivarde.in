@@ -25,32 +25,35 @@ function BlogCard({ blog }) {
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover p-2 rounded-3xl"
           style={{
-            filter: "blur(18px)",
-            transform: "scale(1.08)",
+            filter: "blur(16px)",
+            transform: "scale(1.06)",
             opacity: loaded ? 0 : 1,
-            transition: "opacity 0.35s ease",
+            transition: "opacity 0.2s ease-out",
           }}
         />
-        <Image
-          src={blog.image}
-          alt={blog.title}
-          fill
-          loading="lazy"
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover p-2 rounded-3xl transition-transform duration-500 ease-out group-hover:scale-105"
-          onLoad={() => setLoaded(true)}
-          style={{
-            opacity: loaded ? 1 : 0,
-            transition: "opacity 0.35s ease",
-          }}
-        />
+
+        <div className="h-full w-full transition-transform duration-200 ease-out group-hover:scale-[1.04]">
+          <Image
+            src={blog.image}
+            alt={blog.title}
+            fill
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover p-2 rounded-3xl"
+            onLoad={() => setLoaded(true)}
+            style={{
+              opacity: loaded ? 1 : 0,
+              transition: "opacity 0.2s ease-out",
+            }}
+          />
+        </div>
       </div>
 
       <p className="text-sm font-medium text-white px-4 pb-4 mt-2">
         {blog.title}
       </p>
 
-      <div className="absolute top-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out">
+      <div className="absolute top-4 right-4 text-white opacity-0 transition-opacity duration-150 ease-out group-hover:opacity-100">
         <GoArrowUpRight size={18} />
       </div>
     </Link>
