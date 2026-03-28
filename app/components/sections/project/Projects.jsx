@@ -9,6 +9,16 @@ import { LuExternalLink, LuGithub, LuStar } from "react-icons/lu";
 function ProjectCard({ project, starCount }) {
   const [loaded, setLoaded] = useState(false);
 
+  const handleImageRef = (img) => {
+    if (!img) return;
+
+    if (img.complete) {
+      setLoaded(true);
+    } else {
+      img.onload = () => setLoaded(true);
+    }
+  };
+
   const getRepoLabel = (githubLink) => {
     const parts = githubLink.split("github.com/")[1]?.split("/");
     if (!parts) return githubLink;
@@ -26,21 +36,6 @@ function ProjectCard({ project, starCount }) {
   return (
     <div className="group flex flex-col rounded-3xl border border-[#333] bg-[#111] p-4 md:h-40 md:flex-row md:space-x-8">
       <div className="relative w-full h-32 shrink-0 overflow-hidden rounded-xl md:w-64 md:h-full">
-        <Image
-          src={project.image}
-          alt=""
-          aria-hidden
-          fill
-          sizes="(max-width: 768px) 100vw, 256px"
-          className="object-cover"
-          style={{
-            filter: "blur(16px)",
-            transform: "scale(1.06)",
-            opacity: loaded ? 0 : 1,
-            transition: "opacity 0.2s ease-out",
-          }}
-        />
-
         <div className="h-full w-full transition-transform duration-200 ease-out group-hover:scale-[1.04]">
           <Image
             src={project.image}
@@ -48,14 +43,19 @@ function ProjectCard({ project, starCount }) {
             fill
             loading="lazy"
             sizes="(max-width: 768px) 100vw, 256px"
+            ref={handleImageRef}
             className="object-cover"
-            onLoad={() => setLoaded(true)}
-            style={{
-              opacity: loaded ? 1 : 0,
-              transition: "opacity 0.2s ease-out",
-            }}
           />
         </div>
+
+        <div
+          className="absolute inset-0 transition-opacity duration-200 ease-out pointer-events-none"
+          style={{
+            backdropFilter: "blur(16px)",
+            transform: "scale(1.05)",
+            opacity: loaded ? 0 : 1,
+          }}
+        />
       </div>
 
       <div className="flex flex-1 flex-col justify-between pt-3 md:pt-0">

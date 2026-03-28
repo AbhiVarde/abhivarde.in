@@ -11,6 +11,16 @@ const Featured = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
+  const handleImageRef = (img) => {
+    if (!img) return;
+
+    if (img.complete) {
+      setLoaded(true);
+    } else {
+      img.onload = () => setLoaded(true);
+    }
+  };
+
   const project = useMemo(() => projects[currentIndex], [currentIndex]);
 
   useEffect(() => {
@@ -39,29 +49,20 @@ const Featured = () => {
     <div className="relative w-full h-55 sm:h-70 lg:h-85">
       <Image
         src={project.image}
-        alt=""
-        aria-hidden
-        fill
-        sizes="(max-width: 1024px) 100vw, 66vw"
-        className="object-cover rounded-2xl"
-        style={{
-          filter: "blur(18px)",
-          transform: "scale(1.08)",
-          opacity: loaded ? 0 : 1,
-          transition: "opacity 0.35s ease",
-        }}
-      />
-      <Image
-        src={project.image}
         alt={project.title}
         fill
         priority={currentIndex === 0}
         sizes="(max-width: 1024px) 100vw, 66vw"
+        ref={handleImageRef}
         className="object-cover rounded-2xl"
-        onLoad={() => setLoaded(true)}
+      />
+
+      <div
+        className="absolute inset-0 rounded-2xl transition-opacity duration-200 ease-out pointer-events-none"
         style={{
-          opacity: loaded ? 1 : 0,
-          transition: "opacity 0.35s ease",
+          backdropFilter: "blur(16px)",
+          transform: "scale(1.05)",
+          opacity: loaded ? 0 : 1,
         }}
       />
     </div>

@@ -8,6 +8,17 @@ import Link from "next/link";
 const About = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
+  const handleVideoRef = (video) => {
+    if (!video) return;
+
+    if (video.readyState >= 3) {
+      setIsVideoLoaded(true);
+    } else {
+      const onReady = () => setIsVideoLoaded(true);
+      video.addEventListener("canplay", onReady, { once: true });
+    }
+  };
+
   const handleDownloadClick = () => {
     const link = document.createElement("a");
     link.href = "./AbhiVarde_Resume.pdf";
@@ -55,20 +66,25 @@ const About = () => {
         <div className="group border border-[#333] rounded-3xl bg-[#111] relative overflow-hidden shadow-2xl min-h-75">
           <div className="absolute inset-0">
             <video
+              ref={handleVideoRef}
               src="/SyncUI.mov"
               autoPlay
               loop
               muted
               playsInline
-              preload="none"
-              onLoadedData={() => setIsVideoLoaded(true)}
+              preload="auto"
               className="object-cover w-full h-full"
+            />
+
+            <div
+              className="absolute inset-0 transition-opacity duration-200 ease-out pointer-events-none"
               style={{
-                filter: isVideoLoaded ? "none" : "blur(18px)",
-                transform: isVideoLoaded ? "scale(1)" : "scale(1.08)",
-                transition: "filter 0.35s ease, transform 0.35s ease",
+                backdropFilter: "blur(16px)",
+                transform: "scale(1.05)",
+                opacity: isVideoLoaded ? 0 : 1,
               }}
             />
+
             <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent" />
           </div>
 
@@ -81,7 +97,7 @@ const About = () => {
               href="https://syncui.design"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/80 text-sm font-medium hover:bg-white/20 hover:border-white/30 hover:text-white transition-colors"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/80 text-sm font-medium hover:bg-white/20 hover:border-white/30 hover:text-white transition-colors duration-150"
             >
               <span>syncui.design</span>
               <LuExternalLink size={12} />

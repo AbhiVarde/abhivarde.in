@@ -10,6 +10,16 @@ import { GoArrowUpRight } from "react-icons/go";
 function BlogCard({ blog }) {
   const [loaded, setLoaded] = useState(false);
 
+  const handleImageRef = (img) => {
+    if (!img) return;
+
+    if (img.complete) {
+      setLoaded(true);
+    } else {
+      img.onload = () => setLoaded(true);
+    }
+  };
+
   return (
     <Link
       target="_blank"
@@ -17,21 +27,6 @@ function BlogCard({ blog }) {
       className="group relative cursor-pointer rounded-3xl overflow-hidden border border-[#333] bg-[#111]"
     >
       <div className="relative w-full h-48 overflow-hidden">
-        <Image
-          src={blog.image}
-          alt=""
-          aria-hidden
-          fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover p-2 rounded-3xl"
-          style={{
-            filter: "blur(16px)",
-            transform: "scale(1.06)",
-            opacity: loaded ? 0 : 1,
-            transition: "opacity 0.2s ease-out",
-          }}
-        />
-
         <div className="h-full w-full transition-transform duration-200 ease-out group-hover:scale-[1.04]">
           <Image
             src={blog.image}
@@ -39,14 +34,19 @@ function BlogCard({ blog }) {
             fill
             loading="lazy"
             sizes="(max-width: 768px) 100vw, 50vw"
+            ref={handleImageRef}
             className="object-cover p-2 rounded-3xl"
-            onLoad={() => setLoaded(true)}
-            style={{
-              opacity: loaded ? 1 : 0,
-              transition: "opacity 0.2s ease-out",
-            }}
           />
         </div>
+
+        <div
+          className="absolute inset-0 transition-opacity duration-200 ease-out pointer-events-none rounded-3xl"
+          style={{
+            backdropFilter: "blur(16px)",
+            transform: "scale(1.05)",
+            opacity: loaded ? 0 : 1,
+          }}
+        />
       </div>
 
       <p className="text-sm font-medium text-white px-4 pb-4 mt-2">
