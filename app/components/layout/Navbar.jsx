@@ -178,9 +178,9 @@ const Navbar = () => {
       <div
         className="md:hidden fixed inset-0 z-30"
         style={{
-          backgroundColor: "rgba(0,0,0,0.6)",
-          backdropFilter: "blur(8px)",
-          WebkitBackdropFilter: "blur(8px)",
+          backgroundColor: "rgba(0, 0, 0, 0.75)",
+          backdropFilter: "blur(24px)",
+          WebkitBackdropFilter: "blur(24px)",
           opacity: isMobileMenuOpen ? 1 : 0,
           pointerEvents: isMobileMenuOpen ? "auto" : "none",
           transition: "opacity 0.15s ease",
