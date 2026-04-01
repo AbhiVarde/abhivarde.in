@@ -14,7 +14,7 @@ import Link from "next/link";
 import { PageHeader } from "../../layout/PageHeader";
 
 const USER = "AbhiVarde";
-const LIMIT = 11;
+const LIMIT = 18;
 const API = `https://api.github.com/search/issues?q=author:${USER}+-user:${USER}&sort=created&order=desc&per_page=${LIMIT}`;
 
 function repoName(url) {
@@ -82,7 +82,7 @@ export default function OSS() {
       )}
 
       {!loading && !error && (
-        <div className="relative overflow-hidden max-h-150">
+        <div className="relative overflow-hidden max-h-270">
           <div className="space-y-2">
             {items.map((item) => {
               const { label, icon: Icon, color } = getStatus(item);
