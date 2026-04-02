@@ -74,14 +74,10 @@ const About = () => {
               playsInline
               preload="auto"
               className="object-cover w-full h-full"
-            />
-
-            <div
-              className="absolute inset-0 transition-opacity duration-200 ease-out pointer-events-none"
               style={{
-                backdropFilter: "blur(16px)",
-                transform: "scale(1.05)",
-                opacity: isVideoLoaded ? 0 : 1,
+                filter: isVideoLoaded ? "blur(0px)" : "blur(16px)",
+                transform: isVideoLoaded ? "scale(1)" : "scale(1.08)",
+                transition: "filter 0.4s ease-out, transform 0.4s ease-out",
               }}
             />
 

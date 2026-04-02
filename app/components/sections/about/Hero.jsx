@@ -10,7 +10,6 @@ const Hero = () => {
 
   const handleImageRef = (img) => {
     if (!img) return;
-
     if (img.complete) {
       setLoaded(true);
     } else {
@@ -31,17 +30,14 @@ const Hero = () => {
             quality={60}
             ref={handleImageRef}
             className="object-cover"
-          />
-
-          <div
-            className="absolute inset-0 transition-opacity duration-200 ease-out pointer-events-none"
             style={{
-              backdropFilter: "blur(16px)",
-              transform: "scale(1.05)",
-              opacity: loaded ? 0 : 1,
+              filter: loaded ? "blur(0px)" : "blur(16px)",
+              transform: loaded ? "scale(1)" : "scale(1.08)",
+              transition: "filter 0.4s ease-out, transform 0.4s ease-out",
             }}
           />
 
+          {/* removed the backdropFilter overlay div */}
           <div className="absolute inset-0 bg-black/50" />
           <div className="absolute inset-0 bg-linear-to-b from-black/30 via-transparent to-black/80" />
         </div>

@@ -45,17 +45,13 @@ function ProjectCard({ project, starCount }) {
             sizes="(max-width: 768px) 100vw, 256px"
             ref={handleImageRef}
             className="object-cover"
+            style={{
+              filter: loaded ? "blur(0px)" : "blur(16px)",
+              transform: loaded ? "scale(1)" : "scale(1.08)",
+              transition: "filter 0.4s ease-out, transform 0.4s ease-out",
+            }}
           />
         </div>
-
-        <div
-          className="absolute inset-0 transition-opacity duration-200 ease-out pointer-events-none"
-          style={{
-            backdropFilter: "blur(16px)",
-            transform: "scale(1.05)",
-            opacity: loaded ? 0 : 1,
-          }}
-        />
       </div>
 
       <div className="flex flex-1 flex-col justify-between pt-3 md:pt-0">
