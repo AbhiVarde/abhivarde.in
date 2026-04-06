@@ -28,14 +28,6 @@ const projects = [
     url: "https://nodeflow.abhivarde.in",
   },
   {
-    image: NodeFlow,
-    title: "NodeFlow",
-    shortDescription: "Visual workflow builder for the browser.",
-    description:
-      "Visual node-based workflow builder. Design conditional flows with drag-and-drop nodes, share via URL and export JSON.",
-    url: "https://nodeflow.abhivarde.in",
-  },
-  {
     image: Nothify,
     title: "Nothify",
     shortDescription: "AI agent that auto-generates 404 pages via PRs.",
