@@ -7,8 +7,26 @@ import Billow from "../resources/images/project/billow.webp";
 import Jobs from "../resources/images/project/jobs.webp";
 import Nothify from "../resources/images/project/nothify.webp";
 import NodeFlow from "../resources/images/project/nodeflow.webp";
+import Rekap from "../resources/images/project/rekap.webp";
 
 const projects = [
+  {
+    image: Rekap,
+    title: "rekap",
+    shortDescription: "CLI to resume work in any git repo.",
+    description:
+      "CLI tool to see exactly where you left off in any git repo. Instantly shows branch status, recent commits, uncommitted changes, and repo health so you can continue work without context switching.",
+    url: "https://www.npmjs.com/package/@abhivarde/rekap",
+    githubLink: "https://github.com/AbhiVarde/rekap",
+  },
+  {
+    image: NodeFlow,
+    title: "NodeFlow",
+    shortDescription: "Visual workflow builder for the browser.",
+    description:
+      "Visual node-based workflow builder. Design conditional flows with drag-and-drop nodes, share via URL and export JSON.",
+    url: "https://nodeflow.abhivarde.in",
+  },
   {
     image: NodeFlow,
     title: "NodeFlow",
