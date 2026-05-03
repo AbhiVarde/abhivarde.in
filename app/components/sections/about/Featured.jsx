@@ -80,14 +80,14 @@ const Featured = () => {
                 {project.title}
               </h2>
               <span
-                className="text-xs text-white/30 font-light"
+                className="text-xs text-white/50 font-light"
                 aria-hidden="true"
               >
                 {currentIndex + 1}/{projects.length}
               </span>
             </div>
 
-            <p className="text-sm leading-relaxed text-white/70">
+            <p className="text-sm leading-relaxed text-white/80">
               <span className="block sm:hidden">
                 {project.shortDescription}
               </span>
@@ -123,7 +123,7 @@ const Featured = () => {
                   onClick={() => setCurrentIndex(i)}
                   aria-label={`Go to ${p.title}`}
                   aria-current={i === currentIndex ? "true" : undefined}
-                  className={`h-1 rounded-full transition-all duration-300 ${
+                  className={`h-1 rounded-full transition-all duration-300 p-3 -m-3 box-content ${
                     i === currentIndex
                       ? "w-6 bg-white"
                       : "w-1.5 bg-white/20 hover:bg-white/40"

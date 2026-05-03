@@ -26,8 +26,9 @@ const Hero = () => {
             alt="Abhi Varde"
             fill
             priority
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 984px"
-            quality={60}
+            fetchPriority="high"
+            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 100vw, 984px"
+            quality={50}
             ref={handleImageRef}
             className="object-cover"
             style={{
@@ -36,8 +37,11 @@ const Hero = () => {
               transition: "filter 0.4s ease-out, transform 0.4s ease-out",
             }}
           />
-          <div className="absolute inset-0 bg-black/50" />
-          <div className="absolute inset-0 bg-linear-to-b from-black/30 via-transparent to-black/80" />
+          <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+          <div
+            className="absolute inset-0 bg-linear-to-b from-black/30 via-transparent to-black/80"
+            aria-hidden="true"
+          />
         </div>
 
         <div className="relative z-10 flex flex-col p-4 sm:p-6">
@@ -73,36 +77,28 @@ const Hero = () => {
 
               <p className="mt-3 sm:hidden font-light leading-relaxed">
                 <span className="font-medium">
-                  137+{" "}
-                  <span aria-label="GitHub stars">
-                    <span aria-hidden="true">GitHub ★</span>
-                  </span>
+                  <span className="sr-only">137+ GitHub stars</span>
+                  <span aria-hidden="true">137+ GitHub ★</span>
                 </span>
-                {" · "}
+                <span aria-hidden="true"> · </span>
                 <span className="font-medium">
-                  3K+{" "}
-                  <span aria-label="npm downloads">
-                    <span aria-hidden="true">npm ↓</span>
-                  </span>
+                  <span className="sr-only">3K+ npm downloads</span>
+                  <span aria-hidden="true">3K+ npm ↓</span>
                 </span>
-                {" · "}
+                <span aria-hidden="true"> · </span>
                 <span className="font-medium">110+ countries</span>
               </p>
               <p className="hidden sm:block mt-3 sm:mt-4 font-light leading-relaxed">
                 <span className="font-medium">
-                  137+{" "}
-                  <span aria-label="GitHub stars">
-                    <span aria-hidden="true">GitHub ★</span>
-                  </span>
+                  <span className="sr-only">137+ GitHub stars</span>
+                  <span aria-hidden="true">137+ GitHub ★</span>
                 </span>
-                {" · "}
+                <span aria-hidden="true"> · </span>
                 <span className="font-medium">
-                  3,000+{" "}
-                  <span aria-label="npm downloads">
-                    <span aria-hidden="true">npm ↓</span>
-                  </span>
+                  <span className="sr-only">3,000+ npm downloads</span>
+                  <span aria-hidden="true">3,000+ npm ↓</span>
                 </span>
-                {" · "}
+                <span aria-hidden="true"> · </span>
                 used by developers in{" "}
                 <span className="font-medium">110+ countries</span>
               </p>

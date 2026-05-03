@@ -31,7 +31,7 @@ const Experience = () => {
           Work Experience
         </div>
 
-        <p className="mt-3 text-sm text-white/60 leading-relaxed">
+        <p className="mt-3 text-sm text-white/70 leading-relaxed">
           Where I've worked, contributed, and shipped things that matter.
         </p>
 
@@ -43,9 +43,7 @@ const Experience = () => {
               )}
               <div
                 role="listitem"
-                className={`flex items-center gap-3 py-2 ${
-                  i === 0 ? "pt-0" : ""
-                } ${i === works.length - 1 ? "pb-0" : ""}`}
+                className={`flex items-center gap-3 py-2 ${i === 0 ? "pt-0" : ""} ${i === works.length - 1 ? "pb-0" : ""}`}
               >
                 <img
                   src={work.image}
@@ -64,7 +62,7 @@ const Experience = () => {
                         {work.companyName}
                       </p>
                       {work.type && (
-                        <span className="shrink-0 text-[10px] px-2 py-0.5 rounded-full border border-white/10 text-white/50">
+                        <span className="shrink-0 text-[10px] px-2 py-0.5 rounded-full border border-white/10 text-white/60">
                           {work.type}
                         </span>
                       )}
@@ -89,7 +87,7 @@ const Experience = () => {
           Skills
         </div>
 
-        <p className="mt-3 text-sm text-white/60 leading-relaxed">
+        <p className="mt-3 text-sm text-white/70 leading-relaxed">
           Tools and technologies I work with, and keep reaching for.
         </p>
 
@@ -113,7 +111,8 @@ const Experience = () => {
                     {isRemote(skill.image) ? (
                       <img
                         src={skill.image}
-                        alt={skill.title}
+                        alt=""
+                        aria-hidden="true"
                         width={12}
                         height={12}
                         className={`w-3 h-3 shrink-0 object-contain ${
@@ -123,7 +122,8 @@ const Experience = () => {
                     ) : (
                       <Image
                         src={skill.image}
-                        alt={skill.title}
+                        alt=""
+                        aria-hidden="true"
                         width={12}
                         height={12}
                         className={`w-3 h-3 shrink-0 object-contain ${

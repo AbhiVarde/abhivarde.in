@@ -57,14 +57,14 @@ const About = () => {
               Focused on clean architecture, thoughtful UX, and shipping things
               that last.
             </p>
-            <p className="text-sm sm:text-base leading-relaxed mt-3 text-white/60">
+            <p className="text-sm sm:text-base leading-relaxed mt-3 text-white/70">
               Open to Product Engineer and Design Engineer roles at
               product-driven companies.
             </p>
           </div>
 
           <button
-            className="cursor-pointer text-sm mt-6 sm:mt-4 bg-[#1a1a1a] border border-[#333] px-3.5 py-1.5 rounded-full hover:bg-[#222] transition-colors w-fit"
+            className="cursor-pointer text-sm mt-6 sm:mt-4 bg-[#1a1a1a] border border-[#333] px-3.5 py-1.5 rounded-full hover:bg-[#222] transition-colors w-fit min-h-[44px] sm:min-h-0"
             onClick={handleDownloadClick}
             aria-label="Download Abhi Varde's resume as PDF"
           >
@@ -81,7 +81,7 @@ const About = () => {
               loop
               muted
               playsInline
-              preload="auto"
+              preload="metadata"
               aria-label="Demo of Sync UI, a React component library for Design Engineers"
               className="object-cover w-full h-full"
               style={{
@@ -89,8 +89,13 @@ const About = () => {
                 transform: isVideoLoaded ? "scale(1)" : "scale(1.08)",
                 transition: "filter 0.4s ease-out, transform 0.4s ease-out",
               }}
+            >
+              <track kind="captions" srcLang="en" label="English" default />
+            </video>
+            <div
+              className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent"
+              aria-hidden="true"
             />
-            <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent" />
           </div>
 
           <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white z-10">
@@ -103,7 +108,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit syncui.design, opens in a new tab"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/80 text-sm font-medium hover:bg-white/20 hover:border-white/30 hover:text-white transition-colors duration-150"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/80 text-sm font-medium hover:bg-white/20 hover:border-white/30 hover:text-white transition-colors duration-150 min-h-[44px] sm:min-h-0"
             >
               <span>syncui.design</span>
               <LuExternalLink size={12} aria-hidden="true" />

@@ -3,12 +3,15 @@ const nextConfig = {
   reactStrictMode: true,
 
   experimental: {
-    optimizePackageImports: ["react-icons"],
+    optimizePackageImports: [
+      "react-icons",
+      "motion",
+    ],
   },
 
   images: {
     formats: ["image/avif", "image/webp"],
-    qualities: [55, 75],
+    qualities: [50, 75],
     deviceSizes: [390, 640, 750, 828, 1080, 1200, 1920],
     minimumCacheTTL: 60 * 60 * 24 * 30,
     remotePatterns: [
