@@ -13,7 +13,6 @@ const Featured = () => {
 
   const handleImageRef = (img) => {
     if (!img) return;
-
     if (img.complete) {
       setLoaded(true);
     } else {
@@ -65,7 +64,14 @@ const Featured = () => {
   );
 
   return (
-    <section className="max-w-6xl mx-auto mt-8">
+    <section
+      className="max-w-6xl mx-auto mt-8"
+      aria-label="Featured projects carousel"
+    >
+      <div aria-live="polite" aria-atomic="true" className="sr-only">
+        Showing project {currentIndex + 1} of {projects.length}: {project.title}
+      </div>
+
       <div className="relative rounded-3xl bg-[#0f0f0f] border border-white/10 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 p-4 md:p-6">
           <div className="lg:col-span-4 flex flex-col justify-center gap-3">
@@ -73,7 +79,10 @@ const Featured = () => {
               <h2 className="text-lg sm:text-xl font-medium text-white tracking-tight">
                 {project.title}
               </h2>
-              <span className="text-xs text-white/30 font-light">
+              <span
+                className="text-xs text-white/30 font-light"
+                aria-hidden="true"
+              >
                 {currentIndex + 1}/{projects.length}
               </span>
             </div>
@@ -90,22 +99,30 @@ const Featured = () => {
                 href={project.url || project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`View ${project.title}, opens in a new tab`}
                 className="hidden sm:inline-flex items-center gap-1 text-sm font-medium hover:opacity-70 transition-opacity w-fit group"
                 style={{ color: "#ff3800" }}
               >
                 View project
                 <LuArrowUpRight
                   size={15}
+                  aria-hidden="true"
                   className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </Link>
             )}
 
-            <div className="hidden sm:flex gap-1.5 mt-1">
-              {projects.map((_, i) => (
+            <div
+              className="hidden sm:flex gap-1.5 mt-1"
+              role="group"
+              aria-label="Project slides"
+            >
+              {projects.map((p, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrentIndex(i)}
+                  aria-label={`Go to ${p.title}`}
+                  aria-current={i === currentIndex ? "true" : undefined}
                   className={`h-1 rounded-full transition-all duration-300 ${
                     i === currentIndex
                       ? "w-6 bg-white"
@@ -122,6 +139,7 @@ const Featured = () => {
                 href={project.url || project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`View ${project.title}, opens in a new tab`}
                 className="block w-full"
               >
                 {imageContent}

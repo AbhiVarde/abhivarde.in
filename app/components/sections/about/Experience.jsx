@@ -25,8 +25,8 @@ const Experience = () => {
     <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5 items-stretch">
       <div className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111] flex flex-col">
         <div className="uppercase tracking-widest flex gap-2 items-center text-sm font-medium">
-          <span className="bg-[#FF3B00] p-1 rounded-md">
-            <IoBriefcaseOutline size={18} color="#FFFFFF" />
+          <span className="bg-[#FF3B00] p-1 rounded-md" aria-hidden="true">
+            <IoBriefcaseOutline size={18} color="#FFFFFF" aria-hidden="true" />
           </span>
           Work Experience
         </div>
@@ -35,18 +35,21 @@ const Experience = () => {
           Where I've worked, contributed, and shipped things that matter.
         </p>
 
-        <div className="mt-5 flex flex-col flex-1 justify-between">
+        <div className="mt-5 flex flex-col flex-1 justify-between" role="list">
           {works?.map((work, i) => (
             <React.Fragment key={i}>
-              {i !== 0 && <div className="h-px bg-white/6" />}
+              {i !== 0 && (
+                <div className="h-px bg-white/6" aria-hidden="true" />
+              )}
               <div
+                role="listitem"
                 className={`flex items-center gap-3 py-2 ${
                   i === 0 ? "pt-0" : ""
                 } ${i === works.length - 1 ? "pb-0" : ""}`}
               >
                 <img
                   src={work.image}
-                  alt={work.companyName}
+                  alt={`${work.companyName} logo`}
                   width={36}
                   height={36}
                   loading="lazy"
@@ -66,11 +69,11 @@ const Experience = () => {
                         </span>
                       )}
                     </div>
-                    <p className="text-xs text-white/40 shrink-0">
+                    <p className="text-xs text-white/60 shrink-0">
                       {work.startAt} – {work.endAt}
                     </p>
                   </div>
-                  <p className="text-xs text-white/70 truncate">{work.role}</p>
+                  <p className="text-xs text-white/80 truncate">{work.role}</p>
                 </div>
               </div>
             </React.Fragment>
@@ -80,8 +83,8 @@ const Experience = () => {
 
       <div className="p-4 md:p-6 rounded-3xl border border-[#333] bg-[#111111] flex flex-col">
         <div className="uppercase tracking-widest flex gap-2 items-center text-sm font-medium">
-          <span className="bg-[#FF3B00] p-1 rounded-md">
-            <LuTerminal size={18} color="#FFFFFF" />
+          <span className="bg-[#FF3B00] p-1 rounded-md" aria-hidden="true">
+            <LuTerminal size={18} color="#FFFFFF" aria-hidden="true" />
           </span>
           Skills
         </div>
@@ -93,13 +96,18 @@ const Experience = () => {
         <div className="mt-5 flex flex-col flex-1 justify-between gap-2">
           {groups.map((group, i) => (
             <div key={i}>
-              <p className="text-[10px] uppercase tracking-wider text-white/40 mb-1.5">
+              <p className="text-[10px] uppercase tracking-wider text-white/60 mb-1.5">
                 {group.title}
               </p>
-              <div className="flex flex-wrap gap-1.5">
+              <div
+                className="flex flex-wrap gap-1.5"
+                role="list"
+                aria-label={`${group.title} skills`}
+              >
                 {group.items.map((skill, j) => (
                   <div
                     key={j}
+                    role="listitem"
                     className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-white/15 bg-transparent text-xs"
                   >
                     {isRemote(skill.image) ? (
@@ -123,7 +131,7 @@ const Experience = () => {
                         }`}
                       />
                     )}
-                    {skill.title}
+                    <span>{skill.title}</span>
                   </div>
                 ))}
               </div>

@@ -131,3 +131,25 @@ samp {
 .animate-slide-up {
   animation: slide-up 0.35s ease-out both;
 }
+
+:focus-visible {
+  outline: 2px solid #ff3b00;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-wave,
+  .animate-scroll,
+  .animate-scroll-reverse,
+  .animate-fade-in,
+  .animate-slide-up {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

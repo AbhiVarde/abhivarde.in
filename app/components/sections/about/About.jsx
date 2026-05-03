@@ -10,7 +10,6 @@ const About = () => {
 
   const handleVideoRef = (video) => {
     if (!video) return;
-
     if (video.readyState >= 3) {
       setIsVideoLoaded(true);
     } else {
@@ -31,14 +30,24 @@ const About = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="p-4 sm:p-6 min-h-64 md:min-h-auto border border-[#333] rounded-3xl bg-[#111] text-white shadow-2xl flex flex-col">
           <div className="uppercase tracking-widest flex items-center gap-2 text-sm">
-            <span className="bg-[#FF3B00] p-1 rounded-md shrink-0">
-              <VscVscode size={18} color="#FFFFFF" />
+            <span
+              className="bg-[#FF3B00] p-1 rounded-md shrink-0"
+              aria-hidden="true"
+            >
+              <VscVscode size={18} color="#FFFFFF" aria-hidden="true" />
             </span>
             <div className="flex items-center gap-x-1.5 font-medium leading-tight">
               <span>Design</span>
-              <span className="text-white/40">×</span>
+              <span className="text-white/40" aria-hidden="true">
+                ×
+              </span>
               <span>Product</span>
-              <span className="hidden sm:inline text-white/40">×</span>
+              <span
+                className="hidden sm:inline text-white/40"
+                aria-hidden="true"
+              >
+                ×
+              </span>
               <span className="hidden sm:inline">Engineering</span>
             </div>
           </div>
@@ -57,7 +66,7 @@ const About = () => {
           <button
             className="cursor-pointer text-sm mt-6 sm:mt-4 bg-[#1a1a1a] border border-[#333] px-3.5 py-1.5 rounded-full hover:bg-[#222] transition-colors w-fit"
             onClick={handleDownloadClick}
-            title="Download Resume"
+            aria-label="Download Abhi Varde's resume as PDF"
           >
             Download Resume
           </button>
@@ -73,6 +82,7 @@ const About = () => {
               muted
               playsInline
               preload="auto"
+              aria-label="Demo of Sync UI, a React component library for Design Engineers"
               className="object-cover w-full h-full"
               style={{
                 filter: isVideoLoaded ? "blur(0px)" : "blur(16px)",
@@ -80,7 +90,6 @@ const About = () => {
                 transition: "filter 0.4s ease-out, transform 0.4s ease-out",
               }}
             />
-
             <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent" />
           </div>
 
@@ -93,10 +102,11 @@ const About = () => {
               href="https://syncui.design"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit syncui.design, opens in a new tab"
               className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/80 text-sm font-medium hover:bg-white/20 hover:border-white/30 hover:text-white transition-colors duration-150"
             >
               <span>syncui.design</span>
-              <LuExternalLink size={12} />
+              <LuExternalLink size={12} aria-hidden="true" />
             </Link>
           </div>
         </div>

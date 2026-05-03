@@ -21,19 +21,19 @@ const Contact = () => {
 
         <button
           onClick={handleCopyEmail}
+          aria-label={
+            copied ? "Email copied to clipboard" : "Copy email address"
+          }
           className="flex items-center gap-2 bg-[#FF3B00] text-white px-3.5 py-1.5 rounded-full hover:bg-[#E63500] transition-colors cursor-pointer"
         >
           {copied ? (
-            <>
-              <LuCheck size={16} />
-              <span className="text-sm">Copied!</span>
-            </>
+            <LuCheck size={16} aria-hidden="true" />
           ) : (
-            <>
-              <LuCopy size={16} />
-              <span className="text-sm">Copy Email</span>
-            </>
+            <LuCopy size={16} aria-hidden="true" />
           )}
+          <span className="text-sm" aria-live="polite" aria-atomic="true">
+            {copied ? "Copied!" : "Copy Email"}
+          </span>
         </button>
       </div>
     </div>

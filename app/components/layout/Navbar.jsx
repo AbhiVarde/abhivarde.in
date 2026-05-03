@@ -90,6 +90,8 @@ const Navbar = () => {
         className="fixed top-0 w-full z-40 flex justify-center px-3 py-2"
       >
         <nav
+          role="navigation"
+          aria-label="Main navigation"
           className="relative px-4 w-full max-w-5xl rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] overflow-hidden transition-[background-color,backdrop-filter] duration-200 ease-out"
           style={{
             backgroundColor: isScrolled ? "rgba(0,0,0,0.8)" : "rgba(0,0,0,0.2)",
@@ -99,6 +101,7 @@ const Navbar = () => {
         >
           <div
             className="absolute bottom-0 left-0 w-full h-px transition-opacity duration-200"
+            aria-hidden="true"
             style={{
               background:
                 "linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent)",
@@ -110,14 +113,17 @@ const Navbar = () => {
             <div className="flex items-center gap-1 text-[#F4F0E6] tracking-wide">
               <Link
                 href="/"
+                aria-label="Home — abhivarde.in"
                 className="opacity-90 hover:opacity-100 transition-opacity"
               >
                 ~abhivarde
               </Link>
               {pathname !== "/" && (
                 <>
-                  <span className="opacity-40">/</span>
-                  <span className="capitalize opacity-80">
+                  <span className="opacity-40" aria-hidden="true">
+                    /
+                  </span>
+                  <span className="capitalize opacity-80" aria-hidden="true">
                     {pathname.split("/")[1]}
                   </span>
                 </>
@@ -128,14 +134,22 @@ const Navbar = () => {
               ref={toggleBtnRef}
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
               className="md:hidden relative w-6 h-6 flex items-center justify-center cursor-pointer"
-              aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-nav"
+              aria-label={
+                isMobileMenuOpen
+                  ? "Close navigation menu"
+                  : "Open navigation menu"
+              }
             >
               <span
+                aria-hidden="true"
                 className={`absolute h-[1.5px] w-4 bg-[#F4F0E6] rounded transition-all duration-200 ${
                   isMobileMenuOpen ? "rotate-45" : "-translate-y-0.75"
                 }`}
               />
               <span
+                aria-hidden="true"
                 className={`absolute h-[1.5px] w-4 bg-[#F4F0E6] rounded transition-all duration-200 ${
                   isMobileMenuOpen ? "-rotate-45" : "translate-y-0.75"
                 }`}
@@ -144,29 +158,32 @@ const Navbar = () => {
 
             <ul
               ref={navRef}
+              aria-label="Site pages"
               className="hidden md:flex items-center gap-2 relative"
               onMouseLeave={() => setHoveredItem(null)}
             >
               {indicatorStyle && (
+                // aria-hidden — purely decorative sliding background
                 <span
+                  aria-hidden="true"
                   className="absolute bg-[#F4F0E6] rounded-lg h-8 top-1/2 -translate-y-1/2"
                   style={indicatorStyle}
                 />
               )}
               {headerNavLinks.map((navLink) => (
                 <li key={navLink.url}>
-                  <Link href={navLink.url}>
-                    <button
-                      data-nav-item={navLink.url}
-                      onMouseEnter={() => setHoveredItem(navLink.url)}
-                      className="relative px-3 py-1.5 rounded-md text-sm tracking-wide cursor-pointer"
+                  <Link
+                    href={navLink.url}
+                    data-nav-item={navLink.url}
+                    onMouseEnter={() => setHoveredItem(navLink.url)}
+                    aria-current={pathname === navLink.url ? "page" : undefined}
+                    className="relative px-3 py-1.5 rounded-md text-sm tracking-wide cursor-pointer inline-block"
+                  >
+                    <span
+                      className={`relative z-10 transition-colors duration-150 ${getTextColor(navLink.url)}`}
                     >
-                      <span
-                        className={`relative z-10 transition-colors duration-150 ${getTextColor(navLink.url)}`}
-                      >
-                        {navLink.title}
-                      </span>
-                    </button>
+                      {navLink.title}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -176,6 +193,10 @@ const Navbar = () => {
       </header>
 
       <div
+        id="mobile-nav"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation menu"
         className="md:hidden fixed inset-0 z-30"
         style={{
           backgroundColor: "rgba(0, 0, 0, 0.75)",
@@ -192,15 +213,19 @@ const Navbar = () => {
           style={{ paddingTop: `${navbarHeight + 8}px` }}
           onClick={(e) => e.stopPropagation()}
         >
-          <span className="text-[#F4F0E6]/40 uppercase tracking-widest text-xs mb-4 block">
+          <span
+            aria-hidden="true"
+            className="text-[#F4F0E6]/40 uppercase tracking-widest text-xs mb-4 block"
+          >
             Navigation
           </span>
-          <ul className="flex flex-col">
+          <ul aria-label="Site pages">
             {headerNavLinks.map((item, index) => (
               <li key={item.url}>
                 <Link
                   href={item.url}
                   onClick={() => setIsMobileMenuOpen(false)}
+                  aria-current={pathname === item.url ? "page" : undefined}
                   className={`flex items-center justify-between py-4 transition-colors ${
                     index < headerNavLinks.length - 1
                       ? "border-b border-white/10"
@@ -213,7 +238,10 @@ const Navbar = () => {
                 >
                   <div className="flex items-center gap-3">
                     {item.icon && (
-                      <span className="flex items-center justify-center w-5 h-5 opacity-70">
+                      <span
+                        aria-hidden="true"
+                        className="flex items-center justify-center w-5 h-5 opacity-70"
+                      >
                         {item.icon}
                       </span>
                     )}
@@ -222,7 +250,9 @@ const Navbar = () => {
                     </span>
                   </div>
                   {pathname === item.url && (
-                    <span className="text-[#F4F0E6] text-sm">✸</span>
+                    <span aria-hidden="true" className="text-[#F4F0E6] text-sm">
+                      ✸
+                    </span>
                   )}
                 </Link>
               </li>
